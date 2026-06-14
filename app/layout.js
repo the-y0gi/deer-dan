@@ -1,24 +1,99 @@
-import './globals.css';
+import "./globals.css";
 
 export const metadata = {
-  title: 'Deer & Dan Clothing — Coming Soon',
-  description: 'Deer & Dan Clothing — Premium fashion for every you. Something extraordinary is coming. Stay tuned and be the first to know when we launch.',
-  keywords: 'Deer Dan, Deer & Dan, clothing, fashion, premium, men, women, kids',
-  openGraph: {
-    title: 'Deer & Dan Clothing — Coming Soon',
-    description: 'Premium fashion for every you. Something extraordinary is coming.',
-    type: 'website',
+  metadataBase: new URL("https://deerdan.in"),
+
+  title: {
+    default: "Deer & Dan Clothing | Premium Fashion Brand India",
+    template: "%s | Deer & Dan Clothing",
   },
+
+  description:
+    "Deer & Dan Clothing is a premium fashion brand offering stylish and modern clothing for men, women, and kids. Discover timeless fashion crafted for every you.",
+
+  keywords: [
+    "Deer & Dan",
+    "Deer & Dan Clothing",
+    "Premium Fashion Brand India",
+    "Luxury Clothing Brand India",
+    "Men's Clothing",
+    "Women's Clothing",
+    "Kids Clothing",
+    "Streetwear India",
+    "Online Clothing Store India",
+    "Fashion Brand India",
+    "deerdan.in",
+  ],
+
+  applicationName: "Deer & Dan Clothing",
+
+  authors: [{ name: "Deer & Dan Clothing" }],
+  creator: "Deer & Dan Clothing",
+  publisher: "Deer & Dan Clothing",
+
+  referrer: "origin-when-cross-origin",
+
+  alternates: {
+    canonical: "https://deerdan.in",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  icons: {
+    icon: "/d_logo.svg",
+    shortcut: "/d_logo.svg",
+    apple: "/d_logo.svg",
+  },
+
+  openGraph: {
+    title: "Deer & Dan Clothing | Premium Fashion Brand India",
+    description:
+      "Premium fashion for every you. Discover timeless and modern clothing for men, women, and kids.",
+    url: "https://deerdan.in",
+    siteName: "Deer & Dan Clothing",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://deerdan.in/deer_logo.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Deer & Dan Clothing",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Deer & Dan Clothing | Premium Fashion Brand India",
+    description:
+      "Premium fashion for every you. Discover timeless and modern clothing for men, women, and kids.",
+    images: ["https://deerdan.in/deer_logo.jpeg"],
+    creator: "@deerdan",
+  },
+
+  category: "Fashion",
+
+  // Add this after verifying your site in Google Search Console
+  // verification: {
+  //   google: "YOUR_GOOGLE_VERIFICATION_CODE",
+  // },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#050505" />
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <body>{children}</body>
     </html>
   );
