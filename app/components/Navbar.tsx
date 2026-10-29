@@ -3,7 +3,12 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-export default function Navbar({ theme, onOpenInquiry }) {
+interface NavbarProps {
+  onOpenInquiry: () => void;
+  theme?: string;
+}
+
+export default function Navbar({ onOpenInquiry }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (

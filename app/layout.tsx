@@ -1,6 +1,7 @@
+import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL("https://deerdan.in"),
 
   title: {
@@ -84,14 +85,13 @@ export const metadata = {
   },
 
   category: "Fashion",
-
-  // Add this after verifying your site in Google Search Console
-  // verification: {
-  //   google: "YOUR_GOOGLE_VERIFICATION_CODE",
-  // },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
       <head>

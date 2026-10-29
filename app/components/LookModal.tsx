@@ -2,12 +2,20 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { Look } from '../data/looks';
 
-export default function LookModal({ look, onClose, theme, onInquire }) {
-  const [selectedImg, setSelectedImg] = useState(0);
+interface LookModalProps {
+  look: Look | null;
+  onClose: () => void;
+  onInquire: (look: Look) => void;
+  theme?: string;
+}
+
+export default function LookModal({ look, onClose, onInquire }: LookModalProps) {
+  const [selectedImg, setSelectedImg] = useState<number>(0);
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -43,7 +51,7 @@ export default function LookModal({ look, onClose, theme, onInquire }) {
         style={{
           position: 'fixed',
           inset: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          backgroundColor: 'rgba(0, 0, 0, 0.75)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
         }}
@@ -62,7 +70,7 @@ export default function LookModal({ look, onClose, theme, onInquire }) {
           background: 'var(--card-bg)',
           color: 'var(--text-main)',
           border: '1px solid var(--card-border)',
-          boxShadow: '0 30px 60px rgba(0, 0, 0, 0.5)',
+          boxShadow: '0 30px 60px rgba(0, 0, 0, 0.3)',
           backdropFilter: 'blur(20px)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
@@ -126,7 +134,7 @@ export default function LookModal({ look, onClose, theme, onInquire }) {
                     height: '80px',
                     borderRadius: '0.75rem',
                     overflow: 'hidden',
-                    border: selectedImg === i ? '2px solid var(--accent)' : '2px solid transparent',
+                    border: selectedImg === i ? '2px solid #111111' : '2px solid transparent',
                     opacity: selectedImg === i ? 1 : 0.6,
                     cursor: 'pointer',
                   }}

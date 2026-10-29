@@ -2,9 +2,21 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { Collection, Look } from '../data/looks';
 
-export default function CollectionGrid({ theme, collections, looks, onSelectLook }) {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+interface CollectionGridProps {
+  collections: Collection[];
+  looks: Look[];
+  onSelectLook: (look: Look) => void;
+  theme?: string;
+}
+
+export default function CollectionGrid({
+  collections,
+  looks,
+  onSelectLook,
+}: CollectionGridProps) {
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const filteredLooks =
     selectedCategory === 'all'
@@ -90,8 +102,8 @@ export default function CollectionGrid({ theme, collections, looks, onSelectLook
                     letterSpacing: '0.08em',
                     whiteSpace: 'nowrap',
                     transition: 'all 0.2s ease',
-                    background: active ? 'var(--accent)' : 'transparent',
-                    color: active ? 'var(--accent-contrast)' : 'var(--text-muted)',
+                    background: active ? '#111111' : 'transparent',
+                    color: active ? '#ffffff' : 'var(--text-muted)',
                     border: active ? 'none' : '1px solid var(--card-border)',
                   }}
                 >

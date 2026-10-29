@@ -1,4 +1,36 @@
-export const COLLECTIONS = [
+export interface Collection {
+  id: string;
+  label: string;
+}
+
+export interface Look {
+  id: string;
+  number: string;
+  title: string;
+  category: string;
+  season: string;
+  image: string;
+  detailImages?: string[];
+  fabric: string;
+  silhouette: string;
+  hardware: string;
+  description: string;
+  tags: string[];
+}
+
+export interface AtelierPillar {
+  number: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+export interface BrandStat {
+  value: string;
+  label: string;
+}
+
+export const COLLECTIONS: Collection[] = [
   { id: 'all', label: 'All Collections' },
   { id: 'outerwear', label: 'Outerwear & Coats' },
   { id: 'tailoring', label: 'Sculptural Tailoring' },
@@ -6,7 +38,7 @@ export const COLLECTIONS = [
   { id: 'capsule', label: 'Exclusive Capsule' },
 ];
 
-export const LOOKS = [
+export const LOOKS: Look[] = [
   {
     id: 'look-01',
     number: '01',
@@ -111,7 +143,7 @@ export const LOOKS = [
   },
 ];
 
-export const ATELIER_PILLARS = [
+export const ATELIER_PILLARS: AtelierPillar[] = [
   {
     number: '01',
     title: 'Architectural Form',
@@ -135,7 +167,7 @@ export const ATELIER_PILLARS = [
   },
 ];
 
-export const BRAND_STATS = [
+export const BRAND_STATS: BrandStat[] = [
   { value: '100%', label: 'Noble Natural Fibers' },
   { value: '80', label: 'Pieces per Capsule' },
   { value: '45+', label: 'Hand Hours per Coat' },

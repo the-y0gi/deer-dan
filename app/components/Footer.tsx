@@ -2,7 +2,11 @@
 
 import Image from 'next/image';
 
-export default function Footer({ theme }) {
+interface FooterProps {
+  theme?: string;
+}
+
+export default function Footer({}: FooterProps) {
   return (
     <footer
       style={{

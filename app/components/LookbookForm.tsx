@@ -1,8 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
+import { Look } from '../data/looks';
 
-export default function LookbookForm({ theme, selectedLook, onCloseInquiry }) {
+interface LookbookFormProps {
+  selectedLook: Look | null;
+  onCloseInquiry: () => void;
+  theme?: string;
+}
+
+export default function LookbookForm({ selectedLook }: LookbookFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,10 +18,10 @@ export default function LookbookForm({ theme, selectedLook, onCloseInquiry }) {
     message: '',
   });
 
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
@@ -232,7 +239,7 @@ export default function LookbookForm({ theme, selectedLook, onCloseInquiry }) {
                   style={{
                     width: '100%',
                     padding: '1.1rem',
-                    fontSize: '0.75rem',
+                    fontSize: '0.85rem',
                     marginTop: '0.5rem',
                   }}
                 >

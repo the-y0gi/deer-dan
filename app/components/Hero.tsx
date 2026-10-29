@@ -2,8 +2,15 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { Look } from '../data/looks';
 
-export default function Hero({ theme, looks, onSelectLook }) {
+interface HeroProps {
+  looks: Look[];
+  onSelectLook: (look: Look) => void;
+  theme?: string;
+}
+
+export default function Hero({ looks, onSelectLook }: HeroProps) {
   const [activeLookIndex, setActiveLookIndex] = useState(0);
   const activeLook = looks[activeLookIndex] || looks[0];
 
@@ -107,9 +114,9 @@ export default function Hero({ theme, looks, onSelectLook }) {
               <div>
                 <p
                   style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
                     fontSize: '2rem',
-                    fontWeight: 700,
+                    fontWeight: 500,
                     lineHeight: 1,
                     margin: 0,
                   }}
@@ -132,9 +139,9 @@ export default function Hero({ theme, looks, onSelectLook }) {
               <div>
                 <p
                   style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
                     fontSize: '2rem',
-                    fontWeight: 700,
+                    fontWeight: 500,
                     lineHeight: 1,
                     margin: 0,
                   }}
@@ -157,9 +164,9 @@ export default function Hero({ theme, looks, onSelectLook }) {
               <div>
                 <p
                   style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
                     fontSize: '2rem',
-                    fontWeight: 700,
+                    fontWeight: 500,
                     lineHeight: 1,
                     margin: 0,
                   }}
@@ -181,7 +188,7 @@ export default function Hero({ theme, looks, onSelectLook }) {
             </div>
           </div>
 
-          {/* Right Column: Floating Interactive Lookbook Card (Backdoor AI inspired) */}
+          {/* Right Column: Floating Interactive Lookbook Card */}
           <div>
             <div className="look-card-frame">
               {/* Image Frame */}
@@ -294,9 +301,9 @@ export default function Hero({ theme, looks, onSelectLook }) {
                 >
                   <p
                     style={{
-                      fontFamily: "'Cormorant Garamond', Georgia, serif",
+                      fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
                       fontSize: '1.5rem',
-                      fontWeight: 600,
+                      fontWeight: 500,
                       lineHeight: 1.15,
                       margin: 0,
                     }}
@@ -341,10 +348,10 @@ export default function Hero({ theme, looks, onSelectLook }) {
                         fontWeight: 600,
                         transition: 'all 0.2s',
                         background:
-                          activeLookIndex === idx ? 'var(--accent)' : 'transparent',
+                          activeLookIndex === idx ? '#111111' : 'transparent',
                         color:
                           activeLookIndex === idx
-                            ? 'var(--accent-contrast)'
+                            ? '#ffffff'
                             : 'var(--text-muted)',
                         border:
                           activeLookIndex === idx

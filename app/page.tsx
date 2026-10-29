@@ -8,13 +8,13 @@ import AtelierStory from './components/AtelierStory';
 import LookbookForm from './components/LookbookForm';
 import Footer from './components/Footer';
 import LookModal from './components/LookModal';
-import { COLLECTIONS, LOOKS } from './data/looks';
+import { COLLECTIONS, LOOKS, Look } from './data/looks';
 
 export default function Home() {
-  const [selectedLook, setSelectedLook] = useState(null);
-  const [inquiryLook, setInquiryLook] = useState(null);
+  const [selectedLook, setSelectedLook] = useState<Look | null>(null);
+  const [inquiryLook, setInquiryLook] = useState<Look | null>(null);
 
-  const handleInquire = (look) => {
+  const handleInquire = (look: Look | null) => {
     setInquiryLook(look);
     const inquirySection = document.getElementById('inquiry');
     if (inquirySection) {
@@ -25,41 +25,37 @@ export default function Home() {
   return (
     <div className="min-h-screen font-sans">
       {/* Main Navigation */}
-      <Navbar theme="sand" onOpenInquiry={() => handleInquire(null)} />
+      <Navbar onOpenInquiry={() => handleInquire(null)} />
 
       {/* Hero Showcase Section */}
       <Hero
-        theme="sand"
         looks={LOOKS}
         onSelectLook={(look) => setSelectedLook(look)}
       />
 
       {/* Curated Collection Grid with Filter */}
       <CollectionGrid
-        theme="sand"
         collections={COLLECTIONS}
         looks={LOOKS}
         onSelectLook={(look) => setSelectedLook(look)}
       />
 
       {/* The Atelier & Craftsmanship Philosophy */}
-      <AtelierStory theme="sand" />
+      <AtelierStory />
 
       {/* Request Lookbook & Private Salon Inquiry */}
       <LookbookForm
-        theme="sand"
         selectedLook={inquiryLook}
         onCloseInquiry={() => setInquiryLook(null)}
       />
 
       {/* Luxury Footer */}
-      <Footer theme="sand" />
+      <Footer />
 
       {/* Garment Inspect Modal (Non-booking / purely editorial) */}
       {selectedLook && (
         <LookModal
           look={selectedLook}
-          theme="sand"
           onClose={() => setSelectedLook(null)}
           onInquire={(look) => handleInquire(look)}
         />

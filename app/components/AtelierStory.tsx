@@ -1,9 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { ATELIER_PILLARS } from '../data/looks';
+import { ATELIER_PILLARS, AtelierPillar } from '../data/looks';
 
-export default function AtelierStory({ theme }) {
+interface AtelierStoryProps {
+  theme?: string;
+}
+
+export default function AtelierStory({}: AtelierStoryProps) {
   return (
     <section
       id="atelier"
@@ -64,7 +68,7 @@ export default function AtelierStory({ theme }) {
             gap: '2rem',
           }}
         >
-          {ATELIER_PILLARS.map((pillar) => (
+          {ATELIER_PILLARS.map((pillar: AtelierPillar) => (
             <div
               key={pillar.number}
               style={{
