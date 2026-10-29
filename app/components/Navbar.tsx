@@ -68,8 +68,8 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
               }}
             >
               <Image
-                src="/images/brand-crest-black.jpg"
-                alt="Deer & Dan Stag Crest"
+                src="/images/official-deer-logo.jpg"
+                alt="Deer & Dan Stag Logo"
                 width={34}
                 height={34}
                 style={{ objectFit: 'cover' }}

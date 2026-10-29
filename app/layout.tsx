@@ -102,7 +102,53 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ClothingStore",
+              name: "Deer & Dan",
+              alternateName: "डियर & डैन",
+              description: "Luxury Indian fashion and clothing brand crafting 100% fine combed cotton, artisanal linen tailoring, and quiet luxury menswear & womenswear.",
+              url: "https://deerdan.in",
+              logo: "https://deerdan.in/images/official-deer-logo.jpg",
+              image: "https://deerdan.in/images/store-facade.jpg",
+              founder: {
+                "@type": "Person",
+                name: "Romi",
+                jobTitle: "Founder & Creative Director",
+              },
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Imlikheda Chowk, MP SH 26, Thuniya Bhand",
+                addressLocality: "Chhindwara",
+                addressRegion: "Madhya Pradesh",
+                postalCode: "480001",
+                addressCountry: "IN",
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday",
+                ],
+                opens: "10:30",
+                closes: "22:00",
+              },
+              priceRange: "₹₹₹",
+              telephone: "+91-9999999999",
+            }),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

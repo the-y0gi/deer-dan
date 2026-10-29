@@ -345,8 +345,8 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                       }}
                     >
                       <Image
-                        src="/images/brand-crest-black.jpg"
-                        alt="Crest"
+                        src="/images/official-deer-logo.jpg"
+                        alt="Official Deer Logo"
                         fill
                         style={{ objectFit: 'cover' }}
                       />
