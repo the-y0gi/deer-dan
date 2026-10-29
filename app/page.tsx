@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import CollectionGrid from './components/CollectionGrid';
+import FlagshipShowroom from './components/FlagshipShowroom';
 import AtelierStory from './components/AtelierStory';
 import LookbookForm from './components/LookbookForm';
 import Footer from './components/Footer';
@@ -24,35 +25,38 @@ export default function Home() {
 
   return (
     <div className="min-h-screen font-sans">
-      {/* Main Navigation */}
+      {/* Main Navigation with 5 routes */}
       <Navbar onOpenInquiry={() => handleInquire(null)} />
 
-      {/* Hero Showcase Section */}
+      {/* Hero Showcase Section with Real Model & D&D Linen Shirt */}
       <Hero
         looks={LOOKS}
         onSelectLook={(look) => setSelectedLook(look)}
       />
 
-      {/* Curated Collection Grid with Filter */}
+      {/* Curated Collection Grid with Filter Tabs & Showroom Displays */}
       <CollectionGrid
         collections={COLLECTIONS}
         looks={LOOKS}
         onSelectLook={(look) => setSelectedLook(look)}
       />
 
-      {/* The Atelier & Craftsmanship Philosophy */}
+      {/* Flagship Showroom Destination Spotlight (Chhindwara, MP) */}
+      <FlagshipShowroom />
+
+      {/* The Atelier & 100% Cotton Craftsmanship Philosophy */}
       <AtelierStory />
 
-      {/* Request Lookbook & Private Salon Inquiry */}
+      {/* VIP Digital Catalogue & Styling Inquiry */}
       <LookbookForm
         selectedLook={inquiryLook}
         onCloseInquiry={() => setInquiryLook(null)}
       />
 
-      {/* Luxury Footer */}
+      {/* Luxury Footer with Real Store Address & Timings */}
       <Footer />
 
-      {/* Garment Inspect Modal (Non-booking / purely editorial) */}
+      {/* Garment Inspect Modal (Non-booking / purely editorial look inspection) */}
       {selectedLook && (
         <LookModal
           look={selectedLook}

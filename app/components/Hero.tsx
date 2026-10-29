@@ -2,12 +2,13 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Look } from '../data/looks';
+import { BRAND_DATA } from '../data/brand';
 
 interface HeroProps {
   looks: Look[];
   onSelectLook: (look: Look) => void;
-  theme?: string;
 }
 
 export default function Hero({ looks, onSelectLook }: HeroProps) {
@@ -15,58 +16,94 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
   const activeLook = looks[activeLookIndex] || looks[0];
 
   return (
-    <section className="hero-wrapper">
+    <section className="hero-wrapper" style={{ paddingTop: '8.5rem', paddingBottom: '4.5rem' }}>
       <div className="luxury-container">
         <div className="hero-grid">
-          {/* Left Column: Editorial Headline & Manifesto */}
+          {/* Left Column: Editorial Headline & Brand Manifesto */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
             <div>
               <span className="badge-capsule">
                 <span
                   style={{
-                    width: '6px',
-                    height: '6px',
+                    width: '7px',
+                    height: '7px',
                     borderRadius: '9999px',
                     backgroundColor: '#10b981',
+                    boxShadow: '0 0 8px #10b981',
                   }}
                 />
-                Autumn / Winter 2026 Collection • Showcase Only
+                Flagship Showroom • Imlikheda Chowk, Chhindwara • Open 10:30 AM – 10:00 PM
               </span>
             </div>
 
             <div>
               <h1 className="hero-headline">
                 The Architecture
-                <span className="hero-subhead">of Modern Silhouette</span>
+                <span className="hero-subhead">of Indian Luxury</span>
               </h1>
             </div>
 
             <p
               style={{
                 fontSize: '1.05rem',
-                lineHeight: 1.6,
+                lineHeight: 1.65,
                 color: 'var(--text-muted)',
-                maxWidth: '520px',
+                maxWidth: '540px',
               }}
             >
-              Deer & Dan crafts sculptural garments at the intersection of haute couture
-              tradition and modern minimalist restraint. Designed in limited micro-capsules
-              using 100% noble fibers.
+              <strong>Deer & Dan</strong> crafts pure 100% fine combed cotton, artisanal linen
+              tailoring, and quiet luxury menswear & womenswear. Experience our grand multi-story
+              glass flagship destination curated under the creative direction of{' '}
+              <strong style={{ color: 'var(--text-main)' }}>{BRAND_DATA.founder}</strong>.
             </p>
 
             {/* CTAs */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1.25rem', paddingTop: '0.5rem' }}>
-              <button
-                onClick={() => onSelectLook(activeLook)}
-                className="btn-luxury-primary"
-              >
-                <span>Inspect Current Silhouette</span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem', paddingTop: '0.25rem' }}>
+              <Link href="/collections" className="btn-luxury-primary" style={{ textDecoration: 'none' }}>
+                <span>Explore Curated Looks</span>
                 <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </button>
+              </Link>
 
+              <Link
+                href="/store"
+                className="btn-luxury-ghost"
+                style={{
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.8rem 1.4rem',
+                  borderRadius: '9999px',
+                  border: '1px solid var(--card-border)',
+                  background: 'rgba(255, 255, 255, 0.4)',
+                  backdropFilter: 'blur(10px)',
+                  fontWeight: 600,
+                  fontSize: '0.78rem',
+                  letterSpacing: '0.05em',
+                  color: 'var(--text-main)',
+                  transition: 'all 0.25s ease',
+                }}
+              >
+                <span>Visit Showroom</span>
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </Link>
+            </div>
+
+            {/* Social Proof & Store Trust Badge */}
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                gap: '1.25rem',
+                paddingTop: '0.75rem',
+              }}
+            >
               {/* Backdoor-style Social Proof Patrons */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                 <div style={{ display: 'flex', marginLeft: '0.25rem' }}>
@@ -75,13 +112,13 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                       key={idx}
                       style={{
                         position: 'relative',
-                        width: '28px',
-                        height: '28px',
+                        width: '30px',
+                        height: '30px',
                         borderRadius: '9999px',
                         overflow: 'hidden',
-                        marginLeft: idx === 0 ? 0 : '-8px',
-                        border: '2px solid var(--card-bg)',
-                        boxShadow: '0 2px 5px rgba(0,0,0,0.15)',
+                        marginLeft: idx === 0 ? 0 : '-9px',
+                        border: '2px solid #ffffff',
+                        boxShadow: '0 2px 6px rgba(0,0,0,0.12)',
                       }}
                     >
                       <Image
@@ -93,20 +130,39 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                     </div>
                   ))}
                 </div>
-                <div style={{ fontSize: '0.72rem', lineHeight: 1.25 }}>
-                  <strong style={{ display: 'block', fontWeight: 700 }}>24,000+ patrons</strong>
-                  <span style={{ color: 'var(--text-muted)' }}>registered for viewing</span>
+                <div style={{ fontSize: '0.74rem', lineHeight: 1.25 }}>
+                  <strong style={{ display: 'block', fontWeight: 700, color: 'var(--text-main)' }}>24,000+ Patrons</strong>
+                  <span style={{ color: 'var(--text-muted)' }}>visited in Chhindwara</span>
                 </div>
+              </div>
+
+              {/* Craft Certification Pill */}
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  fontSize: '0.72rem',
+                  padding: '0.4rem 0.85rem',
+                  borderRadius: '9999px',
+                  background: 'rgba(255, 255, 255, 0.65)',
+                  border: '1px solid rgba(0,0,0,0.06)',
+                  color: 'var(--text-main)',
+                  fontWeight: 600,
+                }}
+              >
+                <span>🏷️</span>
+                <span>100% Cotton • Made in India</span>
               </div>
             </div>
 
-            {/* Mini Stat Counters */}
+            {/* Quick Stat Counters */}
             <div
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '1.5rem',
-                paddingTop: '1.5rem',
+                gap: '1.25rem',
+                paddingTop: '1.25rem',
                 borderTop: '1px solid var(--card-border)',
                 maxWidth: '480px',
               }}
@@ -115,24 +171,17 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                 <p
                   style={{
                     fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                    fontSize: '2rem',
+                    fontSize: '1.9rem',
                     fontWeight: 500,
                     lineHeight: 1,
                     margin: 0,
+                    color: 'var(--text-main)',
                   }}
                 >
                   100%
                 </p>
-                <p
-                  style={{
-                    fontSize: '0.65rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    color: 'var(--text-muted)',
-                    marginTop: '0.35rem',
-                  }}
-                >
-                  Virgin Melton & Cashmere
+                <p style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                  Pure Combed Cotton
                 </p>
               </div>
 
@@ -140,24 +189,17 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                 <p
                   style={{
                     fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                    fontSize: '2rem',
+                    fontSize: '1.9rem',
                     fontWeight: 500,
                     lineHeight: 1,
                     margin: 0,
+                    color: 'var(--text-main)',
                   }}
                 >
-                  80 Pcs
+                  10:30 - 10
                 </p>
-                <p
-                  style={{
-                    fontSize: '0.65rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    color: 'var(--text-muted)',
-                    marginTop: '0.35rem',
-                  }}
-                >
-                  Per Capsule Run
+                <p style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                  Open All 7 Days
                 </p>
               </div>
 
@@ -165,223 +207,191 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                 <p
                   style={{
                     fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                    fontSize: '2rem',
+                    fontSize: '1.9rem',
                     fontWeight: 500,
                     lineHeight: 1,
                     margin: 0,
+                    color: 'var(--text-main)',
                   }}
                 >
-                  45+ Hrs
+                  Chhindwara
                 </p>
-                <p
-                  style={{
-                    fontSize: '0.65rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    color: 'var(--text-muted)',
-                    marginTop: '0.35rem',
-                  }}
-                >
-                  Atelier Handcraft
+                <p style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                  Flagship Store
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Floating Interactive Lookbook Card */}
-          <div>
-            <div className="look-card-frame">
-              {/* Image Frame */}
-              <div className="look-card-image-box">
+          {/* Right Column: Hero Look Showcase Frame */}
+          <div style={{ position: 'relative' }}>
+            <div className="look-card-frame" style={{ padding: '0.85rem' }}>
+              <div
+                className="look-card-image-box"
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '540px',
+                  borderRadius: '16px',
+                  overflow: 'hidden',
+                  background: '#f4ede6',
+                }}
+              >
                 <Image
                   src={activeLook.image}
                   alt={activeLook.title}
                   fill
                   priority
-                  style={{ objectFit: 'cover', objectPosition: 'center' }}
-                  sizes="(max-width: 768px) 100vw, 500px"
+                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
                 />
 
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background:
-                      'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 40%, transparent 80%)',
-                  }}
-                />
-
-                {/* Top Badges */}
+                {/* Top Floating Badge */}
                 <div
                   style={{
                     position: 'absolute',
                     top: '1rem',
                     left: '1rem',
-                    right: '1rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                  }}
-                >
-                  <span
-                    style={{
-                      background: 'rgba(0, 0, 0, 0.65)',
-                      color: '#ffffff',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255, 255, 255, 0.2)',
-                      padding: '0.25rem 0.65rem',
-                      borderRadius: '9999px',
-                      fontSize: '0.65rem',
-                      fontFamily: 'monospace',
-                      fontWeight: 700,
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    Look {activeLook.number} / {String(looks.length).padStart(2, '0')}
-                  </span>
-
-                  <span
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.15)',
-                      color: '#ffffff',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255, 255, 255, 0.2)',
-                      padding: '0.25rem 0.65rem',
-                      borderRadius: '9999px',
-                      fontSize: '0.65rem',
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    {activeLook.season}
-                  </span>
-                </div>
-
-                {/* Hotspot pin on model */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '48%',
-                    left: '30%',
-                    background: 'rgba(0, 0, 0, 0.8)',
-                    color: '#ffffff',
-                    border: '1px solid rgba(255, 255, 255, 0.25)',
-                    padding: '0.35rem 0.75rem',
+                    background: 'rgba(255, 255, 255, 0.88)',
+                    backdropFilter: 'blur(10px)',
+                    padding: '0.4rem 0.85rem',
                     borderRadius: '9999px',
                     fontSize: '0.68rem',
-                    fontWeight: 600,
-                    backdropFilter: 'blur(10px)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    boxShadow: '0 8px 20px rgba(0, 0, 0, 0.4)',
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: '#111111',
+                    boxShadow: '0 4px 15px rgba(0,0,0,0.08)',
                   }}
                 >
-                  <span
-                    style={{
-                      width: '6px',
-                      height: '6px',
-                      borderRadius: '9999px',
-                      backgroundColor: '#10b981',
-                    }}
-                  />
-                  <span>{activeLook.tags[0]}</span>
+                  Look {activeLook.number} • {activeLook.season}
                 </div>
 
-                {/* Bottom Overlay Title on image */}
+                {/* Inspect Button overlay */}
+                <button
+                  onClick={() => onSelectLook(activeLook)}
+                  style={{
+                    position: 'absolute',
+                    top: '1rem',
+                    right: '1rem',
+                    background: '#111111',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '9999px',
+                    padding: '0.45rem 0.9rem',
+                    fontSize: '0.68rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                  }}
+                >
+                  <span>Quick View</span>
+                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </button>
+
+                {/* Bottom Overlay Info Pill */}
                 <div
                   style={{
                     position: 'absolute',
                     bottom: '1rem',
-                    left: '1.25rem',
-                    right: '1.25rem',
-                    color: '#ffffff',
+                    left: '1rem',
+                    right: '1rem',
+                    background: 'rgba(255, 255, 255, 0.92)',
+                    backdropFilter: 'blur(16px)',
+                    padding: '1rem 1.25rem',
+                    borderRadius: '16px',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
                   }}
                 >
-                  <p
-                    style={{
-                      fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                      fontSize: '1.5rem',
-                      fontWeight: 500,
-                      lineHeight: 1.15,
-                      margin: 0,
-                    }}
-                  >
-                    {activeLook.title}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '0.72rem',
-                      color: '#e5e7eb',
-                      marginTop: '0.25rem',
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                    }}
-                  >
-                    {activeLook.fabric}
-                  </p>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+                    <div>
+                      <h3
+                        style={{
+                          margin: 0,
+                          fontSize: '1.15rem',
+                          fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
+                          fontWeight: 500,
+                          color: '#111111',
+                        }}
+                      >
+                        {activeLook.title}
+                      </h3>
+                      <p
+                        style={{
+                          margin: '0.25rem 0 0 0',
+                          fontSize: '0.74rem',
+                          color: '#555555',
+                          fontFamily: "'Inter', sans-serif",
+                        }}
+                      >
+                        {activeLook.fabric}
+                      </p>
+                    </div>
+
+                    <div
+                      style={{
+                        position: 'relative',
+                        width: '38px',
+                        height: '38px',
+                        borderRadius: '9999px',
+                        overflow: 'hidden',
+                        flexShrink: 0,
+                        border: '1px solid #111111',
+                      }}
+                    >
+                      <Image
+                        src="/images/brand-crest-black.jpg"
+                        alt="Crest"
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Look Selector Pills */}
+              {/* Look Selector Dock */}
               <div
                 style={{
                   display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
+                  gap: '0.65rem',
                   marginTop: '0.85rem',
-                  paddingTop: '0.75rem',
-                  borderTop: '1px solid var(--card-border)',
+                  overflowX: 'auto',
+                  paddingBottom: '0.25rem',
                 }}
               >
-                <div style={{ display: 'flex', gap: '0.4rem' }}>
-                  {looks.slice(0, 4).map((look, idx) => (
-                    <button
-                      key={look.id}
-                      onClick={() => setActiveLookIndex(idx)}
-                      style={{
-                        padding: '0.35rem 0.65rem',
-                        borderRadius: '0.5rem',
-                        fontSize: '0.7rem',
-                        fontWeight: 600,
-                        transition: 'all 0.2s',
-                        background:
-                          activeLookIndex === idx ? '#111111' : 'transparent',
-                        color:
-                          activeLookIndex === idx
-                            ? '#ffffff'
-                            : 'var(--text-muted)',
-                        border:
-                          activeLookIndex === idx
-                            ? 'none'
-                            : '1px solid var(--card-border)',
-                      }}
-                    >
-                      Look {look.number}
-                    </button>
-                  ))}
-                </div>
-
-                <button
-                  onClick={() => onSelectLook(activeLook)}
-                  style={{
-                    fontSize: '0.72rem',
-                    fontWeight: 700,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                    color: 'var(--accent)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.25rem',
-                  }}
-                >
-                  <span>Specs</span>
-                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+                {looks.slice(0, 4).map((look, idx) => (
+                  <button
+                    key={look.id}
+                    onClick={() => setActiveLookIndex(idx)}
+                    style={{
+                      position: 'relative',
+                      width: '64px',
+                      height: '74px',
+                      borderRadius: '10px',
+                      overflow: 'hidden',
+                      border: idx === activeLookIndex ? '2px solid #111111' : '1px solid rgba(0,0,0,0.1)',
+                      opacity: idx === activeLookIndex ? 1 : 0.65,
+                      transform: idx === activeLookIndex ? 'scale(1.03)' : 'scale(1)',
+                      transition: 'all 0.2s ease',
+                      flexShrink: 0,
+                      cursor: 'pointer',
+                      padding: 0,
+                    }}
+                  >
+                    <Image
+                      src={look.image}
+                      alt={look.title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </button>
+                ))}
               </div>
             </div>
           </div>

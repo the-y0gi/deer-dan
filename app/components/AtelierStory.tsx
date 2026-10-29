@@ -1,7 +1,9 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { ATELIER_PILLARS, AtelierPillar } from '../data/looks';
+import { BRAND_DATA } from '../data/brand';
 
 interface AtelierStoryProps {
   theme?: string;
@@ -17,9 +19,9 @@ export default function AtelierStory({}: AtelierStoryProps) {
         borderTop: '1px solid var(--card-border)',
       }}
     >
-      <div className="luxury-container" style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
+      <div className="luxury-container" style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem' }}>
         {/* Top Manifesto Header */}
-        <div style={{ maxWidth: '780px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+        <div style={{ maxWidth: '820px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
           <span
             style={{
               fontSize: '0.72rem',
@@ -41,9 +43,9 @@ export default function AtelierStory({}: AtelierStoryProps) {
               margin: 0,
             }}
           >
-            Crafted for the Few. <br />
+            Tactile Sophistication. <br />
             <span style={{ fontStyle: 'italic', fontWeight: 300, opacity: 0.85 }}>
-              Preserving Haute Couture in Modern India.
+              100% Cotton Crafted for Modern India.
             </span>
           </h2>
           <p
@@ -54,13 +56,111 @@ export default function AtelierStory({}: AtelierStoryProps) {
               margin: 0,
             }}
           >
-            Deer & Dan was founded on a simple principle: true luxury is tactile, quiet, and
-            architectural. We refuse fast-fashion cycles. Each silhouette is meticulously engineered,
-            hand-cut, and tailored by master artisans to outlast fleeting seasons.
+            Deer & Dan was founded by <strong>{BRAND_DATA.founder}</strong> on a relentless commitment:
+            elevating everyday menswear and contemporary silhouettes through pure natural fibers,
+            sculpted drape, and genuine artisanal tailoring. No synthetic compromises, no mass fast fashion.
           </p>
         </div>
 
-        {/* 3 Pillars Grid */}
+        {/* Featured Macro Craft Strip Banner */}
+        <div
+          className="look-card-frame"
+          style={{
+            padding: '1.5rem',
+            borderRadius: '24px',
+            background: 'rgba(255, 255, 255, 0.7)',
+            backdropFilter: 'blur(16px)',
+          }}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              alignItems: 'center',
+            }}
+          >
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                height: '240px',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
+              }}
+            >
+              <Image
+                src="/images/craft-tags-strip.jpg"
+                alt="Deer & Dan 100% Cotton Neck Label, Care Tag, and Paper Hangtag"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  fontSize: '0.68rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.15em',
+                  fontWeight: 700,
+                  color: '#111111',
+                }}
+              >
+                <span>✨</span>
+                <span>Uncompromising Label Standards</span>
+              </div>
+              <h3
+                style={{
+                  fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
+                  fontSize: '1.65rem',
+                  fontWeight: 500,
+                  margin: 0,
+                  lineHeight: 1.25,
+                }}
+              >
+                100% Cotton • Made in India
+              </h3>
+              <p
+                style={{
+                  fontSize: '0.85rem',
+                  color: 'var(--text-muted)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                From our custom woven neck labels to our signature kraft paper tags, every detail
+                is authenticated with the Deer & Dan stag insignia. Designed for unmatched longevity
+                and effortless breathability in Indian climates.
+              </p>
+              <div style={{ paddingTop: '0.5rem' }}>
+                <Link
+                  href="/about"
+                  style={{
+                    fontSize: '0.74rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.12em',
+                    color: '#111111',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                  }}
+                >
+                  <span>Read The Full Heritage Story</span>
+                  <span>&rarr;</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 3 Pillars Grid with Visuals */}
         <div
           style={{
             display: 'grid',
@@ -82,196 +182,132 @@ export default function AtelierStory({}: AtelierStoryProps) {
                 transition: 'all 0.3s ease',
               }}
             >
+              {pillar.image && (
+                <div
+                  style={{
+                    position: 'relative',
+                    width: '100%',
+                    height: '180px',
+                    borderRadius: '14px',
+                    overflow: 'hidden',
+                  }}
+                >
+                  <Image
+                    src={pillar.image}
+                    alt={pillar.title}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              )}
+
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   borderBottom: '1px solid var(--card-border)',
-                  paddingBottom: '0.85rem',
+                  paddingBottom: '0.75rem',
                 }}
               >
                 <span
                   style={{
                     fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                    fontSize: '2.5rem',
+                    fontSize: '2rem',
                     fontWeight: 500,
-                    color: 'var(--accent)',
+                    color: 'var(--text-main)',
                   }}
                 >
                   {pillar.number}
                 </span>
                 <span
                   style={{
-                    fontFamily: 'monospace',
                     fontSize: '0.65rem',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
+                    letterSpacing: '0.18em',
                     color: 'var(--text-muted)',
-                  }}
-                >
-                  Standard
-                </span>
-              </div>
-              <div>
-                <span
-                  style={{
-                    fontSize: '0.68rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
                     fontWeight: 600,
-                    color: 'var(--text-muted)',
-                    display: 'block',
-                    marginBottom: '0.25rem',
                   }}
                 >
                   {pillar.subtitle}
                 </span>
+              </div>
+
+              <div>
                 <h3
                   style={{
                     fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                    fontSize: '1.65rem',
+                    fontSize: '1.45rem',
                     fontWeight: 500,
-                    margin: 0,
+                    margin: '0 0 0.5rem 0',
                   }}
                 >
                   {pillar.title}
                 </h3>
+                <p
+                  style={{
+                    fontSize: '0.86rem',
+                    color: 'var(--text-muted)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}
+                >
+                  {pillar.description}
+                </p>
               </div>
-              <p
-                style={{
-                  fontSize: '0.88rem',
-                  color: 'var(--text-muted)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                }}
-              >
-                {pillar.description}
-              </p>
             </div>
           ))}
         </div>
 
-        {/* Visual Editorial Spotlight */}
+        {/* Founder Quote Card */}
         <div
-          id="craftsmanship"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3rem',
-            alignItems: 'center',
-            paddingTop: '2rem',
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(251,231,214,0.3) 100%)',
+            border: '1px solid rgba(0,0,0,0.06)',
+            borderRadius: '24px',
+            padding: '2.5rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.04)',
           }}
         >
-          <div
+          <div style={{ fontSize: '2rem', lineHeight: 1 }}>“</div>
+          <p
             style={{
-              position: 'relative',
-              width: '100%',
-              height: '420px',
-              borderRadius: '1.75rem',
-              overflow: 'hidden',
-              border: '1px solid var(--card-border)',
+              fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
+              fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)',
+              fontStyle: 'italic',
+              fontWeight: 400,
+              lineHeight: 1.5,
+              margin: 0,
+              color: 'var(--text-main)',
             }}
           >
-            <Image
-              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=85"
-              alt="Atelier Craftsmanship"
-              fill
-              style={{ objectFit: 'cover' }}
-              sizes="(max-width: 1024px) 100vw, 700px"
-            />
+            We don&apos;t just sell garments at Deer & Dan; we curate an experience of quiet confidence.
+            When you slip into our 100% fine cotton and artisanal tailored linens, you immediately feel
+            the precision of authentic craftsmanship.
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '0.5rem' }}>
             <div
               style={{
-                position: 'absolute',
-                inset: 0,
-                background:
-                  'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 50%, transparent 100%)',
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                bottom: '1.5rem',
-                left: '1.5rem',
-                right: '1.5rem',
+                width: '40px',
+                height: '40px',
+                borderRadius: '9999px',
+                background: '#111111',
                 color: '#ffffff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 700,
+                fontSize: '0.85rem',
               }}
             >
-              <span
-                style={{
-                  fontFamily: 'monospace',
-                  fontSize: '0.65rem',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.12em',
-                  opacity: 0.8,
-                  display: 'block',
-                }}
-              >
-                Atelier Archive • New Delhi
-              </span>
-              <p
-                style={{
-                  fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                  fontSize: '1.45rem',
-                  fontWeight: 500,
-                  marginTop: '0.25rem',
-                  margin: 0,
-                }}
-              >
-                Hand-sculpted Canvas & Precision Tailoring
-              </p>
+              R
             </div>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <span
-              style={{
-                fontSize: '0.72rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.2em',
-                fontWeight: 600,
-                color: 'var(--accent)',
-              }}
-            >
-              Noble Standards
-            </span>
-            <h3
-              style={{
-                fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                fontSize: '2.25rem',
-                fontWeight: 400,
-                lineHeight: 1.2,
-                margin: 0,
-              }}
-            >
-              Materials that Breathe and Age Gracefully
-            </h3>
-            <p
-              style={{
-                fontSize: '0.92rem',
-                color: 'var(--text-muted)',
-                lineHeight: 1.65,
-                margin: 0,
-              }}
-            >
-              Every textile is touched, tested, and vetted by hand. From our double-faced cashmere
-              scarves to our architectural wool overcoats, we source exclusively from heritage mills
-              that practice humane shearing and organic botanical dyeing.
-            </p>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', paddingTop: '0.5rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', fontSize: '0.8rem' }}>
-                <span style={{ width: '6px', height: '6px', borderRadius: '9999px', backgroundColor: '#10b981' }} />
-                <span>Zero synthetic polyester or nylon blending</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', fontSize: '0.8rem' }}>
-                <span style={{ width: '6px', height: '6px', borderRadius: '9999px', backgroundColor: '#10b981' }} />
-                <span>Natural horn, mother-of-pearl, and gunmetal closures</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', fontSize: '0.8rem' }}>
-                <span style={{ width: '6px', height: '6px', borderRadius: '9999px', backgroundColor: '#10b981' }} />
-                <span>Traceable heritage mill provenance certificates</span>
-              </div>
+            <div>
+              <strong style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600 }}>{BRAND_DATA.founder}</strong>
+              <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{BRAND_DATA.founderRole}, Deer & Dan</span>
             </div>
           </div>
         </div>
