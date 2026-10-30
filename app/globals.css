@@ -302,3 +302,148 @@ body {
   background: #111111;
   color: #ffffff;
 }
+
+/* ─── Luxury Concierge Form Styling ─── */
+.luxury-form-card {
+  position: relative;
+  width: 100%;
+  border-radius: 2rem;
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+.luxury-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1.5px solid rgba(0, 0, 0, 0.09);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.luxury-input-wrapper:focus-within {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3.5px rgba(16, 185, 129, 0.14), 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.luxury-input-icon {
+  position: absolute;
+  left: 1rem;
+  color: #71717a;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.luxury-input-wrapper:focus-within .luxury-input-icon {
+  color: #10b981;
+}
+
+.luxury-input-field {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.65rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #121212;
+}
+
+.luxury-input-field::placeholder {
+  color: #9ca3af;
+}
+
+.service-option-btn {
+  text-align: left;
+  border-radius: 16px;
+  padding: 0.95rem 1.1rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  position: relative;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.service-option-btn:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.service-option-btn.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(251, 231, 214, 0.45) 100%);
+  border-color: #10b981;
+  color: #121212;
+  box-shadow: 0 6px 18px -4px rgba(16, 185, 129, 0.18), 0 0 0 1px #10b981;
+}
+
+.time-slot-pill {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  color: #374151;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.time-slot-pill:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.time-slot-pill.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.09) 0%, rgba(251, 231, 214, 0.45) 100%);
+  border-color: #10b981;
+  color: #064e3b;
+  box-shadow: 0 4px 14px -3px rgba(16, 185, 129, 0.18), 0 0 0 1px #10b981;
+}
+
+.btn-whatsapp-submit {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #25D366 0%, #059669 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 12px 24px -4px rgba(16, 185, 129, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-whatsapp-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -4px rgba(16, 185, 129, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+.btn-whatsapp-submit:active {
+  transform: translateY(0);
+}
+
