@@ -179,16 +179,16 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
               <span>10:30 AM – 10:00 PM</span>
             </Link>
 
-            <button
-              onClick={onOpenInquiry}
+            <Link
+              href="/contact"
               className="btn-luxury-primary"
-              style={{ padding: '0.6rem 1.2rem', fontSize: '0.7rem' }}
+              style={{ padding: '0.6rem 1.2rem', fontSize: '0.7rem', textDecoration: 'none' }}
             >
               <span>VIP Inquiry</span>
               <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </button>
+            </Link>
 
             {/* Mobile menu toggle */}
             <button

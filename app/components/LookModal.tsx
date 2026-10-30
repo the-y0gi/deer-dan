@@ -3,15 +3,16 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Look } from '../data/looks';
+import { BRAND_DATA } from '../data/brand';
 
 interface LookModalProps {
   look: Look | null;
   onClose: () => void;
-  onInquire: (look: Look) => void;
+  onInquire?: (look: Look) => void;
   theme?: string;
 }
 
-export default function LookModal({ look, onClose, onInquire }: LookModalProps) {
+export default function LookModal({ look, onClose }: LookModalProps) {
   const [selectedImg, setSelectedImg] = useState<number>(0);
 
   useEffect(() => {
@@ -63,10 +64,10 @@ export default function LookModal({ look, onClose, onInquire }: LookModalProps) 
           position: 'relative',
           zIndex: 10,
           width: '100%',
-          maxWidth: '980px',
-          maxHeight: '90vh',
-          overflowY: 'auto',
-          borderRadius: '2rem',
+          maxWidth: '960px',
+          maxHeight: 'min(94vh, 660px)',
+          overflow: 'hidden',
+          borderRadius: '1.75rem',
           background: 'var(--card-bg)',
           color: 'var(--text-main)',
           border: '1px solid var(--card-border)',
@@ -74,6 +75,7 @@ export default function LookModal({ look, onClose, onInquire }: LookModalProps) 
           backdropFilter: 'blur(20px)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          alignItems: 'center',
         }}
       >
         {/* Close Button */}
@@ -102,13 +104,13 @@ export default function LookModal({ look, onClose, onInquire }: LookModalProps) 
         </button>
 
         {/* Left: Image Showcase */}
-        <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           <div
             style={{
               position: 'relative',
               width: '100%',
-              height: '460px',
-              borderRadius: '1.25rem',
+              height: '410px',
+              borderRadius: '1.15rem',
               overflow: 'hidden',
               backgroundColor: '#111',
             }}
@@ -118,25 +120,26 @@ export default function LookModal({ look, onClose, onInquire }: LookModalProps) 
               alt={look.title}
               fill
               style={{ objectFit: 'cover' }}
-              sizes="(max-width: 1024px) 100vw, 600px"
+              sizes="(max-width: 1024px) 100vw, 500px"
             />
           </div>
 
           {images.length > 1 && (
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', gap: '0.65rem' }}>
               {images.map((img, i) => (
                 <button
                   key={i}
                   onClick={() => setSelectedImg(i)}
                   style={{
                     position: 'relative',
-                    width: '60px',
-                    height: '80px',
-                    borderRadius: '0.75rem',
+                    width: '54px',
+                    height: '68px',
+                    borderRadius: '0.65rem',
                     overflow: 'hidden',
                     border: selectedImg === i ? '2px solid #111111' : '2px solid transparent',
                     opacity: selectedImg === i ? 1 : 0.6,
                     cursor: 'pointer',
+                    padding: 0,
                   }}
                 >
                   <Image src={img} alt="thumb" fill style={{ objectFit: 'cover' }} />
@@ -146,23 +149,23 @@ export default function LookModal({ look, onClose, onInquire }: LookModalProps) 
           )}
         </div>
 
-        {/* Right: Specs & Atelier Notes */}
+        {/* Right: Specs & Notes */}
         <div
           style={{
-            padding: '2rem',
+            padding: '1.5rem 1.75rem',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            gap: '1.5rem',
+            gap: '1rem',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
             <div>
               <span
                 style={{
                   fontSize: '0.68rem',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.2em',
+                  letterSpacing: '0.18em',
                   color: 'var(--accent)',
                   fontWeight: 600,
                 }}
@@ -172,16 +175,17 @@ export default function LookModal({ look, onClose, onInquire }: LookModalProps) 
               <h3
                 style={{
                   fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                  fontSize: '2rem',
+                  fontSize: '1.75rem',
                   fontWeight: 500,
-                  margin: '0.25rem 0 0',
+                  margin: '0.2rem 0 0',
+                  lineHeight: 1.2,
                 }}
               >
                 {look.title}
               </h3>
             </div>
 
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.5, margin: 0 }}>
               {look.description}
             </p>
 
@@ -190,42 +194,42 @@ export default function LookModal({ look, onClose, onInquire }: LookModalProps) 
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '0.85rem',
-                paddingTop: '1rem',
+                gap: '0.65rem',
+                paddingTop: '0.75rem',
                 borderTop: '1px solid var(--card-border)',
-                fontSize: '0.75rem',
+                fontSize: '0.72rem',
               }}
             >
               <div>
-                <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', display: 'block' }}>
+                <span style={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', display: 'block' }}>
                   Fabric & Textile
                 </span>
-                <p style={{ fontWeight: 600, margin: '0.2rem 0 0' }}>{look.fabric}</p>
+                <p style={{ fontWeight: 600, margin: '0.15rem 0 0' }}>{look.fabric}</p>
               </div>
 
               <div>
-                <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', display: 'block' }}>
-                  Silhouette Architecture
+                <span style={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', display: 'block' }}>
+                  Fit & Silhouette
                 </span>
-                <p style={{ fontWeight: 600, margin: '0.2rem 0 0' }}>{look.silhouette}</p>
+                <p style={{ fontWeight: 600, margin: '0.15rem 0 0' }}>{look.silhouette}</p>
               </div>
 
               <div>
-                <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', display: 'block' }}>
-                  Hardware & Finish
+                <span style={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', display: 'block' }}>
+                  Details & Craftsmanship
                 </span>
-                <p style={{ fontWeight: 600, margin: '0.2rem 0 0' }}>{look.hardware}</p>
+                <p style={{ fontWeight: 600, margin: '0.15rem 0 0' }}>{look.hardware}</p>
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', paddingTop: '0.5rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', paddingTop: '0.35rem' }}>
               {look.tags.map((tag, idx) => (
                 <span
                   key={idx}
                   style={{
-                    padding: '0.25rem 0.65rem',
+                    padding: '0.2rem 0.55rem',
                     borderRadius: '9999px',
-                    fontSize: '0.65rem',
+                    fontSize: '0.62rem',
                     fontWeight: 600,
                     textTransform: 'uppercase',
                     letterSpacing: '0.08em',
@@ -239,21 +243,31 @@ export default function LookModal({ look, onClose, onInquire }: LookModalProps) 
             </div>
           </div>
 
-          {/* Inquire Action */}
-          <div style={{ paddingTop: '1rem', borderTop: '1px solid var(--card-border)' }}>
-            <button
-              onClick={() => {
-                onClose();
-                onInquire(look);
-              }}
+          {/* Inquire Action: Only clean WhatsApp button */}
+          <div style={{ paddingTop: '0.85rem', borderTop: '1px solid var(--card-border)' }}>
+            <a
+              href={`https://wa.me/91${BRAND_DATA.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(
+                `Hello Deer & Dan! I am interested in Look ${look.number}: "${look.title}". Could you please check availability and sizing at the Chhindwara showroom?`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-luxury-primary"
-              style={{ width: '100%', padding: '1rem', textAlign: 'center' }}
+              style={{
+                width: '100%',
+                padding: '0.9rem 1.25rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                textDecoration: 'none',
+                borderRadius: '9999px',
+              }}
             >
-              Inquire for Private Salon Viewing
-            </button>
-            <p style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.5rem', margin: '0.5rem 0 0' }}>
-              Exclusive archival piece • Viewing by private salon appointment
-            </p>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+              <span>Enquire on WhatsApp</span>
+            </a>
           </div>
         </div>
       </div>

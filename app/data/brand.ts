@@ -30,7 +30,7 @@ export interface StoreInfo {
 
 export const BRAND_DATA: StoreInfo = {
   name: 'Deer & Dan',
-  tagline: 'Clothing & Haute Couture Showroom',
+  tagline: 'Premium Clothing & Smart Casuals Showroom',
   founder: 'Romi',
   founderRole: 'Founder & Creative Director',
   phone: '9999999999',

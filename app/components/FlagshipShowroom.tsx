@@ -2,6 +2,15 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  Building2,
+  Sparkles,
+  Clock,
+  Car,
+  MapPin,
+  ArrowUpRight,
+  ArrowRight,
+} from 'lucide-react';
 import { BRAND_DATA } from '../data/brand';
 
 export default function FlagshipShowroom() {
@@ -9,7 +18,7 @@ export default function FlagshipShowroom() {
     <section
       id="showroom"
       style={{
-        padding: '6rem 0',
+        padding: '3.75rem 0',
         position: 'relative',
         borderTop: '1px solid var(--card-border)',
       }}
@@ -19,7 +28,7 @@ export default function FlagshipShowroom() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3rem',
+            gap: '2.5rem',
             alignItems: 'center',
           }}
         >
@@ -28,8 +37,8 @@ export default function FlagshipShowroom() {
             <div
               className="look-card-frame"
               style={{
-                padding: '0.85rem',
-                borderRadius: '24px',
+                padding: '0.65rem',
+                borderRadius: '20px',
                 overflow: 'hidden',
               }}
             >
@@ -37,8 +46,8 @@ export default function FlagshipShowroom() {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '460px',
-                  borderRadius: '18px',
+                  height: '380px',
+                  borderRadius: '16px',
                   overflow: 'hidden',
                 }}
               >
@@ -53,18 +62,18 @@ export default function FlagshipShowroom() {
                 <div
                   style={{
                     position: 'absolute',
-                    top: '1rem',
-                    left: '1rem',
+                    top: '0.85rem',
+                    left: '0.85rem',
                     background: 'rgba(255, 255, 255, 0.92)',
                     backdropFilter: 'blur(10px)',
-                    padding: '0.45rem 0.9rem',
+                    padding: '0.35rem 0.75rem',
                     borderRadius: '9999px',
-                    fontSize: '0.7rem',
+                    fontSize: '0.68rem',
                     fontWeight: 700,
-                    letterSpacing: '0.08em',
+                    letterSpacing: '0.06em',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.5rem',
+                    gap: '0.45rem',
                     color: '#111111',
                     boxShadow: '0 4px 15px rgba(0,0,0,0.12)',
                   }}
@@ -85,13 +94,13 @@ export default function FlagshipShowroom() {
                 <div
                   style={{
                     position: 'absolute',
-                    bottom: '1rem',
-                    left: '1rem',
-                    right: '1rem',
-                    background: 'rgba(17, 17, 17, 0.88)',
+                    bottom: '0.85rem',
+                    left: '0.85rem',
+                    right: '0.85rem',
+                    background: 'rgba(17, 17, 17, 0.9)',
                     backdropFilter: 'blur(12px)',
-                    padding: '1.15rem 1.35rem',
-                    borderRadius: '16px',
+                    padding: '0.9rem 1.15rem',
+                    borderRadius: '14px',
                     color: '#ffffff',
                     border: '1px solid rgba(255,255,255,0.12)',
                   }}
@@ -99,8 +108,8 @@ export default function FlagshipShowroom() {
                   <p
                     style={{
                       margin: 0,
-                      fontSize: '0.68rem',
-                      letterSpacing: '0.18em',
+                      fontSize: '0.65rem',
+                      letterSpacing: '0.15em',
                       textTransform: 'uppercase',
                       color: 'rgba(255,255,255,0.65)',
                     }}
@@ -109,15 +118,15 @@ export default function FlagshipShowroom() {
                   </p>
                   <h3
                     style={{
-                      margin: '0.35rem 0 0 0',
+                      margin: '0.25rem 0 0 0',
                       fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                      fontSize: '1.4rem',
+                      fontSize: '1.25rem',
                       fontWeight: 500,
                     }}
                   >
                     Imlikheda Chowk, Chhindwara
                   </h3>
-                  <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.75rem', color: 'rgba(255,255,255,0.8)' }}>
+                  <p style={{ margin: '0.2rem 0 0 0', fontSize: '0.72rem', color: 'rgba(255,255,255,0.8)' }}>
                     {BRAND_DATA.address.landmark}, {BRAND_DATA.address.road} (PIN: {BRAND_DATA.address.pincode})
                   </p>
                 </div>
@@ -126,17 +135,17 @@ export default function FlagshipShowroom() {
           </div>
 
           {/* Right: Story & Visiting Experience */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
             <div>
               <span
                 style={{
-                  fontSize: '0.72rem',
+                  fontSize: '0.68rem',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.22em',
+                  letterSpacing: '0.2em',
                   fontWeight: 600,
                   color: 'var(--accent)',
                   display: 'block',
-                  marginBottom: '0.5rem',
+                  marginBottom: '0.35rem',
                 }}
               >
                 In-Store Destination
@@ -144,7 +153,7 @@ export default function FlagshipShowroom() {
               <h2
                 style={{
                   fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                  fontSize: 'clamp(2.2rem, 4vw, 3.4rem)',
+                  fontSize: 'clamp(1.75rem, 3.2vw, 2.5rem)',
                   fontWeight: 400,
                   lineHeight: 1.15,
                   letterSpacing: '-0.02em',
@@ -160,8 +169,8 @@ export default function FlagshipShowroom() {
 
             <p
               style={{
-                fontSize: '1rem',
-                lineHeight: 1.7,
+                fontSize: '0.88rem',
+                lineHeight: 1.6,
                 color: 'var(--text-muted)',
                 margin: 0,
               }}
@@ -171,93 +180,107 @@ export default function FlagshipShowroom() {
               atelier capsules. Every customer receives personalized guidance and fabric consultations.
             </p>
 
-            {/* Feature Highlights Grid */}
+            {/* Feature Highlights Grid with Lucide Icons */}
             <div
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '1.25rem',
-                paddingTop: '0.5rem',
+                gap: '0.75rem',
+                paddingTop: '0.15rem',
               }}
             >
               <div
                 style={{
-                  background: 'rgba(255, 255, 255, 0.5)',
+                  background: 'rgba(255, 255, 255, 0.55)',
                   backdropFilter: 'blur(8px)',
-                  padding: '1.1rem',
-                  borderRadius: '16px',
+                  padding: '0.75rem 0.95rem',
+                  borderRadius: '14px',
                   border: '1px solid var(--card-border)',
                 }}
               >
-                <div style={{ fontSize: '1.25rem', marginBottom: '0.35rem' }}>🏛️</div>
-                <h4 style={{ margin: 0, fontSize: '0.9rem', fontWeight: 600 }}>Multi-Floor Experience</h4>
-                <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-                  Spacious open galleries with custom warm-lit architectural display arches.
+                <div style={{ color: '#111111', marginBottom: '0.35rem' }}>
+                  <Building2 size={18} strokeWidth={1.8} />
+                </div>
+                <h4 style={{ margin: 0, fontSize: '0.82rem', fontWeight: 600 }}>Multi-Floor Experience</h4>
+                <p style={{ margin: '0.15rem 0 0 0', fontSize: '0.7rem', color: 'var(--text-muted)', lineHeight: 1.35 }}>
+                  Open galleries with custom warm-lit architectural display arches.
                 </p>
               </div>
 
               <div
                 style={{
-                  background: 'rgba(255, 255, 255, 0.5)',
+                  background: 'rgba(255, 255, 255, 0.55)',
                   backdropFilter: 'blur(8px)',
-                  padding: '1.1rem',
-                  borderRadius: '16px',
+                  padding: '0.75rem 0.95rem',
+                  borderRadius: '14px',
                   border: '1px solid var(--card-border)',
                 }}
               >
-                <div style={{ fontSize: '1.25rem', marginBottom: '0.35rem' }}>👔</div>
-                <h4 style={{ margin: 0, fontSize: '0.9rem', fontWeight: 600 }}>Personal Styling</h4>
-                <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-                  One-on-one wardrobe curation directed by founder Romi's in-house team.
+                <div style={{ color: '#111111', marginBottom: '0.35rem' }}>
+                  <Sparkles size={18} strokeWidth={1.8} />
+                </div>
+                <h4 style={{ margin: 0, fontSize: '0.82rem', fontWeight: 600 }}>Personal Styling</h4>
+                <p style={{ margin: '0.15rem 0 0 0', fontSize: '0.7rem', color: 'var(--text-muted)', lineHeight: 1.35 }}>
+                  One-on-one wardrobe curation directed by founder Romi&apos;s team.
                 </p>
               </div>
 
               <div
                 style={{
-                  background: 'rgba(255, 255, 255, 0.5)',
+                  background: 'rgba(255, 255, 255, 0.55)',
                   backdropFilter: 'blur(8px)',
-                  padding: '1.1rem',
-                  borderRadius: '16px',
+                  padding: '0.75rem 0.95rem',
+                  borderRadius: '14px',
                   border: '1px solid var(--card-border)',
                 }}
               >
-                <div style={{ fontSize: '1.25rem', marginBottom: '0.35rem' }}>⏰</div>
-                <h4 style={{ margin: 0, fontSize: '0.9rem', fontWeight: 600 }}>10:30 AM – 10:00 PM</h4>
-                <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-                  Open 7 days a week for seamless evening & weekend walkthroughs.
+                <div style={{ color: '#111111', marginBottom: '0.35rem' }}>
+                  <Clock size={18} strokeWidth={1.8} />
+                </div>
+                <h4 style={{ margin: 0, fontSize: '0.82rem', fontWeight: 600 }}>10:30 AM – 10:00 PM</h4>
+                <p style={{ margin: '0.15rem 0 0 0', fontSize: '0.7rem', color: 'var(--text-muted)', lineHeight: 1.35 }}>
+                  Open 7 days a week for evening & weekend walkthroughs.
                 </p>
               </div>
 
               <div
                 style={{
-                  background: 'rgba(255, 255, 255, 0.5)',
+                  background: 'rgba(255, 255, 255, 0.55)',
                   backdropFilter: 'blur(8px)',
-                  padding: '1.1rem',
-                  borderRadius: '16px',
+                  padding: '0.75rem 0.95rem',
+                  borderRadius: '14px',
                   border: '1px solid var(--card-border)',
                 }}
               >
-                <div style={{ fontSize: '1.25rem', marginBottom: '0.35rem' }}>🅿️</div>
-                <h4 style={{ margin: 0, fontSize: '0.9rem', fontWeight: 600 }}>Hassle-Free Parking</h4>
-                <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-                  Direct highway access on MP SH 26 with convenient showroom parking.
+                <div style={{ color: '#111111', marginBottom: '0.35rem' }}>
+                  <Car size={18} strokeWidth={1.8} />
+                </div>
+                <h4 style={{ margin: 0, fontSize: '0.82rem', fontWeight: 600 }}>Hassle-Free Parking</h4>
+                <p style={{ margin: '0.15rem 0 0 0', fontSize: '0.7rem', color: 'var(--text-muted)', lineHeight: 1.35 }}>
+                  Direct highway access on MP SH 26 with showroom parking.
                 </p>
               </div>
             </div>
 
             {/* CTAs */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', paddingTop: '0.5rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', paddingTop: '0.25rem' }}>
               <a
                 href={BRAND_DATA.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-luxury-primary"
-                style={{ textDecoration: 'none' }}
+                style={{
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  padding: '0.75rem 1.25rem',
+                  fontSize: '0.78rem',
+                }}
               >
+                <MapPin size={15} strokeWidth={2} />
                 <span>Get Google Maps Directions</span>
-                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
+                <ArrowUpRight size={14} strokeWidth={2} />
               </a>
 
               <Link
@@ -265,20 +288,22 @@ export default function FlagshipShowroom() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.5rem',
-                  padding: '0.8rem 1.4rem',
+                  gap: '0.45rem',
+                  padding: '0.75rem 1.25rem',
                   borderRadius: '9999px',
                   border: '1px solid var(--card-border)',
-                  background: 'rgba(255, 255, 255, 0.4)',
+                  background: 'rgba(255, 255, 255, 0.5)',
                   backdropFilter: 'blur(10px)',
                   fontWeight: 600,
                   fontSize: '0.78rem',
-                  letterSpacing: '0.05em',
+                  letterSpacing: '0.04em',
                   color: 'var(--text-main)',
                   textDecoration: 'none',
+                  transition: 'all 0.2s ease',
                 }}
               >
-                <span>View Full Store Details &rarr;</span>
+                <span>View Full Store Details</span>
+                <ArrowRight size={14} strokeWidth={2} />
               </Link>
             </div>
           </div>

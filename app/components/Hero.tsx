@@ -16,30 +16,15 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
   const activeLook = looks[activeLookIndex] || looks[0];
 
   return (
-    <section className="hero-wrapper" style={{ paddingTop: '8.5rem', paddingBottom: '4.5rem' }}>
+    <section className="hero-wrapper" style={{ paddingTop: '7.25rem', paddingBottom: '3.5rem' }}>
       <div className="luxury-container">
         <div className="hero-grid">
           {/* Left Column: Editorial Headline & Brand Manifesto */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
             <div>
-              <span className="badge-capsule">
-                <span
-                  style={{
-                    width: '7px',
-                    height: '7px',
-                    borderRadius: '9999px',
-                    backgroundColor: '#10b981',
-                    boxShadow: '0 0 8px #10b981',
-                  }}
-                />
-                Flagship Showroom • Imlikheda Chowk, Chhindwara • Open 10:30 AM – 10:00 PM
-              </span>
-            </div>
-
-            <div>
               <h1 className="hero-headline">
-                The Architecture
-                <span className="hero-subhead">of Indian Luxury</span>
+                Refined Style.
+                <span className="hero-subhead">100% Pure Cotton.</span>
               </h1>
             </div>
 
@@ -51,9 +36,9 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                 maxWidth: '540px',
               }}
             >
-              <strong>Deer & Dan</strong> crafts pure 100% fine combed cotton, artisanal linen
-              tailoring, and quiet luxury menswear & womenswear. Experience our grand multi-story
-              glass flagship destination curated under the creative direction of{' '}
+              <strong>Deer & Dan</strong> crafts pure 100% combed cotton shirts, relaxed
+              pleated trousers, signature denim, and everyday smart casuals. Experience our grand
+              multi-story glass showroom at Imlikheda Chowk curated under the creative direction of{' '}
               <strong style={{ color: 'var(--text-main)' }}>{BRAND_DATA.founder}</strong>.
             </p>
 
@@ -92,68 +77,6 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </Link>
-            </div>
-
-            {/* Social Proof & Store Trust Badge */}
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                gap: '1.25rem',
-                paddingTop: '0.75rem',
-              }}
-            >
-              {/* Backdoor-style Social Proof Patrons */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                <div style={{ display: 'flex', marginLeft: '0.25rem' }}>
-                  {['photo-1534528741775-53994a69daeb', 'photo-1507003211169-0a1dd7228f2d', 'photo-1517841905240-472988babdf9', 'photo-1524504388940-b1c1722653e1'].map((imgId, idx) => (
-                    <div
-                      key={idx}
-                      style={{
-                        position: 'relative',
-                        width: '30px',
-                        height: '30px',
-                        borderRadius: '9999px',
-                        overflow: 'hidden',
-                        marginLeft: idx === 0 ? 0 : '-9px',
-                        border: '2px solid #ffffff',
-                        boxShadow: '0 2px 6px rgba(0,0,0,0.12)',
-                      }}
-                    >
-                      <Image
-                        src={`https://images.unsplash.com/${imgId}?auto=format&fit=crop&w=80&q=80`}
-                        alt="Patron"
-                        fill
-                        style={{ objectFit: 'cover' }}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div style={{ fontSize: '0.74rem', lineHeight: 1.25 }}>
-                  <strong style={{ display: 'block', fontWeight: 700, color: 'var(--text-main)' }}>24,000+ Patrons</strong>
-                  <span style={{ color: 'var(--text-muted)' }}>visited in Chhindwara</span>
-                </div>
-              </div>
-
-              {/* Craft Certification Pill */}
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.45rem',
-                  fontSize: '0.72rem',
-                  padding: '0.4rem 0.85rem',
-                  borderRadius: '9999px',
-                  background: 'rgba(255, 255, 255, 0.65)',
-                  border: '1px solid rgba(0,0,0,0.06)',
-                  color: 'var(--text-main)',
-                  fontWeight: 600,
-                }}
-              >
-                <span>🏷️</span>
-                <span>100% Cotton • Made in India</span>
-              </div>
             </div>
 
             {/* Quick Stat Counters */}
@@ -231,7 +154,7 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '540px',
+                  height: '460px',
                   borderRadius: '16px',
                   overflow: 'hidden',
                   background: '#f4ede6',
@@ -298,33 +221,34 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                 <div
                   style={{
                     position: 'absolute',
-                    bottom: '1rem',
-                    left: '1rem',
-                    right: '1rem',
+                    bottom: '0.75rem',
+                    left: '0.75rem',
+                    right: '0.75rem',
                     background: 'rgba(255, 255, 255, 0.92)',
                     backdropFilter: 'blur(16px)',
-                    padding: '1rem 1.25rem',
-                    borderRadius: '16px',
+                    padding: '0.85rem 1.15rem',
+                    borderRadius: '14px',
                     boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
                     <div>
                       <h3
                         style={{
                           margin: 0,
-                          fontSize: '1.15rem',
+                          fontSize: '1.05rem',
                           fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
                           fontWeight: 500,
                           color: '#111111',
+                          lineHeight: 1.2,
                         }}
                       >
                         {activeLook.title}
                       </h3>
                       <p
                         style={{
-                          margin: '0.25rem 0 0 0',
-                          fontSize: '0.74rem',
+                          margin: '0.2rem 0 0 0',
+                          fontSize: '0.72rem',
                           color: '#555555',
                           fontFamily: "'Inter', sans-serif",
                         }}
@@ -336,8 +260,8 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                     <div
                       style={{
                         position: 'relative',
-                        width: '38px',
-                        height: '38px',
+                        width: '36px',
+                        height: '36px',
                         borderRadius: '9999px',
                         overflow: 'hidden',
                         flexShrink: 0,
@@ -357,11 +281,14 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
 
               {/* Look Selector Dock */}
               <div
+                className="no-scrollbar"
                 style={{
                   display: 'flex',
-                  gap: '0.65rem',
-                  marginTop: '0.85rem',
+                  gap: '0.55rem',
+                  marginTop: '0.65rem',
                   overflowX: 'auto',
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
                   paddingBottom: '0.25rem',
                 }}
               >
@@ -371,13 +298,13 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
                     onClick={() => setActiveLookIndex(idx)}
                     style={{
                       position: 'relative',
-                      width: '64px',
-                      height: '74px',
+                      width: '58px',
+                      height: '66px',
                       borderRadius: '10px',
                       overflow: 'hidden',
                       border: idx === activeLookIndex ? '2px solid #111111' : '1px solid rgba(0,0,0,0.1)',
                       opacity: idx === activeLookIndex ? 1 : 0.65,
-                      transform: idx === activeLookIndex ? 'scale(1.03)' : 'scale(1)',
+                      transform: idx === activeLookIndex ? 'scale(1.02)' : 'scale(1)',
                       transition: 'all 0.2s ease',
                       flexShrink: 0,
                       cursor: 'pointer',

@@ -62,7 +62,7 @@ export default function CollectionGrid({
                 margin: 0,
               }}
             >
-              Autumn / Winter 26 Exhibition
+              Curated Outfits & Smart Casuals
             </h2>
             <p
               style={{
@@ -72,19 +72,22 @@ export default function CollectionGrid({
                 marginTop: '0.75rem',
               }}
             >
-              Explore our latest silhouettes. Click any piece to inspect fabric composition,
-              drape architecture, and artisan hardware.
+              Explore pure 100% combed cotton shirts, relaxed pleated trousers, washed black denim,
+              and old-money knits. Click any look to inspect fabric details and styling.
             </p>
           </div>
 
           {/* Collection Filter Tabs */}
           <div
+            className="no-scrollbar"
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
               overflowX: 'auto',
-              paddingBottom: '0.5rem',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              paddingBottom: '0.25rem',
             }}
           >
             {collections.map((cat) => {
@@ -229,7 +232,7 @@ export default function CollectionGrid({
                       color: 'var(--accent)',
                     }}
                   >
-                    Inspect Specs &rarr;
+                    View Look & Sizing &rarr;
                   </span>
                 </div>
               </div>

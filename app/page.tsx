@@ -6,27 +6,17 @@ import Hero from './components/Hero';
 import CollectionGrid from './components/CollectionGrid';
 import FlagshipShowroom from './components/FlagshipShowroom';
 import AtelierStory from './components/AtelierStory';
-import LookbookForm from './components/LookbookForm';
 import Footer from './components/Footer';
 import LookModal from './components/LookModal';
 import { COLLECTIONS, LOOKS, Look } from './data/looks';
 
 export default function Home() {
   const [selectedLook, setSelectedLook] = useState<Look | null>(null);
-  const [inquiryLook, setInquiryLook] = useState<Look | null>(null);
-
-  const handleInquire = (look: Look | null) => {
-    setInquiryLook(look);
-    const inquirySection = document.getElementById('inquiry');
-    if (inquirySection) {
-      inquirySection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="min-h-screen font-sans">
       {/* Main Navigation with 5 routes */}
-      <Navbar onOpenInquiry={() => handleInquire(null)} />
+      <Navbar />
 
       {/* Hero Showcase Section with Real Model & D&D Linen Shirt */}
       <Hero
@@ -47,12 +37,6 @@ export default function Home() {
       {/* The Atelier & 100% Cotton Craftsmanship Philosophy */}
       <AtelierStory />
 
-      {/* VIP Digital Catalogue & Styling Inquiry */}
-      <LookbookForm
-        selectedLook={inquiryLook}
-        onCloseInquiry={() => setInquiryLook(null)}
-      />
-
       {/* Luxury Footer with Real Store Address & Timings */}
       <Footer />
 
@@ -61,7 +45,6 @@ export default function Home() {
         <LookModal
           look={selectedLook}
           onClose={() => setSelectedLook(null)}
-          onInquire={(look) => handleInquire(look)}
         />
       )}
     </div>
