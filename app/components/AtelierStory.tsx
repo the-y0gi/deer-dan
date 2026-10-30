@@ -284,8 +284,8 @@ export default function AtelierStory({}: AtelierStoryProps) {
               color: 'var(--text-main)',
             }}
           >
-            We don&apos;t just sell garments at Deer & Dan; we curate an experience of quiet confidence.
-            When you slip into our 100% fine cotton and artisanal tailored linens, you immediately feel
+            We don&apos;t just sell garments at Deer & Dan; we curate an experience of effortless confidence.
+            When you slip into our 100% pure combed cotton shirts and relaxed tailored fits, you immediately feel
             the precision of authentic craftsmanship.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '0.5rem' }}>

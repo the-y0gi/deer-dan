@@ -14,7 +14,7 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
     name: '',
     email: '',
     phone: '',
-    interest: selectedLook ? selectedLook.title : 'General A/W 26 Lookbook',
+    interest: selectedLook ? selectedLook.title : 'General Showroom Collection',
     message: '',
   });
 
@@ -76,11 +76,11 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
                   margin: 0,
                 }}
               >
-                Thank You for Your Patronage
+                Thank You for Connecting
               </h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', maxWidth: '440px', lineHeight: 1.6, margin: 0 }}>
-                The high-resolution Deer & Dan Autumn / Winter 26 digital lookbook and private
-                salon viewing catalogue have been dispatched to your email.
+                Our Chhindwara showroom team has received your message. We will reach out
+                shortly with look details, sizing, or to welcome you for your visit.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
@@ -102,7 +102,7 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
                     color: 'var(--accent)',
                   }}
                 >
-                  Private Salon & Lookbook Request
+                  Personal Styling & In-Store Concierge
                 </span>
                 <h3
                   style={{
@@ -112,11 +112,11 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
                     margin: 0,
                   }}
                 >
-                  Request High-Resolution Lookbook
+                  Plan Your Visit or Inquire on a Look
                 </h3>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.5 }}>
-                  Receive our comprehensive digital catalogue with textile origins, drape
-                  specifications, and private salon viewing schedules.
+                  Interested in a specific look, sizing query, or planning a visit to our flagship showroom in Chhindwara?
+                  Share your details and our team will assist you promptly.
                 </p>
               </div>
 
@@ -212,11 +212,11 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
                   <label style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)' }}>
-                    Private Viewing City / Notes
+                    Inquiry Details / Sizing / Visit Timing
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="Provide any specific sizing inquiries or preferred viewing locations (New Delhi, Mumbai, or Milan)..."
+                    placeholder="e.g. Sizing check for Look 01 (M or L), planning to visit this weekend, or styling questions..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     style={{
@@ -243,7 +243,7 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
                     marginTop: '0.5rem',
                   }}
                 >
-                  {loading ? 'Dispatched to Atelier...' : 'Receive Digital Lookbook & Schedule'}
+                  {loading ? 'Submitting to Showroom...' : 'Send Styling & Visit Inquiry'}
                 </button>
               </form>
             </div>

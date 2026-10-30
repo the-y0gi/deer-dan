@@ -132,12 +132,15 @@ export default function CollectionsPage() {
 
             {/* Category Filter Pills */}
             <div
+              className="no-scrollbar"
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.5rem',
                 overflowX: 'auto',
-                paddingBottom: '0.5rem',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                paddingBottom: '0.25rem',
               }}
             >
               {COLLECTIONS.map((cat) => {
