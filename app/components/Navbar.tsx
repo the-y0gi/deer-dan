@@ -23,131 +23,50 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
   ];
 
   return (
-    <header
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        padding: '0.85rem 1rem',
-        pointerEvents: 'none',
-      }}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3.5 pointer-events-none">
       <nav
         aria-label="Main Navigation"
-        className="luxury-container"
-        style={{
-          pointerEvents: 'auto',
-          background: 'var(--nav-bg)',
-          border: '1px solid var(--nav-border)',
-          borderRadius: '9999px',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          boxShadow: '0 12px 30px -8px rgba(0, 0, 0, 0.08)',
-          padding: '0.65rem 1.35rem',
-          transition: 'all 0.3s ease',
-        }}
+        className="pointer-events-auto max-w-[1280px] mx-auto px-5 lg:px-6 py-2.5 rounded-full bg-white/85 border border-black/8 backdrop-blur-xl shadow-[0_12px_30px_-8px_rgba(0,0,0,0.08)] transition-all duration-300"
       >
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="flex items-center justify-between">
           {/* Brand Logo & Meta */}
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', textDecoration: 'none', color: 'inherit' }}>
-            <div
-              style={{
-                position: 'relative',
-                width: '34px',
-                height: '34px',
-                borderRadius: '9999px',
-                overflow: 'hidden',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: '#111111',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-              }}
-            >
+          <Link href="/" className="flex items-center gap-2.5 no-underline text-inherit group">
+            <div className="relative w-[34px] h-[34px] rounded-full overflow-hidden flex items-center justify-center bg-[#111111] border border-white/20 shadow-[0_2px_8px_rgba(0,0,0,0.15)] shrink-0">
               <Image
                 src="/images/official-deer-logo.jpg"
                 alt="Deer & Dan Stag Logo"
                 width={34}
                 height={34}
-                style={{ objectFit: 'cover' }}
+                className="object-cover"
               />
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span
-                style={{
-                  fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                  fontWeight: 600,
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                  fontSize: '1.05rem',
-                  lineHeight: 1.1,
-                  color: 'var(--text-main)',
-                }}
-              >
+            <div className="flex flex-col">
+              <span className="font-serif font-semibold tracking-[0.18em] uppercase text-[1.05rem] leading-none text-[#121212]">
                 Deer & Dan
               </span>
-              <span
-                style={{
-                  fontSize: '0.52rem',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.2em',
-                  opacity: 0.65,
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 500,
-                  color: 'var(--text-muted)',
-                }}
-              >
+              <span className="text-[0.52rem] uppercase tracking-[0.2em] opacity-65 font-sans font-medium text-[#525252] mt-0.5">
                 Flagship Showroom • Chhindwara
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1.75rem',
-              fontSize: '0.72rem',
-              fontWeight: 600,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-            }}
-            className="hidden-mobile-nav"
-          >
+          <div className="hidden min-[960px]:flex items-center gap-7 text-[0.72rem] font-semibold tracking-[0.12em] uppercase">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  style={{
-                    textDecoration: 'none',
-                    color: isActive ? 'var(--text-main)' : 'var(--text-muted)',
-                    opacity: isActive ? 1 : 0.8,
-                    fontWeight: isActive ? 700 : 500,
-                    position: 'relative',
-                    transition: 'all 0.2s ease',
-                    padding: '0.25rem 0',
-                  }}
+                  className={`relative py-1 transition-all duration-200 no-underline ${
+                    isActive
+                      ? 'text-[#121212] font-bold opacity-100'
+                      : 'text-[#525252] font-medium opacity-80 hover:opacity-100 hover:text-[#121212]'
+                  }`}
                 >
                   {link.label}
                   {isActive && (
-                    <span
-                      style={{
-                        position: 'absolute',
-                        bottom: '-4px',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        width: '4px',
-                        height: '4px',
-                        borderRadius: '9999px',
-                        backgroundColor: '#111111',
-                      }}
-                    />
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#111111]" />
                   )}
                 </Link>
               );
@@ -155,37 +74,18 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
           </div>
 
           {/* Right Action */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <Link
-              href="/store"
-              className="badge-capsule"
-              id="desktop-store-badge"
-              style={{
-                display: 'none',
-                textDecoration: 'none',
-                color: 'inherit',
-                fontSize: '0.62rem',
-              }}
-            >
-              <span
-                style={{
-                  width: '6px',
-                  height: '6px',
-                  borderRadius: '9999px',
-                  backgroundColor: '#10b981',
-                  boxShadow: '0 0 8px #10b981',
-                }}
-              />
-              <span>10:30 AM – 10:00 PM</span>
-            </Link>
-
+          <div className="flex items-center gap-3">
             <Link
               href="/contact"
               className="btn-luxury-primary"
-              style={{ padding: '0.6rem 1.2rem', fontSize: '0.7rem', textDecoration: 'none' }}
+              style={{
+                padding: '0.6rem 1.25rem',
+                fontSize: '0.72rem',
+                color: '#ffffff',
+              }}
             >
-              <span>VIP Inquiry</span>
-              <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <span className="text-white text-[0.72rem] font-semibold tracking-tight">VIP Inquiry</span>
+              <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white stroke-white">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
@@ -193,15 +93,7 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              style={{
-                display: 'none',
-                padding: '0.5rem',
-                color: 'inherit',
-                background: 'transparent',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-              className="mobile-hamburger-btn"
+              className="min-[960px]:hidden p-2 text-inherit bg-transparent border-0 cursor-pointer flex items-center justify-center"
               aria-label="Toggle menu"
             >
               <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -217,65 +109,31 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
 
         {/* Mobile menu dropdown */}
         {mobileMenuOpen && (
-          <div
-            style={{
-              paddingTop: '1rem',
-              marginTop: '0.75rem',
-              borderTop: '1px solid var(--card-border)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '0.85rem',
-              fontSize: '0.78rem',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-            }}
-          >
+          <div className="pt-4 mt-3 border-t border-black/8 flex flex-col gap-3 text-[0.78rem] tracking-[0.12em] uppercase">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                style={{
-                  textDecoration: 'none',
-                  color: pathname === link.href ? 'var(--text-main)' : 'var(--text-muted)',
-                  fontWeight: pathname === link.href ? 700 : 500,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: '0.35rem 0',
-                }}
+                className={`flex items-center justify-between py-1.5 no-underline ${
+                  pathname === link.href ? 'text-[#121212] font-bold' : 'text-[#525252] font-medium'
+                }`}
               >
                 <span>{link.label}</span>
-                <span style={{ opacity: 0.4 }}>→</span>
+                <span className="opacity-40">→</span>
               </Link>
             ))}
-            <div style={{ paddingTop: '0.5rem', borderTop: '1px dashed var(--card-border)' }}>
-              <p style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'none', margin: 0 }}>
+            <div className="pt-2 border-t border-dashed border-black/8">
+              <p className="text-[0.68rem] text-[#525252] normal-case m-0">
                 📍 {BRAND_DATA.address.landmark}, {BRAND_DATA.address.city}
               </p>
-              <p style={{ fontSize: '0.65rem', color: '#10b981', margin: '0.2rem 0 0 0', textTransform: 'none', fontWeight: 600 }}>
+              <p className="text-[0.65rem] text-[#10b981] mt-0.5 normal-case font-semibold">
                 ● Open Today: {BRAND_DATA.timings.hours}
               </p>
             </div>
           </div>
         )}
       </nav>
-
-      <style jsx>{`
-        @media (min-width: 960px) {
-          #desktop-store-badge {
-            display: inline-flex !important;
-          }
-        }
-        @media (max-width: 959px) {
-          .hidden-mobile-nav {
-            display: none !important;
-          }
-          .mobile-hamburger-btn {
-            display: inline-flex !important;
-          }
-        }
-      `}</style>
     </header>
   );
 }

@@ -6,10 +6,7 @@ import {
   MapPin,
   Clock,
   Phone,
-  MessageCircle,
   ArrowUpRight,
-  Sparkles,
-  ShieldCheck,
 } from 'lucide-react';
 import { BRAND_DATA } from '../data/brand';
 
@@ -27,155 +24,49 @@ export default function Footer({}: FooterProps) {
   ];
 
   return (
-    <footer
-      style={{
-        borderTop: '1px solid var(--card-border)',
-        padding: '5rem 0 3.5rem',
-        background: 'linear-gradient(180deg, rgba(253, 250, 247, 0.4) 0%, rgba(248, 241, 235, 0.95) 100%)',
-        position: 'relative',
-        transition: 'all 0.3s ease',
-      }}
-    >
-      <div className="luxury-container" style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
+    <footer className="border-t border-black/8 pt-20 pb-14 bg-gradient-to-b from-[#fdfaf7]/40 to-[#f8f1eb]/95 relative transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-14">
         {/* Main 4 Columns Grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-            gap: '3rem',
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Col 1: Brand & Founder Heritage */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', maxWidth: '340px' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none', color: 'inherit' }}>
-              <div
-                style={{
-                  position: 'relative',
-                  width: '38px',
-                  height: '38px',
-                  borderRadius: '9999px',
-                  overflow: 'hidden',
-                  background: '#111111',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: '1px solid rgba(0, 0, 0, 0.15)',
-                  boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-                }}
-              >
+          <div className="flex flex-col gap-5 max-w-[340px]">
+            <Link href="/" className="flex items-center gap-3 no-underline text-inherit group">
+              <div className="relative w-[38px] h-[38px] rounded-full overflow-hidden bg-[#111111] flex items-center justify-center border border-black/15 shadow-[0_4px_10px_rgba(0,0,0,0.1)] shrink-0">
                 <Image
                   src="/images/official-deer-logo.jpg"
                   alt="Deer & Dan Official Logo"
                   width={38}
                   height={38}
-                  style={{ objectFit: 'cover' }}
+                  className="object-cover"
                 />
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span
-                  style={{
-                    fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                    fontWeight: 600,
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                    fontSize: '1.25rem',
-                    lineHeight: 1.1,
-                  }}
-                >
+              <div className="flex flex-col">
+                <span className="font-serif font-semibold tracking-[0.18em] uppercase text-[1.25rem] leading-none text-[#121212]">
                   Deer & Dan
                 </span>
-                <span
-                  style={{
-                    fontSize: '0.55rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.2em',
-                    color: 'var(--text-muted)',
-                    fontWeight: 600,
-                  }}
-                >
+                <span className="text-[0.55rem] uppercase tracking-[0.2em] text-[#525252] font-semibold mt-1">
                   Haute Couture • India
                 </span>
               </div>
             </Link>
 
-            <p
-              style={{
-                fontSize: '0.82rem',
-                color: 'var(--text-muted)',
-                lineHeight: 1.65,
-                margin: 0,
-              }}
-            >
+            <p className="text-[0.82rem] text-[#525252] leading-relaxed m-0">
               Quiet luxury menswear, artisanal linen tailoring, and sculpted contemporary wear.
               100% pure Indian cotton crafted for timeless longevity and poise.
             </p>
-
-            {/* <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                padding: '0.45rem 0.85rem',
-                borderRadius: '9999px',
-                background: 'rgba(255, 255, 255, 0.8)',
-                border: '1px solid var(--card-border)',
-                fontSize: '0.7rem',
-                fontWeight: 600,
-                color: 'var(--text-main)',
-                width: 'fit-content',
-              }}
-            >
-              <Sparkles size={13} color="#b45309" />
-              <span>Directed by {BRAND_DATA.founder}</span>
-            </div> */}
           </div>
 
           {/* Col 2: Showcase Pages */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <p
-              style={{
-                fontSize: '0.72rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.18em',
-                color: 'var(--accent)',
-                margin: 0,
-              }}
-            >
+          <div className="flex flex-col gap-4">
+            <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[#111111] m-0">
               Showcase Pages
             </p>
-            <ul
-              style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.75rem',
-                fontSize: '0.82rem',
-              }}
-            >
+            <ul className="list-none p-0 m-0 flex flex-col gap-3 text-[0.82rem]">
               {showcaseLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    style={{
-                      color: 'var(--text-muted)',
-                      textDecoration: 'none',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.4rem',
-                      transition: 'all 0.2s ease',
-                      fontWeight: 500,
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = '#111111';
-                      e.currentTarget.style.transform = 'translateX(3px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'var(--text-muted)';
-                      e.currentTarget.style.transform = 'translateX(0)';
-                    }}
+                    className="text-[#525252] no-underline inline-flex items-center gap-1.5 transition-all duration-200 font-medium hover:text-[#111111] hover:translate-x-1"
                   >
                     <span>{link.label}</span>
                   </Link>
@@ -185,61 +76,43 @@ export default function Footer({}: FooterProps) {
           </div>
 
           {/* Col 3: Flagship Destination */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <p
-              style={{
-                fontSize: '0.72rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.18em',
-                color: 'var(--accent)',
-                margin: 0,
-              }}
-            >
+          <div className="flex flex-col gap-4">
+            <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[#111111] m-0">
               Flagship Destination
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
-                <MapPin size={17} color="#111111" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                  <strong style={{ color: 'var(--text-main)', display: 'block', fontWeight: 600 }}>
+            <div className="flex flex-col gap-3.5">
+              <div className="flex items-start gap-2.5">
+                <MapPin size={17} className="text-[#111111] shrink-0 mt-0.5" />
+                <div className="text-[0.82rem] text-[#525252] leading-snug">
+                  <strong className="text-[#121212] block font-semibold">
                     Deer & Dan Showroom
                   </strong>
                   <span>{BRAND_DATA.address.landmark}, {BRAND_DATA.address.road}</span>
-                  <span style={{ display: 'block' }}>{BRAND_DATA.address.city}, MP {BRAND_DATA.address.pincode}</span>
+                  <span className="block">{BRAND_DATA.address.city}, MP {BRAND_DATA.address.pincode}</span>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                <Clock size={16} color="#10b981" style={{ flexShrink: 0 }} />
-                <div style={{ fontSize: '0.8rem' }}>
-                  <span style={{ color: '#10b981', fontWeight: 600, display: 'block' }}>
+              <div className="flex items-center gap-2.5">
+                <Clock size={16} className="text-[#10b981] shrink-0" />
+                <div className="text-[0.8rem]">
+                  <span className="text-[#10b981] font-semibold block">
                     Open Today: {BRAND_DATA.timings.hours}
                   </span>
-                  <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Monday through Sunday</span>
+                  <span className="text-[0.72rem] text-[#525252]">Monday through Sunday</span>
                 </div>
               </div>
 
-              <div style={{ paddingTop: '0.25rem' }}>
+              <div className="pt-1">
                 <a
                   href={BRAND_DATA.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="btn-luxury-secondary"
                   style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    fontSize: '0.76rem',
-                    fontWeight: 600,
-                    color: '#111111',
-                    textDecoration: 'none',
                     padding: '0.4rem 0.85rem',
-                    borderRadius: '9999px',
-                    background: 'rgba(255, 255, 255, 0.7)',
-                    border: '1px solid var(--card-border)',
+                    fontSize: '0.76rem',
                     width: 'fit-content',
-                    transition: 'all 0.2s ease',
                   }}
                 >
                   <span>Open in Google Maps</span>
@@ -250,51 +123,22 @@ export default function Footer({}: FooterProps) {
           </div>
 
           {/* Col 4: Styling & Concierge */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <p
-              style={{
-                fontSize: '0.72rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.18em',
-                color: 'var(--accent)',
-                margin: 0,
-              }}
-            >
+          <div className="flex flex-col gap-4">
+            <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[#111111] m-0">
               Styling & Concierge
             </p>
 
-            <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.6 }}>
+            <p className="text-[0.82rem] text-[#525252] m-0 leading-relaxed">
               Looking for personal styling or wedding wardrobe curation? Connect directly with our concierge.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', paddingTop: '0.25rem' }}>
+            <div className="flex flex-col gap-2.5 pt-1">
               <a
                 href={`tel:${BRAND_DATA.phone}`}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  fontSize: '0.82rem',
-                  color: 'var(--text-main)',
-                  textDecoration: 'none',
-                  fontWeight: 500,
-                  transition: 'color 0.2s',
-                }}
+                className="inline-flex items-center gap-2.5 text-[0.82rem] text-[#121212] no-underline font-medium hover:text-black transition-colors"
               >
-                <div
-                  style={{
-                    width: '28px',
-                    height: '28px',
-                    borderRadius: '9999px',
-                    background: 'rgba(255, 255, 255, 0.8)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px solid var(--card-border)',
-                  }}
-                >
-                  <Phone size={13} color="#111111" />
+                <div className="w-7 h-7 rounded-full bg-white/80 flex items-center justify-center border border-black/8 shrink-0">
+                  <Phone size={13} className="text-[#111111]" />
                 </div>
                 <span>{BRAND_DATA.phoneFormatted}</span>
               </a>
@@ -303,28 +147,9 @@ export default function Footer({}: FooterProps) {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  fontSize: '0.82rem',
-                  color: 'var(--text-muted)',
-                  textDecoration: 'none',
-                  fontWeight: 500,
-                }}
+                className="inline-flex items-center gap-2.5 text-[0.82rem] text-[#525252] no-underline font-medium hover:text-[#121212] transition-colors"
               >
-                <div
-                  style={{
-                    width: '28px',
-                    height: '28px',
-                    borderRadius: '9999px',
-                    background: 'rgba(255, 255, 255, 0.8)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px solid var(--card-border)',
-                  }}
-                >
+                <div className="w-7 h-7 rounded-full bg-white/80 flex items-center justify-center border border-black/8 shrink-0">
                   <svg
                     width="14"
                     height="14"
@@ -347,39 +172,16 @@ export default function Footer({}: FooterProps) {
         </div>
 
         {/* Bottom Strip */}
-        <div
-          style={{
-            borderTop: '1px solid var(--card-border)',
-            paddingTop: '2rem',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '1.25rem',
-            fontSize: '0.72rem',
-            color: 'var(--text-muted)',
-          }}
-        >
-          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.45rem' }}>
+        <div className="border-t border-black/8 pt-8 flex flex-wrap items-center justify-between gap-5 text-[0.72rem] text-[#525252]">
+          <div className="flex flex-wrap items-center gap-2">
             <span>
               &copy; {new Date().getFullYear()} <strong>Deer & Dan Clothing</strong>. All rights reserved. Flagship Showroom in Chhindwara, Madhya Pradesh.
             </span>
-            <span style={{ opacity: 0.4 }}>•</span>
+            <span className="opacity-40">•</span>
             <span>
-              Developed by <strong style={{ color: 'var(--text-main)', fontWeight: 600 }}>Yogesh Gadhewal</strong>
+              Developed by <strong className="text-[#121212] font-semibold">Yogesh Gadhewal</strong>
             </span>
           </div>
-
-          {/* <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.68rem', fontWeight: 600 }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-              <ShieldCheck size={14} color="#10b981" />
-              <span>100% Pure Cotton</span>
-            </span>
-            <span>•</span>
-            <span>Made in India</span>
-            <span>•</span>
-            <span>Haute Couture Showcase</span>
-          </div> */}
         </div>
       </div>
     </footer>

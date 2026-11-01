@@ -24,91 +24,36 @@ export default function CollectionGrid({
       : looks.filter((l) => l.category === selectedCategory);
 
   return (
-    <section id="collections" style={{ padding: '6rem 0', position: 'relative' }}>
-      <div className="luxury-container">
+    <section id="collections" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            alignItems: 'flex-end',
-            justifyContent: 'space-between',
-            gap: '1.5rem',
-            marginBottom: '3.5rem',
-          }}
-        >
-          <div style={{ maxWidth: '580px' }}>
-            <span
-              style={{
-                fontSize: '0.72rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.2em',
-                fontWeight: 600,
-                color: 'var(--accent)',
-                display: 'block',
-                marginBottom: '0.5rem',
-              }}
-            >
+        <div className="flex flex-row flex-wrap items-end justify-between gap-6 mb-14">
+          <div className="max-w-[580px]">
+            <span className="text-[0.72rem] uppercase tracking-[0.2em] font-semibold text-[#111111] block mb-2">
               Curated Lookbook
             </span>
-            <h2
-              style={{
-                fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                fontSize: 'clamp(2.2rem, 4vw, 3.5rem)',
-                fontWeight: 400,
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em',
-                margin: 0,
-              }}
-            >
+            <h2 className="font-serif text-[clamp(2.2rem,4vw,3.5rem)] font-normal leading-[1.1] tracking-[-0.02em] m-0 text-[#121212]">
               Curated Outfits & Smart Casuals
             </h2>
-            <p
-              style={{
-                fontSize: '0.95rem',
-                color: 'var(--text-muted)',
-                lineHeight: 1.6,
-                marginTop: '0.75rem',
-              }}
-            >
+            <p className="text-[0.95rem] text-[#525252] leading-relaxed mt-3 m-0">
               Explore pure 100% combed cotton shirts, relaxed pleated trousers, washed black denim,
               and old-money knits. Click any look to inspect fabric details and styling.
             </p>
           </div>
 
           {/* Collection Filter Tabs */}
-          <div
-            className="no-scrollbar"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              overflowX: 'auto',
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-              paddingBottom: '0.25rem',
-            }}
-          >
+          <div className="no-scrollbar flex items-center gap-2 overflow-x-auto pb-1 max-w-full">
             {collections.map((cat) => {
               const active = selectedCategory === cat.id;
               return (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  style={{
-                    padding: '0.5rem 1.1rem',
-                    borderRadius: '9999px',
-                    fontSize: '0.72rem',
-                    fontWeight: active ? 700 : 500,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    whiteSpace: 'nowrap',
-                    transition: 'all 0.2s ease',
-                    background: active ? '#111111' : 'transparent',
-                    color: active ? '#ffffff' : 'var(--text-muted)',
-                    border: active ? 'none' : '1px solid var(--card-border)',
-                  }}
+                  className={`py-2 px-4 rounded-full text-[0.72rem] uppercase tracking-[0.08em] whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                    active
+                      ? 'bg-[#111111] text-white font-bold border-transparent shadow-sm'
+                      : 'bg-transparent text-[#525252] font-medium border border-black/8 hover:border-black/20 hover:text-[#121212]'
+                  }`}
                 >
                   {cat.label}
                 </button>
@@ -118,120 +63,50 @@ export default function CollectionGrid({
         </div>
 
         {/* Masonry / Grid Cards */}
-        <div className="collection-grid-layout">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {filteredLooks.map((look) => (
             <article
               key={look.id}
               onClick={() => onSelectLook(look)}
-              className="collection-card"
+              className="flex flex-col bg-white/85 border border-black/8 rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer backdrop-blur-md hover:border-black/20 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] group"
             >
               {/* Image Box */}
-              <div className="collection-card-img-wrap">
+              <div className="relative w-full h-[420px] overflow-hidden bg-[#111111]">
                 <Image
                   src={look.image}
                   alt={look.title}
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '1rem',
-                    left: '1rem',
-                    background: 'rgba(0, 0, 0, 0.7)',
-                    color: '#ffffff',
-                    padding: '0.25rem 0.65rem',
-                    borderRadius: '9999px',
-                    fontSize: '0.65rem',
-                    fontFamily: 'monospace',
-                    fontWeight: 700,
-                    letterSpacing: '0.1em',
-                    backdropFilter: 'blur(8px)',
-                  }}
-                >
+                <div className="absolute top-4 left-4 bg-black/70 text-white py-1 px-2.5 rounded-full text-[0.65rem] font-mono font-bold tracking-widest backdrop-blur-md">
                   LOOK {look.number}
                 </div>
               </div>
 
               {/* Text Info */}
-              <div
-                style={{
-                  padding: '1.5rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.75rem',
-                  flex: 1,
-                  justifyContent: 'space-between',
-                }}
-              >
+              <div className="p-6 flex flex-col gap-3 flex-1 justify-between">
                 <div>
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      fontSize: '0.68rem',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.1em',
-                      color: 'var(--text-muted)',
-                      marginBottom: '0.35rem',
-                    }}
-                  >
+                  <div className="flex items-center justify-between text-[0.68rem] uppercase tracking-wider text-[#525252] mb-1.5">
                     <span>{look.season}</span>
-                    <span style={{ textTransform: 'capitalize' }}>{look.category}</span>
+                    <span className="capitalize">{look.category}</span>
                   </div>
 
-                  <h3
-                    style={{
-                      fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                      fontSize: '1.45rem',
-                      fontWeight: 500,
-                      lineHeight: 1.25,
-                      margin: 0,
-                    }}
-                  >
+                  <h3 className="font-serif text-[1.45rem] font-medium leading-snug m-0 text-[#121212]">
                     {look.title}
                   </h3>
 
-                  <p
-                    style={{
-                      fontSize: '0.8rem',
-                      color: 'var(--text-muted)',
-                      lineHeight: 1.5,
-                      marginTop: '0.5rem',
-                      display: '-webkit-box',
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: 'vertical',
-                      overflow: 'hidden',
-                    }}
-                  >
+                  <p className="text-[0.8rem] text-[#525252] leading-relaxed mt-2 line-clamp-2 m-0">
                     {look.description}
                   </p>
                 </div>
 
-                <div
-                  style={{
-                    paddingTop: '0.75rem',
-                    borderTop: '1px solid var(--card-border)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    fontSize: '0.72rem',
-                  }}
-                >
-                  <span style={{ fontFamily: 'monospace', opacity: 0.75, fontSize: '0.68rem' }}>
+                <div className="pt-3 border-t border-black/8 flex items-center justify-between text-[0.72rem]">
+                  <span className="font-mono opacity-75 text-[0.68rem] text-[#525252]">
                     {look.tags[0]}
                   </span>
-                  <span
-                    style={{
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'var(--accent)',
-                    }}
-                  >
+                  <span className="font-bold uppercase tracking-[0.08em] text-[#111111] group-hover:translate-x-0.5 transition-transform">
                     View Look & Sizing &rarr;
                   </span>
                 </div>

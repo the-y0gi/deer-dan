@@ -17,116 +17,36 @@ export default function FlagshipShowroom() {
   return (
     <section
       id="showroom"
-      style={{
-        padding: '3.75rem 0',
-        position: 'relative',
-        borderTop: '1px solid var(--card-border)',
-      }}
+      className="py-16 relative border-t border-black/8"
     >
-      <div className="luxury-container">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2.5rem',
-            alignItems: 'center',
-          }}
-        >
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left: Facade Showcase Card */}
-          <div style={{ position: 'relative' }}>
-            <div
-              className="look-card-frame"
-              style={{
-                padding: '0.65rem',
-                borderRadius: '20px',
-                overflow: 'hidden',
-              }}
-            >
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: '380px',
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                }}
-              >
+          <div className="relative">
+            <div className="relative w-full max-w-[480px] mx-auto rounded-[2.5rem] p-3 bg-white border border-black/12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.18)]">
+              <div className="relative w-full h-[380px] rounded-2xl overflow-hidden">
                 <Image
                   src="/images/store-facade.jpg"
                   alt="Deer & Dan Grand Flagship Store in Chhindwara"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  className="object-cover object-center"
                 />
 
                 {/* Top Badge: Live Open Status */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '0.85rem',
-                    left: '0.85rem',
-                    background: 'rgba(255, 255, 255, 0.92)',
-                    backdropFilter: 'blur(10px)',
-                    padding: '0.35rem 0.75rem',
-                    borderRadius: '9999px',
-                    fontSize: '0.68rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.06em',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.45rem',
-                    color: '#111111',
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.12)',
-                  }}
-                >
-                  <span
-                    style={{
-                      width: '7px',
-                      height: '7px',
-                      borderRadius: '9999px',
-                      backgroundColor: '#10b981',
-                      boxShadow: '0 0 8px #10b981',
-                    }}
-                  />
+                <div className="absolute top-3.5 left-3.5 bg-white/92 backdrop-blur-md py-1.5 px-3 rounded-full text-[0.68rem] font-bold tracking-[0.06em] flex items-center gap-2 text-[#111111] shadow-[0_4px_15px_rgba(0,0,0,0.12)]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] shadow-[0_0_8px_#10b981]" />
                   <span>Open Today • {BRAND_DATA.timings.hours}</span>
                 </div>
 
                 {/* Bottom Overlay Info */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '0.85rem',
-                    left: '0.85rem',
-                    right: '0.85rem',
-                    background: 'rgba(17, 17, 17, 0.9)',
-                    backdropFilter: 'blur(12px)',
-                    padding: '0.9rem 1.15rem',
-                    borderRadius: '14px',
-                    color: '#ffffff',
-                    border: '1px solid rgba(255,255,255,0.12)',
-                  }}
-                >
-                  <p
-                    style={{
-                      margin: 0,
-                      fontSize: '0.65rem',
-                      letterSpacing: '0.15em',
-                      textTransform: 'uppercase',
-                      color: 'rgba(255,255,255,0.65)',
-                    }}
-                  >
+                <div className="absolute bottom-3.5 left-3.5 right-3.5 bg-[#111111]/90 backdrop-blur-md p-4 rounded-xl text-white border border-white/12">
+                  <p className="m-0 text-[0.65rem] tracking-[0.15em] uppercase text-white/65">
                     Flagship Destination • Madhya Pradesh
                   </p>
-                  <h3
-                    style={{
-                      margin: '0.25rem 0 0 0',
-                      fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                      fontSize: '1.25rem',
-                      fontWeight: 500,
-                    }}
-                  >
+                  <h3 className="m-0 mt-1 font-serif text-[1.25rem] font-medium text-white">
                     Imlikheda Chowk, Chhindwara
                   </h3>
-                  <p style={{ margin: '0.2rem 0 0 0', fontSize: '0.72rem', color: 'rgba(255,255,255,0.8)' }}>
+                  <p className="m-0 mt-1 text-[0.72rem] text-white/80">
                     {BRAND_DATA.address.landmark}, {BRAND_DATA.address.road} (PIN: {BRAND_DATA.address.pincode})
                   </p>
                 </div>
@@ -135,145 +55,76 @@ export default function FlagshipShowroom() {
           </div>
 
           {/* Right: Story & Visiting Experience */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
+          <div className="flex flex-col gap-4.5">
             <div>
-              <span
-                style={{
-                  fontSize: '0.68rem',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.2em',
-                  fontWeight: 600,
-                  color: 'var(--accent)',
-                  display: 'block',
-                  marginBottom: '0.35rem',
-                }}
-              >
+              <span className="text-[0.68rem] uppercase tracking-[0.2em] font-semibold text-[#111111] block mb-1.5">
                 In-Store Destination
               </span>
-              <h2
-                style={{
-                  fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                  fontSize: 'clamp(1.75rem, 3.2vw, 2.5rem)',
-                  fontWeight: 400,
-                  lineHeight: 1.15,
-                  letterSpacing: '-0.02em',
-                  margin: 0,
-                }}
-              >
+              <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] font-normal leading-[1.15] tracking-[-0.02em] m-0 text-[#121212]">
                 Step Inside the <br />
-                <span style={{ fontStyle: 'italic', fontWeight: 300, opacity: 0.85 }}>
+                <span className="font-light italic opacity-85">
                   Deer & Dan Showroom.
                 </span>
               </h2>
             </div>
 
-            <p
-              style={{
-                fontSize: '0.88rem',
-                lineHeight: 1.6,
-                color: 'var(--text-muted)',
-                margin: 0,
-              }}
-            >
+            <p className="text-[0.88rem] leading-relaxed text-[#525252] m-0">
               Located prominently at Imlikheda Chowk on MP SH 26, our grand glass facade destination
               houses curated luxury displays—from quiet luxury knitwear and ascot pairings to dark street
               atelier capsules. Every customer receives personalized guidance and fabric consultations.
             </p>
 
             {/* Feature Highlights Grid with Lucide Icons */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '0.75rem',
-                paddingTop: '0.15rem',
-              }}
-            >
-              <div
-                style={{
-                  background: 'rgba(255, 255, 255, 0.55)',
-                  backdropFilter: 'blur(8px)',
-                  padding: '0.75rem 0.95rem',
-                  borderRadius: '14px',
-                  border: '1px solid var(--card-border)',
-                }}
-              >
-                <div style={{ color: '#111111', marginBottom: '0.35rem' }}>
+            <div className="grid grid-cols-2 gap-3 pt-1">
+              <div className="bg-white/55 backdrop-blur-md p-3.5 rounded-2xl border border-black/8 hover:border-black/20 transition-colors">
+                <div className="text-[#111111] mb-1.5">
                   <Building2 size={18} strokeWidth={1.8} />
                 </div>
-                <h4 style={{ margin: 0, fontSize: '0.82rem', fontWeight: 600 }}>Multi-Floor Experience</h4>
-                <p style={{ margin: '0.15rem 0 0 0', fontSize: '0.7rem', color: 'var(--text-muted)', lineHeight: 1.35 }}>
+                <h4 className="m-0 text-[0.82rem] font-semibold text-[#121212]">Multi-Floor Experience</h4>
+                <p className="m-0 mt-1 text-[0.7rem] text-[#525252] leading-snug">
                   Open galleries with custom warm-lit architectural display arches.
                 </p>
               </div>
 
-              <div
-                style={{
-                  background: 'rgba(255, 255, 255, 0.55)',
-                  backdropFilter: 'blur(8px)',
-                  padding: '0.75rem 0.95rem',
-                  borderRadius: '14px',
-                  border: '1px solid var(--card-border)',
-                }}
-              >
-                <div style={{ color: '#111111', marginBottom: '0.35rem' }}>
+              <div className="bg-white/55 backdrop-blur-md p-3.5 rounded-2xl border border-black/8 hover:border-black/20 transition-colors">
+                <div className="text-[#111111] mb-1.5">
                   <Sparkles size={18} strokeWidth={1.8} />
                 </div>
-                <h4 style={{ margin: 0, fontSize: '0.82rem', fontWeight: 600 }}>Personal Styling</h4>
-                <p style={{ margin: '0.15rem 0 0 0', fontSize: '0.7rem', color: 'var(--text-muted)', lineHeight: 1.35 }}>
+                <h4 className="m-0 text-[0.82rem] font-semibold text-[#121212]">Personal Styling</h4>
+                <p className="m-0 mt-1 text-[0.7rem] text-[#525252] leading-snug">
                   One-on-one wardrobe curation directed by founder Romi&apos;s team.
                 </p>
               </div>
 
-              <div
-                style={{
-                  background: 'rgba(255, 255, 255, 0.55)',
-                  backdropFilter: 'blur(8px)',
-                  padding: '0.75rem 0.95rem',
-                  borderRadius: '14px',
-                  border: '1px solid var(--card-border)',
-                }}
-              >
-                <div style={{ color: '#111111', marginBottom: '0.35rem' }}>
+              <div className="bg-white/55 backdrop-blur-md p-3.5 rounded-2xl border border-black/8 hover:border-black/20 transition-colors">
+                <div className="text-[#111111] mb-1.5">
                   <Clock size={18} strokeWidth={1.8} />
                 </div>
-                <h4 style={{ margin: 0, fontSize: '0.82rem', fontWeight: 600 }}>10:30 AM – 10:00 PM</h4>
-                <p style={{ margin: '0.15rem 0 0 0', fontSize: '0.7rem', color: 'var(--text-muted)', lineHeight: 1.35 }}>
+                <h4 className="m-0 text-[0.82rem] font-semibold text-[#121212]">10:30 AM – 10:00 PM</h4>
+                <p className="m-0 mt-1 text-[0.7rem] text-[#525252] leading-snug">
                   Open 7 days a week for evening & weekend walkthroughs.
                 </p>
               </div>
 
-              <div
-                style={{
-                  background: 'rgba(255, 255, 255, 0.55)',
-                  backdropFilter: 'blur(8px)',
-                  padding: '0.75rem 0.95rem',
-                  borderRadius: '14px',
-                  border: '1px solid var(--card-border)',
-                }}
-              >
-                <div style={{ color: '#111111', marginBottom: '0.35rem' }}>
+              <div className="bg-white/55 backdrop-blur-md p-3.5 rounded-2xl border border-black/8 hover:border-black/20 transition-colors">
+                <div className="text-[#111111] mb-1.5">
                   <Car size={18} strokeWidth={1.8} />
                 </div>
-                <h4 style={{ margin: 0, fontSize: '0.82rem', fontWeight: 600 }}>Hassle-Free Parking</h4>
-                <p style={{ margin: '0.15rem 0 0 0', fontSize: '0.7rem', color: 'var(--text-muted)', lineHeight: 1.35 }}>
+                <h4 className="m-0 text-[0.82rem] font-semibold text-[#121212]">Hassle-Free Parking</h4>
+                <p className="m-0 mt-1 text-[0.7rem] text-[#525252] leading-snug">
                   Direct highway access on MP SH 26 with showroom parking.
                 </p>
               </div>
             </div>
 
             {/* CTAs */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', paddingTop: '0.25rem' }}>
+            <div className="flex flex-wrap gap-3 pt-1">
               <a
                 href={BRAND_DATA.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-luxury-primary"
                 style={{
-                  textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.45rem',
                   padding: '0.75rem 1.25rem',
                   fontSize: '0.78rem',
                 }}
@@ -285,22 +136,7 @@ export default function FlagshipShowroom() {
 
               <Link
                 href="/store"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.45rem',
-                  padding: '0.75rem 1.25rem',
-                  borderRadius: '9999px',
-                  border: '1px solid var(--card-border)',
-                  background: 'rgba(255, 255, 255, 0.5)',
-                  backdropFilter: 'blur(10px)',
-                  fontWeight: 600,
-                  fontSize: '0.78rem',
-                  letterSpacing: '0.04em',
-                  color: 'var(--text-main)',
-                  textDecoration: 'none',
-                  transition: 'all 0.2s ease',
-                }}
+                className="btn-luxury-ghost"
               >
                 <span>View Full Store Details</span>
                 <ArrowRight size={14} strokeWidth={2} />

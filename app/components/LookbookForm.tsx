@@ -33,97 +33,50 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
   return (
     <section
       id="inquiry"
-      style={{
-        padding: '7rem 0',
-        position: 'relative',
-        borderTop: '1px solid var(--card-border)',
-      }}
+      className="py-28 relative border-t border-black/8"
     >
-      <div className="luxury-container" style={{ maxWidth: '820px' }}>
-        <div
-          style={{
-            background: 'var(--card-bg)',
-            border: '1px solid var(--card-border)',
-            borderRadius: '2rem',
-            padding: 'clamp(2rem, 5vw, 3.5rem)',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            backdropFilter: 'blur(16px)',
-          }}
-        >
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="bg-white/90 border border-black/8 rounded-3xl p-8 sm:p-14 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.1)] backdrop-blur-xl">
           {submitted ? (
-            <div style={{ textAlign: 'center', padding: '3rem 1rem', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
-              <div
-                style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '9999px',
-                  backgroundColor: 'rgba(16, 185, 129, 0.15)',
-                  color: '#10b981',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
+            <div className="text-center py-12 px-4 flex flex-col gap-4 items-center">
+              <div className="w-16 h-16 rounded-full bg-[#10b981]/15 text-[#10b981] flex items-center justify-center">
                 <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3
-                style={{
-                  fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                  fontSize: '2.5rem',
-                  fontWeight: 400,
-                  margin: 0,
-                }}
-              >
+              <h3 className="font-serif text-4xl font-normal m-0 text-[#121212]">
                 Thank You for Connecting
               </h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', maxWidth: '440px', lineHeight: 1.6, margin: 0 }}>
+              <p className="text-[0.9rem] text-[#525252] max-w-md leading-relaxed m-0">
                 Our Chhindwara showroom team has received your message. We will reach out
                 shortly with look details, sizing, or to welcome you for your visit.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
-                className="btn-luxury-secondary"
-                style={{ marginTop: '1rem' }}
+                className="mt-4 inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full border border-black/10 bg-white/70 hover:border-black/30 hover:bg-white text-[0.82rem] font-medium transition-all duration-200 cursor-pointer"
               >
                 Submit Another Request
               </button>
             </div>
           ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <span
-                  style={{
-                    fontSize: '0.72rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.22em',
-                    fontWeight: 600,
-                    color: 'var(--accent)',
-                  }}
-                >
+            <div className="flex flex-col gap-8">
+              <div className="text-center flex flex-col gap-2">
+                <span className="text-[0.72rem] uppercase tracking-[0.22em] font-semibold text-[#111111]">
                   Personal Styling & In-Store Concierge
                 </span>
-                <h3
-                  style={{
-                    fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                    fontSize: 'clamp(2rem, 4vw, 3rem)',
-                    fontWeight: 400,
-                    margin: 0,
-                  }}
-                >
+                <h3 className="font-serif text-[clamp(2rem,4vw,3rem)] font-normal m-0 text-[#121212]">
                   Plan Your Visit or Inquire on a Look
                 </h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.5 }}>
+                <p className="text-[0.9rem] text-[#525252] max-w-lg mx-auto leading-relaxed m-0">
                   Interested in a specific look, sizing query, or planning a visit to our flagship showroom in Chhindwara?
                   Share your details and our team will assist you promptly.
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)' }}>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[0.7rem] font-semibold uppercase tracking-wider text-[#525252]">
                       Full Name *
                     </label>
                     <input
@@ -132,20 +85,12 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
                       placeholder="e.g. Eleanor Vance"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      style={{
-                        padding: '0.85rem 1rem',
-                        borderRadius: '0.75rem',
-                        border: '1px solid var(--input-border)',
-                        background: 'var(--input-bg)',
-                        color: 'var(--text-main)',
-                        fontSize: '0.85rem',
-                        outline: 'none',
-                      }}
+                      className="w-full p-3.5 rounded-xl border border-[#e2ddd5] bg-white text-[#121212] text-[0.85rem] outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-all"
                     />
                   </div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)' }}>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[0.7rem] font-semibold uppercase tracking-wider text-[#525252]">
                       Email Address *
                     </label>
                     <input
@@ -154,22 +99,14 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
                       placeholder="e.g. eleanor@atelier.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      style={{
-                        padding: '0.85rem 1rem',
-                        borderRadius: '0.75rem',
-                        border: '1px solid var(--input-border)',
-                        background: 'var(--input-bg)',
-                        color: 'var(--text-main)',
-                        fontSize: '0.85rem',
-                        outline: 'none',
-                      }}
+                      className="w-full p-3.5 rounded-xl border border-[#e2ddd5] bg-white text-[#121212] text-[0.85rem] outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-all"
                     />
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)' }}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[0.7rem] font-semibold uppercase tracking-wider text-[#525252]">
                       Phone (Optional)
                     </label>
                     <input
@@ -177,41 +114,25 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
                       placeholder="+91 98765 43210"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      style={{
-                        padding: '0.85rem 1rem',
-                        borderRadius: '0.75rem',
-                        border: '1px solid var(--input-border)',
-                        background: 'var(--input-bg)',
-                        color: 'var(--text-main)',
-                        fontSize: '0.85rem',
-                        outline: 'none',
-                      }}
+                      className="w-full p-3.5 rounded-xl border border-[#e2ddd5] bg-white text-[#121212] text-[0.85rem] outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-all"
                     />
                   </div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)' }}>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[0.7rem] font-semibold uppercase tracking-wider text-[#525252]">
                       Capsule / Look of Interest
                     </label>
                     <input
                       type="text"
                       value={formData.interest}
                       onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                      style={{
-                        padding: '0.85rem 1rem',
-                        borderRadius: '0.75rem',
-                        border: '1px solid var(--input-border)',
-                        background: 'var(--input-bg)',
-                        color: 'var(--text-main)',
-                        fontSize: '0.85rem',
-                        outline: 'none',
-                      }}
+                      className="w-full p-3.5 rounded-xl border border-[#e2ddd5] bg-white text-[#121212] text-[0.85rem] outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-all"
                     />
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                  <label style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)' }}>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-[0.7rem] font-semibold uppercase tracking-wider text-[#525252]">
                     Inquiry Details / Sizing / Visit Timing
                   </label>
                   <textarea
@@ -219,16 +140,7 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
                     placeholder="e.g. Sizing check for Look 01 (M or L), planning to visit this weekend, or styling questions..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    style={{
-                      padding: '0.85rem 1rem',
-                      borderRadius: '0.75rem',
-                      border: '1px solid var(--input-border)',
-                      background: 'var(--input-bg)',
-                      color: 'var(--text-main)',
-                      fontSize: '0.85rem',
-                      outline: 'none',
-                      resize: 'vertical',
-                    }}
+                    className="w-full p-3.5 rounded-xl border border-[#e2ddd5] bg-white text-[#121212] text-[0.85rem] outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-all resize-y"
                   />
                 </div>
 

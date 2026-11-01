@@ -16,35 +16,33 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
   const activeLook = looks[activeLookIndex] || looks[0];
 
   return (
-    <section className="hero-wrapper" style={{ paddingTop: '7.25rem', paddingBottom: '3.5rem' }}>
-      <div className="luxury-container">
-        <div className="hero-grid">
+    <section className="relative pt-[7.25rem] pb-14 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-14 lg:gap-16 items-center">
           {/* Left Column: Editorial Headline & Brand Manifesto */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+          <div className="flex flex-col gap-7">
             <div>
-              <h1 className="hero-headline">
+              <h1 className="font-serif text-[clamp(2.5rem,5.2vw,4.6rem)] font-normal leading-[1.05] tracking-[-0.025em] text-[#121212] m-0">
                 Refined Style.
-                <span className="hero-subhead">100% Pure Cotton.</span>
+                <span className="block mt-1 font-serif text-[clamp(1.8rem,3.8vw,3.6rem)] font-normal italic">
+                  100% Pure Cotton.
+                </span>
               </h1>
             </div>
 
-            <p
-              style={{
-                fontSize: '1.05rem',
-                lineHeight: 1.65,
-                color: 'var(--text-muted)',
-                maxWidth: '540px',
-              }}
-            >
-              <strong>Deer & Dan</strong> crafts pure 100% combed cotton shirts, relaxed
+            <p className="text-[1.05rem] leading-[1.65] text-[#525252] max-w-[540px] m-0">
+              <strong className="font-bold text-[#121212]">Deer & Dan</strong> crafts pure 100% combed cotton shirts, relaxed
               pleated trousers, signature denim, and everyday smart casuals. Experience our grand
               multi-story glass showroom at Imlikheda Chowk curated under the creative direction of{' '}
-              <strong style={{ color: 'var(--text-main)' }}>{BRAND_DATA.founder}</strong>.
+              <strong className="font-bold text-[#121212]">{BRAND_DATA.founder}</strong>.
             </p>
 
             {/* CTAs */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem', paddingTop: '0.25rem' }}>
-              <Link href="/collections" className="btn-luxury-primary" style={{ textDecoration: 'none' }}>
+            <div className="flex flex-wrap items-center gap-4 pt-1">
+              <Link
+                href="/collections"
+                className="btn-luxury-primary"
+              >
                 <span>Explore Curated Looks</span>
                 <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -54,22 +52,6 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
               <Link
                 href="/store"
                 className="btn-luxury-ghost"
-                style={{
-                  textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  padding: '0.8rem 1.4rem',
-                  borderRadius: '9999px',
-                  border: '1px solid var(--card-border)',
-                  background: 'rgba(255, 255, 255, 0.4)',
-                  backdropFilter: 'blur(10px)',
-                  fontWeight: 600,
-                  fontSize: '0.78rem',
-                  letterSpacing: '0.05em',
-                  color: 'var(--text-main)',
-                  transition: 'all 0.25s ease',
-                }}
               >
                 <span>Visit Showroom</span>
                 <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,66 +62,30 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
             </div>
 
             {/* Quick Stat Counters */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '1.25rem',
-                paddingTop: '1.25rem',
-                borderTop: '1px solid var(--card-border)',
-                maxWidth: '480px',
-              }}
-            >
+            <div className="grid grid-cols-3 gap-5 pt-5 border-t border-black/8 max-w-[480px]">
               <div>
-                <p
-                  style={{
-                    fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                    fontSize: '1.9rem',
-                    fontWeight: 500,
-                    lineHeight: 1,
-                    margin: 0,
-                    color: 'var(--text-main)',
-                  }}
-                >
+                <p className="font-serif text-[1.9rem] font-medium leading-none text-[#121212] m-0">
                   100%
                 </p>
-                <p style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                <p className="text-[0.65rem] uppercase tracking-[0.1em] text-[#525252] mt-1.5 m-0 font-medium">
                   Pure Combed Cotton
                 </p>
               </div>
 
               <div>
-                <p
-                  style={{
-                    fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                    fontSize: '1.9rem',
-                    fontWeight: 500,
-                    lineHeight: 1,
-                    margin: 0,
-                    color: 'var(--text-main)',
-                  }}
-                >
+                <p className="font-serif text-[1.9rem] font-medium leading-none text-[#121212] m-0">
                   10:30 - 10
                 </p>
-                <p style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                <p className="text-[0.65rem] uppercase tracking-[0.1em] text-[#525252] mt-1.5 m-0 font-medium">
                   Open All 7 Days
                 </p>
               </div>
 
               <div>
-                <p
-                  style={{
-                    fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                    fontSize: '1.9rem',
-                    fontWeight: 500,
-                    lineHeight: 1,
-                    margin: 0,
-                    color: 'var(--text-main)',
-                  }}
-                >
+                <p className="font-serif text-[1.9rem] font-medium leading-none text-[#121212] m-0">
                   Chhindwara
                 </p>
-                <p style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                <p className="text-[0.65rem] uppercase tracking-[0.1em] text-[#525252] mt-1.5 m-0 font-medium">
                   Flagship Store
                 </p>
               </div>
@@ -147,132 +93,52 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
           </div>
 
           {/* Right Column: Hero Look Showcase Frame */}
-          <div style={{ position: 'relative' }}>
-            <div className="look-card-frame" style={{ padding: '0.85rem' }}>
-              <div
-                className="look-card-image-box"
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: '460px',
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                  background: '#f4ede6',
-                }}
-              >
+          <div className="relative">
+            <div className="relative w-full max-w-[480px] mx-auto rounded-[2.75rem] p-[0.85rem] bg-white border border-black/12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.18),0_0_0_1px_rgba(0,0,0,0.05)] transition-all duration-400">
+              <div className="relative w-full h-[460px] sm:h-[480px] rounded-[2.25rem] overflow-hidden bg-[#111111]">
                 <Image
                   src={activeLook.image}
                   alt={activeLook.title}
                   fill
                   priority
-                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                  className="object-cover object-top"
                 />
 
                 {/* Top Floating Badge */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '1rem',
-                    left: '1rem',
-                    background: 'rgba(255, 255, 255, 0.88)',
-                    backdropFilter: 'blur(10px)',
-                    padding: '0.4rem 0.85rem',
-                    borderRadius: '9999px',
-                    fontSize: '0.68rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                    color: '#111111',
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.08)',
-                  }}
-                >
+                <div className="absolute top-4 left-4 bg-white/88 backdrop-blur-md py-1.5 px-3.5 rounded-full text-[0.68rem] font-bold tracking-[0.12em] uppercase text-[#111111] shadow-[0_4px_15px_rgba(0,0,0,0.08)]">
                   Look {activeLook.number} • {activeLook.season}
                 </div>
 
                 {/* Inspect Button overlay */}
                 <button
                   onClick={() => onSelectLook(activeLook)}
-                  style={{
-                    position: 'absolute',
-                    top: '1rem',
-                    right: '1rem',
-                    background: '#111111',
-                    color: '#ffffff',
-                    border: 'none',
-                    borderRadius: '9999px',
-                    padding: '0.45rem 0.9rem',
-                    fontSize: '0.68rem',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.35rem',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                  }}
+                  className="absolute top-4 right-4 bg-[#111111] hover:bg-[#262626] text-white border-0 rounded-full py-1.5 px-3.5 text-[0.68rem] font-semibold cursor-pointer flex items-center gap-1.5 shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-colors"
                 >
-                  <span>Quick View</span>
-                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span className="text-white">Quick View</span>
+                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 </button>
 
                 {/* Bottom Overlay Info Pill */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '0.75rem',
-                    left: '0.75rem',
-                    right: '0.75rem',
-                    background: 'rgba(255, 255, 255, 0.92)',
-                    backdropFilter: 'blur(16px)',
-                    padding: '0.85rem 1.15rem',
-                    borderRadius: '14px',
-                    boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
+                <div className="absolute bottom-3 left-3 right-3 bg-white/92 backdrop-blur-xl p-[0.85rem_1.15rem] rounded-[14px] shadow-[0_10px_25px_rgba(0,0,0,0.1)]">
+                  <div className="flex justify-between items-center gap-4">
                     <div>
-                      <h3
-                        style={{
-                          margin: 0,
-                          fontSize: '1.05rem',
-                          fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                          fontWeight: 500,
-                          color: '#111111',
-                          lineHeight: 1.2,
-                        }}
-                      >
+                      <h3 className="m-0 text-[1.05rem] font-serif font-medium text-[#111111] leading-tight">
                         {activeLook.title}
                       </h3>
-                      <p
-                        style={{
-                          margin: '0.2rem 0 0 0',
-                          fontSize: '0.72rem',
-                          color: '#555555',
-                          fontFamily: "'Inter', sans-serif",
-                        }}
-                      >
+                      <p className="mt-1 text-[0.72rem] text-[#555555] font-sans m-0">
                         {activeLook.fabric}
                       </p>
                     </div>
 
-                    <div
-                      style={{
-                        position: 'relative',
-                        width: '36px',
-                        height: '36px',
-                        borderRadius: '9999px',
-                        overflow: 'hidden',
-                        flexShrink: 0,
-                        border: '1px solid #111111',
-                      }}
-                    >
+                    <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-[#111111]">
                       <Image
                         src="/images/official-deer-logo.jpg"
                         alt="Official Deer Logo"
                         fill
-                        style={{ objectFit: 'cover' }}
+                        className="object-cover"
                       />
                     </div>
                   </div>
@@ -280,42 +146,22 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
               </div>
 
               {/* Look Selector Dock */}
-              <div
-                className="no-scrollbar"
-                style={{
-                  display: 'flex',
-                  gap: '0.55rem',
-                  marginTop: '0.65rem',
-                  overflowX: 'auto',
-                  scrollbarWidth: 'none',
-                  msOverflowStyle: 'none',
-                  paddingBottom: '0.25rem',
-                }}
-              >
+              <div className="no-scrollbar flex gap-[0.55rem] mt-[0.65rem] overflow-x-auto pb-1">
                 {looks.slice(0, 4).map((look, idx) => (
                   <button
                     key={look.id}
                     onClick={() => setActiveLookIndex(idx)}
-                    style={{
-                      position: 'relative',
-                      width: '58px',
-                      height: '66px',
-                      borderRadius: '10px',
-                      overflow: 'hidden',
-                      border: idx === activeLookIndex ? '2px solid #111111' : '1px solid rgba(0,0,0,0.1)',
-                      opacity: idx === activeLookIndex ? 1 : 0.65,
-                      transform: idx === activeLookIndex ? 'scale(1.02)' : 'scale(1)',
-                      transition: 'all 0.2s ease',
-                      flexShrink: 0,
-                      cursor: 'pointer',
-                      padding: 0,
-                    }}
+                    className={`relative w-[58px] h-[66px] rounded-[10px] overflow-hidden shrink-0 cursor-pointer p-0 transition-all duration-200 ${
+                      idx === activeLookIndex
+                        ? 'border-2 border-[#111111] opacity-100 scale-[1.02]'
+                        : 'border border-black/10 opacity-65 hover:opacity-90 scale-100'
+                    }`}
                   >
                     <Image
                       src={look.image}
                       alt={look.title}
                       fill
-                      style={{ objectFit: 'cover' }}
+                      className="object-cover"
                     />
                   </button>
                 ))}
