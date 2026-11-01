@@ -40,21 +40,21 @@ export default function CollectionsPage() {
       <Navbar onOpenInquiry={() => handleInquire(null)} />
 
       {/* Collections Page Hero Header */}
-      <section className="pt-[8.5rem] pb-12">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="max-w-[840px] flex flex-col gap-4.5">
-            <span className="text-[0.72rem] uppercase tracking-[0.22em] font-bold text-[#111111] block">
+      <section className="pt-24 sm:pt-[8.5rem] pb-8 sm:pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="max-w-[840px] flex flex-col gap-4 sm:gap-4.5">
+            <span className="text-[0.68rem] sm:text-[0.72rem] uppercase tracking-[0.22em] font-bold text-[#111111] block">
               The Atelier Lookbook • 2026 Curated Showcase
             </span>
 
-            <h1 className="font-serif text-[clamp(2.5rem,5.2vw,4.4rem)] font-normal leading-[1.1] tracking-[-0.025em] m-0 text-[#121212]">
+            <h1 className="font-serif text-[clamp(2.1rem,6vw,4.4rem)] font-normal leading-[1.1] tracking-[-0.025em] m-0 text-[#121212]">
               The Curated Lookbook & <br />
               <span className="italic font-light opacity-85">
                 Seasonal Silhouettes.
               </span>
             </h1>
 
-            <p className="text-[1.08rem] text-[#525252] leading-[1.75] m-0 max-w-[720px]">
+            <p className="text-[0.95rem] sm:text-[1.08rem] text-[#525252] leading-[1.7] sm:leading-[1.75] m-0 max-w-[720px]">
               Every garment in the Deer & Dan collection is crafted with intention—from 100% pure Indian
               combed cotton and breathable linen sets to tailored denim and quiet luxury knitwear.
               Select any look to inspect fabric compositions and styling specifications.
@@ -62,10 +62,10 @@ export default function CollectionsPage() {
           </div>
 
           {/* Search & Category Filter Controls */}
-          <div className="mt-10 flex flex-col gap-5">
+          <div className="mt-8 sm:mt-10 flex flex-col gap-4 sm:gap-5">
             {/* Search Input Bar with Result Count */}
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="w-full max-w-md relative">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+              <div className="w-full sm:max-w-md relative">
                 <div className="absolute left-4.5 top-1/2 -translate-y-1/2 text-zinc-500 flex items-center pointer-events-none">
                   <Search size={16} />
                 </div>
@@ -74,7 +74,7 @@ export default function CollectionsPage() {
                   placeholder="Search fabric, silhouette, cotton, denim..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full py-3.5 pl-11 pr-10 rounded-full border border-black/10 bg-white/85 backdrop-blur-md text-[0.88rem] outline-none text-[#121212] shadow-[0_4px_15px_rgba(0,0,0,0.03)] focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-all"
+                  className="w-full py-3 sm:py-3.5 pl-11 pr-10 rounded-full border border-black/10 bg-white/85 backdrop-blur-md text-[0.85rem] sm:text-[0.88rem] outline-none text-[#121212] shadow-[0_4px_15px_rgba(0,0,0,0.03)] focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-all"
                 />
                 {searchQuery && (
                   <button
@@ -88,7 +88,7 @@ export default function CollectionsPage() {
               </div>
 
               {/* Counter Tag */}
-              <div className="inline-flex items-center gap-1.5 text-[0.75rem] text-[#525252]">
+              <div className="inline-flex items-center gap-1.5 text-[0.72rem] sm:text-[0.75rem] text-[#525252]">
                 <span>
                   Showing <strong>{filteredLooks.length}</strong> {filteredLooks.length === 1 ? 'silhouette' : 'silhouettes'}
                 </span>
@@ -96,14 +96,14 @@ export default function CollectionsPage() {
             </div>
 
             {/* Category Filter Pills */}
-            <div className="no-scrollbar flex items-center gap-2 overflow-x-auto pb-1 max-w-full">
+            <div className="no-scrollbar flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 max-w-full -mx-4 px-4 sm:mx-0 sm:px-0">
               {COLLECTIONS.map((cat) => {
                 const active = selectedCategory === cat.id;
                 return (
                   <button
                     key={cat.id}
                     onClick={() => setSelectedCategory(cat.id)}
-                    className={`py-2.5 px-5 rounded-full text-[0.74rem] uppercase tracking-[0.08em] whitespace-nowrap transition-all duration-200 cursor-pointer inline-flex items-center gap-2 border ${
+                    className={`py-2 sm:py-2.5 px-3.5 sm:px-5 rounded-full text-[0.7rem] sm:text-[0.74rem] uppercase tracking-[0.08em] whitespace-nowrap transition-all duration-200 cursor-pointer inline-flex items-center gap-1.5 sm:gap-2 border ${
                       active
                         ? 'bg-[#121212] text-white font-bold border-[#121212] shadow-sm'
                         : 'bg-white/85 text-[#525252] font-medium border-black/8 hover:border-black/20 hover:text-[#121212]'
@@ -111,7 +111,7 @@ export default function CollectionsPage() {
                   >
                     <span>{cat.label}</span>
                     <span
-                      className={`text-[0.65rem] font-semibold py-0.5 px-2 rounded-full ${
+                      className={`text-[0.62rem] sm:text-[0.65rem] font-semibold py-0.5 px-1.5 sm:px-2 rounded-full ${
                         active ? 'bg-white/20 text-white' : 'bg-black/5 text-[#71717a]'
                       }`}
                     >
@@ -126,17 +126,17 @@ export default function CollectionsPage() {
       </section>
 
       {/* Lookbook Grid Section */}
-      <section className="pb-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      <section className="pb-16 sm:pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {filteredLooks.map((look) => (
               <article
                 key={look.id}
                 onClick={() => setSelectedLook(look)}
-                className="flex flex-col bg-white/85 border border-black/8 rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer backdrop-blur-md hover:border-black/20 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] group"
+                className="flex flex-col bg-white/85 border border-black/8 rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer backdrop-blur-md hover:border-black/20 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] group"
               >
                 {/* Image Box */}
-                <div className="relative w-full h-[420px] overflow-hidden bg-[#111111]">
+                <div className="relative w-full h-[340px] xs:h-[380px] sm:h-[420px] overflow-hidden bg-[#111111]">
                   <Image
                     src={look.image}
                     alt={look.title}
@@ -157,7 +157,7 @@ export default function CollectionsPage() {
                 </div>
 
                 {/* Text Info */}
-                <div className="p-6 sm:p-7 flex flex-col gap-3.5 flex-1 justify-between">
+                <div className="p-5 sm:p-7 flex flex-col gap-3 sm:gap-3.5 flex-1 justify-between">
                   <div>
                     <div className="flex items-center justify-between text-[0.7rem] uppercase tracking-wider text-[#525252] mb-1">
                       <span>{look.season}</span>

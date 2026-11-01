@@ -97,21 +97,21 @@ _Sent via deeranddan.com concierge_`;
       <Navbar />
 
       {/* Hero Header */}
-      <section className="pt-[7.5rem] pb-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="max-w-[780px] flex flex-col gap-3.5">
-            <span className="inline-flex items-center gap-2 text-[0.72rem] font-bold uppercase tracking-[0.15em] text-[#111111]">
+      <section className="pt-24 sm:pt-[7.5rem] pb-8 sm:pb-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="max-w-[780px] flex flex-col gap-3 sm:gap-3.5">
+            <span className="inline-flex items-center gap-2 text-[0.68rem] sm:text-[0.72rem] font-bold uppercase tracking-[0.15em] text-[#111111]">
               Showroom Concierge • Chhindwara
             </span>
 
-            <h1 className="font-serif text-[clamp(2.3rem,4.5vw,3.8rem)] font-normal leading-[1.1] tracking-[-0.025em] m-0 text-[#121212]">
+            <h1 className="font-serif text-[clamp(2.1rem,5vw,3.8rem)] font-normal leading-[1.1] tracking-[-0.025em] m-0 text-[#121212]">
               Connect with Our <br />
               <span className="italic font-light opacity-85">
                 Styling Concierge.
               </span>
             </h1>
 
-            <p className="text-[0.95rem] text-[#525252] leading-relaxed m-0 max-w-[640px]">
+            <p className="text-[0.9rem] sm:text-[0.95rem] text-[#525252] leading-relaxed m-0 max-w-[640px]">
               Planning a visit to our multi-floor glass showroom at Imlikheda
               Chowk, checking size availability, or scheduling personal styling?
               Connect with our team directly.
@@ -121,28 +121,28 @@ _Sent via deeranddan.com concierge_`;
       </section>
 
       {/* Main Contact Grid */}
-      <section className="pb-18">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 items-start">
+      <section className="pb-14 sm:pb-18">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-8 sm:gap-10 items-start">
             {/* Left: Contact Info Cards */}
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-4 sm:gap-5">
               {/* WhatsApp Quick CTA Box */}
-              <div className="bg-gradient-to-br from-[#10b981]/12 to-white/85 border border-[#10b981]/30 rounded-3xl p-6 flex flex-col gap-3.5 shadow-sm">
+              <div className="bg-gradient-to-br from-[#10b981]/12 to-white/85 border border-[#10b981]/30 rounded-2xl sm:rounded-3xl p-4.5 sm:p-6 flex flex-col gap-3 sm:gap-3.5 shadow-sm">
                 <div className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-full bg-[#10b981] text-white flex items-center justify-center shrink-0">
                     <MessageCircle size={18} />
                   </div>
                   <div>
-                    <h3 className="m-0 text-[1.15rem] font-serif font-medium text-[#121212]">
+                    <h3 className="m-0 text-[1.1rem] sm:text-[1.15rem] font-serif font-medium text-[#121212]">
                       Instant WhatsApp Concierge
                     </h3>
-                    <span className="text-[0.72rem] text-emerald-700 font-semibold">
+                    <span className="text-[0.68rem] sm:text-[0.72rem] text-emerald-700 font-semibold">
                       Active Now • Fast Response
                     </span>
                   </div>
                 </div>
 
-                <p className="m-0 text-[0.82rem] text-[#525252] leading-relaxed">
+                <p className="m-0 text-[0.8rem] sm:text-[0.82rem] text-[#525252] leading-relaxed">
                   Chat directly with our showroom team for outfit sizes,
                   in-store trial assistance, or quick queries.
                 </p>
@@ -152,13 +152,7 @@ _Sent via deeranddan.com concierge_`;
                     href={BRAND_DATA.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-luxury-primary"
-                    style={{
-                      background: '#10b981',
-                      padding: '0.75rem 1.35rem',
-                      fontSize: '0.78rem',
-                      color: '#ffffff',
-                    }}
+                    className="btn-luxury-primary !bg-[#10b981] !py-3 !px-5 !text-[0.78rem] !text-white w-full sm:w-auto justify-center"
                   >
                     <MessageCircle size={15} />
                     <span>Open WhatsApp Chat</span>
@@ -168,59 +162,59 @@ _Sent via deeranddan.com concierge_`;
               </div>
 
               {/* Physical Store Details Card */}
-              <div className="bg-white/85 border border-black/8 rounded-3xl p-6 flex flex-col gap-4.5 shadow-sm">
+              <div className="bg-white/85 border border-black/8 rounded-2xl sm:rounded-3xl p-4.5 sm:p-6 flex flex-col gap-4 sm:gap-4.5 shadow-sm">
                 <div>
-                  <span className="text-[0.65rem] uppercase tracking-[0.15em] text-[#525252] font-bold inline-flex items-center gap-1.5 mb-1.5">
+                  <span className="text-[0.62rem] sm:text-[0.65rem] uppercase tracking-[0.15em] text-[#525252] font-bold inline-flex items-center gap-1.5 mb-1 sm:mb-1.5">
                     <MapPin size={13} className="text-[#111111]" />
                     Flagship Showroom
                   </span>
-                  <h4 className="m-0 text-[1.2rem] font-serif font-medium text-[#121212]">
+                  <h4 className="m-0 text-[1.15rem] sm:text-[1.2rem] font-serif font-medium text-[#121212]">
                     Deer & Dan (डियर & डैन)
                   </h4>
-                  <p className="m-0 mt-1 text-[0.82rem] text-[#525252] leading-relaxed">
+                  <p className="m-0 mt-1 text-[0.8rem] sm:text-[0.82rem] text-[#525252] leading-relaxed">
                     {BRAND_DATA.address.full}
                   </p>
-                  <p className="m-0 mt-0.5 text-[0.72rem] text-[#525252]">
+                  <p className="m-0 mt-0.5 text-[0.7rem] sm:text-[0.72rem] text-[#525252]">
                     Plus Code: {BRAND_DATA.address.plusCode}
                   </p>
                 </div>
 
-                <div className="border-t border-black/8 pt-3.5">
-                  <span className="text-[0.65rem] uppercase tracking-[0.15em] text-[#525252] font-bold inline-flex items-center gap-1.5 mb-1">
+                <div className="border-t border-black/8 pt-3 sm:pt-3.5">
+                  <span className="text-[0.62rem] sm:text-[0.65rem] uppercase tracking-[0.15em] text-[#525252] font-bold inline-flex items-center gap-1.5 mb-1">
                     <Clock size={13} className="text-[#111111]" />
                     Operating Hours
                   </span>
-                  <p className="m-0 text-[1.05rem] font-semibold text-[#10b981]">
+                  <p className="m-0 text-[1rem] sm:text-[1.05rem] font-semibold text-[#10b981]">
                     10:30 AM – 10:00 PM
                   </p>
-                  <span className="text-[0.72rem] text-[#525252]">
+                  <span className="text-[0.7rem] sm:text-[0.72rem] text-[#525252]">
                     Open Monday through Sunday (All 7 Days)
                   </span>
                 </div>
 
-                <div className="border-t border-black/8 pt-3.5 flex flex-col gap-2">
-                  <span className="text-[0.65rem] uppercase tracking-[0.15em] text-[#525252] font-bold inline-flex items-center gap-1.5 mb-0.5">
+                <div className="border-t border-black/8 pt-3 sm:pt-3.5 flex flex-col gap-1.5 sm:gap-2">
+                  <span className="text-[0.62rem] sm:text-[0.65rem] uppercase tracking-[0.15em] text-[#525252] font-bold inline-flex items-center gap-1.5 mb-0.5">
                     <Phone size={13} className="text-[#111111]" />
                     Direct Channels
                   </span>
                   <a
                     href={`tel:${BRAND_DATA.phone}`}
-                    className="text-[0.82rem] text-[#121212] no-underline font-semibold inline-flex items-center gap-1.5 hover:underline"
+                    className="text-[0.8rem] sm:text-[0.82rem] text-[#121212] no-underline font-semibold inline-flex items-center gap-1.5 hover:underline"
                   >
                     <span>Phone: {BRAND_DATA.phoneFormatted}</span>
                   </a>
-                  <span className="text-[0.8rem] text-[#525252]">
+                  <span className="text-[0.78rem] sm:text-[0.8rem] text-[#525252]">
                     Instagram: {BRAND_DATA.instagram}
                   </span>
-                  <span className="text-[0.8rem] text-[#525252]">
+                  <span className="text-[0.78rem] sm:text-[0.8rem] text-[#525252]">
                     Website: {BRAND_DATA.website}
                   </span>
                 </div>
               </div>
 
               {/* Complimentary VIP Packaging Pill */}
-              <div className="bg-white border border-black/10 rounded-2xl p-4 sm:px-5 flex items-center gap-4 shadow-sm">
-                <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0">
+              <div className="bg-white border border-black/10 rounded-xl sm:rounded-2xl p-3.5 sm:p-4 sm:px-5 flex items-center gap-3.5 sm:gap-4 shadow-sm">
+                <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0">
                   <Image
                     src="/images/packaging-single-bag.jpg"
                     alt="Deer & Dan luxury packaging bag"
@@ -229,11 +223,11 @@ _Sent via deeranddan.com concierge_`;
                   />
                 </div>
                 <div>
-                  <h5 className="m-0 text-[0.88rem] font-semibold flex items-center gap-1.5 text-[#121212]">
+                  <h5 className="m-0 text-[0.85rem] sm:text-[0.88rem] font-semibold flex items-center gap-1.5 text-[#121212]">
                     <Gift size={14} className="text-[#111111]" />
                     Complimentary VIP Packaging
                   </h5>
-                  <p className="m-0 mt-0.5 text-[0.72rem] text-[#525252] leading-snug">
+                  <p className="m-0 mt-0.5 text-[0.7rem] sm:text-[0.72rem] text-[#525252] leading-snug">
                     Every purchase includes our signature matte black stag gift bag & seal.
                   </p>
                 </div>
@@ -241,7 +235,7 @@ _Sent via deeranddan.com concierge_`;
             </div>
 
             {/* Right: Interactive WhatsApp Form */}
-            <div className="w-full rounded-3xl p-7 sm:p-10 bg-white/92 backdrop-blur-xl border border-black/8 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.06),inset_0_0_0_1px_rgba(255,255,255,0.8)]">
+            <div className="w-full rounded-2xl sm:rounded-3xl p-4.5 sm:p-7 md:p-10 bg-white/92 backdrop-blur-xl border border-black/8 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.06),inset_0_0_0_1px_rgba(255,255,255,0.8)]">
               {submitted ? (
                 <div className="text-center py-12 px-6 flex flex-col items-center gap-4.5">
                   <div className="w-16 h-16 rounded-full bg-[#10b981]/12 border border-[#10b981]/30 text-[#10b981] flex items-center justify-center shadow-[0_8px_20px_rgba(16,185,129,0.2)]">
@@ -414,7 +408,7 @@ _Sent via deeranddan.com concierge_`;
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-2.5">
+                    <div className="grid grid-cols-1 xs:grid-cols-3 gap-2 sm:gap-2.5">
                       {TIME_SLOTS.map((slot) => {
                         const isSelected = formData.time === slot.value;
                         return (
@@ -424,7 +418,7 @@ _Sent via deeranddan.com concierge_`;
                             onClick={() =>
                               setFormData({ ...formData, time: slot.value })
                             }
-                            className={`p-3 rounded-xl text-[0.82rem] font-medium border transition-all duration-200 cursor-pointer flex items-center justify-between shadow-sm ${
+                            className={`p-2.5 sm:p-3 rounded-xl text-[0.8rem] sm:text-[0.82rem] font-medium border transition-all duration-200 cursor-pointer flex items-center justify-between shadow-sm ${
                               isSelected
                                 ? "bg-gradient-to-br from-[#10b981]/10 to-[#fbe7d6]/45 border-[#10b981] text-emerald-900 shadow-sm"
                                 : "bg-white/85 border-black/8 text-zinc-700 hover:border-[#10b981]/35 hover:bg-white hover:-translate-y-0.5"
@@ -438,7 +432,7 @@ _Sent via deeranddan.com concierge_`;
                                 }`}
                               />
                               <span
-                                className={`font-semibold text-[0.82rem] ${
+                                className={`font-semibold text-[0.8rem] sm:text-[0.82rem] ${
                                   isSelected ? "text-emerald-950" : "text-zinc-800"
                                 }`}
                               >
@@ -446,7 +440,7 @@ _Sent via deeranddan.com concierge_`;
                               </span>
                             </div>
                             <span
-                              className={`text-[0.68rem] py-0.5 px-1.5 rounded-md font-semibold ${
+                              className={`text-[0.65rem] sm:text-[0.68rem] py-0.5 px-1.5 rounded-md font-semibold ${
                                 isSelected
                                   ? "bg-[#10b981]/20 text-emerald-800"
                                   : "bg-black/5 text-zinc-500"
@@ -516,9 +510,9 @@ _Sent via deeranddan.com concierge_`;
       </section>
 
       {/* Embedded Map Section */}
-      <section className="pb-18">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="relative w-full h-[360px] rounded-3xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-black/8">
+      <section className="pb-14 sm:pb-18">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="relative w-full h-[260px] sm:h-[360px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-black/8">
             <iframe
               src={BRAND_DATA.mapEmbedUrl}
               width="100%"

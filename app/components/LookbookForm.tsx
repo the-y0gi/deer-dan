@@ -33,10 +33,10 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
   return (
     <section
       id="inquiry"
-      className="py-28 relative border-t border-black/8"
+      className="py-16 sm:py-28 relative border-t border-black/8"
     >
-      <div className="max-w-3xl mx-auto px-6">
-        <div className="bg-white/90 border border-black/8 rounded-3xl p-8 sm:p-14 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.1)] backdrop-blur-xl">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <div className="bg-white/90 border border-black/8 rounded-2xl sm:rounded-3xl p-5 sm:p-10 md:p-14 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.1)] backdrop-blur-xl">
           {submitted ? (
             <div className="text-center py-12 px-4 flex flex-col gap-4 items-center">
               <div className="w-16 h-16 rounded-full bg-[#10b981]/15 text-[#10b981] flex items-center justify-center">
@@ -147,13 +147,7 @@ export default function LookbookForm({ selectedLook }: LookbookFormProps) {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn-luxury-primary"
-                  style={{
-                    width: '100%',
-                    padding: '1.1rem',
-                    fontSize: '0.85rem',
-                    marginTop: '0.5rem',
-                  }}
+                  className="btn-luxury-primary w-full !py-3.5 sm:!py-4 !px-6 !text-[0.85rem] mt-2 justify-center"
                 >
                   {loading ? 'Submitting to Showroom...' : 'Send Styling & Visit Inquiry'}
                 </button>
