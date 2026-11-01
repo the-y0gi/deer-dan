@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, Sparkles, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, ShieldCheck } from 'lucide-react';
 import { BRAND_DATA } from '../data/brand';
 
 interface AtelierStoryProps {
@@ -40,83 +40,31 @@ export default function AtelierStory({}: AtelierStoryProps) {
   return (
     <section
       id="atelier"
-      style={{
-        padding: '4.5rem 0',
-        position: 'relative',
-        borderTop: '1px solid var(--card-border)',
-      }}
+      className="py-12 sm:py-20 relative border-t border-black/8"
     >
-      <div className="luxury-container" style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-        
-        {/* Section Header: Crisp, Compact & Editorial */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            alignItems: 'flex-end',
-            justifyContent: 'space-between',
-            gap: '1.5rem',
-          }}
-        >
-          <div style={{ maxWidth: '580px' }}>
-            <span
-              style={{
-                fontSize: '0.68rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.22em',
-                fontWeight: 700,
-                color: 'var(--accent)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                marginBottom: '0.45rem',
-              }}
-            >
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 flex flex-col gap-8 sm:gap-10">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-6">
+          <div className="max-w-[580px]">
+            <span className="text-[0.65rem] sm:text-[0.68rem] uppercase tracking-[0.22em] font-bold text-[#111111] inline-flex items-center gap-1.5 mb-2">
               The Craft & Heritage
             </span>
-            <h2
-              style={{
-                fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                fontSize: 'clamp(2rem, 3.8vw, 3rem)',
-                fontWeight: 400,
-                lineHeight: 1.15,
-                letterSpacing: '-0.02em',
-                margin: 0,
-              }}
-            >
+            <h2 className="font-serif text-[clamp(1.8rem,5vw,3rem)] font-normal leading-[1.15] tracking-[-0.02em] m-0 text-[#121212]">
               Pure Cotton Craftsmanship. <br />
-              <span style={{ fontStyle: 'italic', fontWeight: 300, opacity: 0.85 }}>
+              <span className="italic font-light opacity-85">
                 Tailored for Modern India.
               </span>
             </h2>
           </div>
 
-          <div style={{ maxWidth: '420px', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-            <p
-              style={{
-                fontSize: '0.88rem',
-                color: 'var(--text-muted)',
-                lineHeight: 1.6,
-                margin: 0,
-              }}
-            >
-              Deer & Dan was founded by <strong>{BRAND_DATA.founder}</strong> on a strict commitment to natural fiber purity. Every shirt, trouser, and denim piece represents authentic tailoring and quiet luxury.
+          <div className="max-w-[420px] flex flex-col gap-3">
+            <p className="text-[0.85rem] sm:text-[0.88rem] text-[#525252] leading-relaxed m-0">
+              Deer & Dan was founded by <strong className="font-semibold text-[#121212]">{BRAND_DATA.founder}</strong> on a strict commitment to natural fiber purity. Every shirt, trouser, and denim piece represents authentic tailoring and quiet luxury.
             </p>
             <div>
               <Link
                 href="/about"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.35rem',
-                  fontSize: '0.78rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
-                  color: 'var(--text-main)',
-                  textDecoration: 'none',
-                }}
+                className="inline-flex items-center gap-1.5 text-[0.74rem] sm:text-[0.78rem] font-bold uppercase tracking-[0.1em] text-[#121212] no-underline hover:underline"
               >
                 <span>Read Full Atelier Story</span>
                 <ArrowUpRight size={14} />
@@ -125,123 +73,45 @@ export default function AtelierStory({}: AtelierStoryProps) {
           </div>
         </div>
 
-        {/* 3 Pillars Visual Cards Grid - Clean, Balanced & Perfectly Sized */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '1.5rem',
-          }}
-        >
+        {/* 3 Pillars Visual Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {pillarCards.map((card) => (
             <div
               key={card.num}
-              style={{
-                background: 'var(--card-bg)',
-                border: '1px solid var(--card-border)',
-                borderRadius: '20px',
-                padding: '1rem',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1rem',
-                transition: 'transform 0.25s ease, box-shadow 0.25s ease',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.03)',
-              }}
+              className="bg-white/85 border border-black/8 rounded-2xl p-3.5 sm:p-4 flex flex-col gap-3.5 sm:gap-4 shadow-[0_8px_24px_rgba(0,0,0,0.03)] hover:-translate-y-1 transition-all duration-250"
             >
               {/* Image Container with Floating Badges */}
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: '220px',
-                  borderRadius: '14px',
-                  overflow: 'hidden',
-                  background: '#f4ede6',
-                }}
-              >
+              <div className="relative w-full h-[200px] sm:h-[220px] rounded-xl overflow-hidden bg-[#f4ede6]">
                 <Image
                   src={card.image}
                   alt={card.title}
                   fill
-                  style={{ objectFit: 'cover' }}
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 380px"
                 />
 
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '0.75rem',
-                    left: '0.75rem',
-                    background: 'rgba(255, 255, 255, 0.92)',
-                    backdropFilter: 'blur(8px)',
-                    padding: '0.25rem 0.65rem',
-                    borderRadius: '9999px',
-                    fontSize: '0.62rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    color: '#111111',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                  }}
-                >
+                <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 bg-white/92 backdrop-blur-md py-1 px-2.5 rounded-full text-[0.6rem] sm:text-[0.62rem] font-bold tracking-[0.1em] uppercase text-[#111111] shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
                   {card.tag}
                 </div>
 
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '0.65rem',
-                    right: '0.65rem',
-                    background: 'rgba(17, 17, 17, 0.85)',
-                    backdropFilter: 'blur(8px)',
-                    padding: '0.25rem 0.65rem',
-                    borderRadius: '9999px',
-                    fontSize: '0.62rem',
-                    fontWeight: 600,
-                    color: '#ffffff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.3rem',
-                  }}
-                >
-                  <ShieldCheck size={11} color="#10b981" />
+                <div className="absolute bottom-2 sm:bottom-2.5 right-2 sm:right-2.5 bg-[#111111]/85 backdrop-blur-md py-1 px-2.5 rounded-full text-[0.6rem] sm:text-[0.62rem] font-semibold text-white flex items-center gap-1">
+                  <ShieldCheck size={11} className="text-[#10b981]" />
                   <span>{card.badge}</span>
                 </div>
               </div>
 
               {/* Text Info */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', padding: '0 0.35rem 0.35rem 0.35rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <h3
-                    style={{
-                      fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                      fontSize: '1.3rem',
-                      fontWeight: 500,
-                      margin: 0,
-                    }}
-                  >
+              <div className="flex flex-col gap-1 px-0.5 pb-0.5">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-serif text-[1.18rem] sm:text-[1.3rem] font-medium text-[#121212] m-0">
                     {card.title}
                   </h3>
-                  <span
-                    style={{
-                      fontFamily: "'Newsreader', Georgia, serif",
-                      fontSize: '1.25rem',
-                      fontWeight: 300,
-                      color: 'var(--text-muted)',
-                    }}
-                  >
+                  <span className="font-serif text-[1.15rem] sm:text-[1.25rem] font-light text-[#525252]">
                     {card.num}
                   </span>
                 </div>
 
-                <p
-                  style={{
-                    fontSize: '0.82rem',
-                    color: 'var(--text-muted)',
-                    lineHeight: 1.55,
-                    margin: 0,
-                  }}
-                >
+                <p className="text-[0.78rem] sm:text-[0.82rem] text-[#525252] leading-relaxed m-0">
                   {card.desc}
                 </p>
               </div>
@@ -249,61 +119,22 @@ export default function AtelierStory({}: AtelierStoryProps) {
           ))}
         </div>
 
-        {/* Founder Quote Card: Grand, Prominent & Luxurious */}
-        <div
-          style={{
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(251,231,214,0.4) 100%)',
-            border: '1px solid var(--card-border)',
-            borderRadius: '24px',
-            padding: 'clamp(2rem, 4vw, 3rem)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1.25rem',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
-            backdropFilter: 'blur(12px)',
-          }}
-        >
-          <div style={{ fontSize: '3rem', lineHeight: 1, fontFamily: 'Georgia, serif', color: 'var(--accent)' }}>“</div>
-          <p
-            style={{
-              fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-              fontSize: 'clamp(1.25rem, 2.5vw, 1.7rem)',
-              fontStyle: 'italic',
-              fontWeight: 400,
-              lineHeight: 1.5,
-              margin: 0,
-              color: 'var(--text-main)',
-              maxWidth: '960px',
-            }}
-          >
+        {/* Founder Quote Card */}
+        <div className="bg-gradient-to-br from-white/85 to-[#fbe7d6]/40 border border-black/8 rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-12 flex flex-col gap-3.5 sm:gap-5 shadow-[0_10px_30px_rgba(0,0,0,0.03)] backdrop-blur-md">
+          <div className="text-4xl sm:text-5xl leading-none font-serif text-[#111111]">“</div>
+          <p className="font-serif text-[clamp(1.05rem,3.2vw,1.7rem)] italic font-normal leading-relaxed m-0 text-[#121212] max-w-[960px]">
             We don&apos;t just sell garments at Deer & Dan; we curate an experience of effortless confidence. When you slip into our 100% pure combed cotton shirts and relaxed tailored fits, you immediately feel the precision of authentic craftsmanship.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginTop: '0.5rem' }}>
-            <div
-              style={{
-                width: '46px',
-                height: '46px',
-                borderRadius: '9999px',
-                background: '#111111',
-                color: '#ffffff',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontWeight: 700,
-                fontSize: '1rem',
-                letterSpacing: '0.05em',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-              }}
-            >
+          <div className="flex items-center gap-3 sm:gap-3.5 mt-1 sm:mt-2">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#111111] text-white flex items-center justify-center font-bold text-sm sm:text-base tracking-wider shadow-[0_4px_12px_rgba(0,0,0,0.15)] shrink-0">
               R
             </div>
             <div>
-              <strong style={{ display: 'block', fontSize: '0.95rem', fontWeight: 600 }}>{BRAND_DATA.founder}</strong>
-              <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>{BRAND_DATA.founderRole}, Deer & Dan</span>
+              <strong className="block text-[0.88rem] sm:text-[0.95rem] font-semibold text-[#121212]">{BRAND_DATA.founder}</strong>
+              <span className="text-[0.72rem] sm:text-[0.76rem] text-[#525252]">{BRAND_DATA.founderRole}, Deer & Dan</span>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

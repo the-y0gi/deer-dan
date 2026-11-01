@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { BRAND_DATA } from '../data/brand';
@@ -9,11 +8,9 @@ import {
   Clock,
   MapPin,
   User,
-  Sparkles,
   ArrowUpRight,
   MessageCircle,
   Gift,
-  CheckCircle2,
   Car,
   Building,
 } from 'lucide-react';
@@ -94,52 +91,23 @@ export default function StorePage() {
       <Navbar />
 
       {/* Flagship Store Hero Header */}
-      <section style={{ paddingTop: '8.5rem', paddingBottom: '3.5rem' }}>
-        <div className="luxury-container">
-          <div style={{ maxWidth: '840px', display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+      <section className="pt-24 sm:pt-[8.5rem] pb-8 sm:pb-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="max-w-[840px] flex flex-col gap-4 sm:gap-4.5">
+            <span className="text-[0.68rem] sm:text-[0.72rem] tracking-[0.2em] uppercase font-bold text-[#111111] block">
+              Flagship Destination • Open Daily 10:30 AM – 10:00 PM
+            </span>
 
-              <span
-                style={{
-                  fontSize: '0.72rem',
-                  letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
-                  fontWeight: 700,
-                  color: 'var(--accent)',
-                }}
-              >
-                Flagship Destination • Open Daily 10:30 AM – 10:00 PM
-              </span>
-            </div>
-
-            <h1
-              style={{
-                fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                fontSize: 'clamp(2.5rem, 5.2vw, 4.4rem)',
-                fontWeight: 400,
-                lineHeight: 1.1,
-                letterSpacing: '-0.025em',
-                margin: 0,
-                color: '#121212',
-              }}
-            >
+            <h1 className="font-serif text-[clamp(2.1rem,6vw,4.4rem)] font-normal leading-[1.1] tracking-[-0.025em] m-0 text-[#121212]">
               The Grand Flagship Store <br />
-              <span style={{ fontStyle: 'italic', fontWeight: 300, opacity: 0.85 }}>
+              <span className="italic font-light opacity-85">
                 at Imlikheda Chowk, Chhindwara.
               </span>
             </h1>
 
-            <p
-              style={{
-                fontSize: '1.08rem',
-                color: 'var(--text-muted)',
-                lineHeight: 1.75,
-                margin: 0,
-                maxWidth: '720px',
-              }}
-            >
+            <p className="text-[0.95rem] sm:text-[1.08rem] text-[#525252] leading-[1.7] sm:leading-[1.75] m-0 max-w-[720px]">
               Step into a sanctuary of architectural refinement and quiet luxury. Spanning multiple
-              glass-fronted floors on MP SH 26, the <strong style={{ color: '#121212' }}>Deer & Dan</strong> flagship showroom brings
+              glass-fronted floors on MP SH 26, the <strong className="font-semibold text-[#121212]">Deer & Dan</strong> flagship showroom brings
               personalized haute couture and contemporary Indian fashion to Madhya Pradesh.
             </p>
           </div>
@@ -147,92 +115,28 @@ export default function StorePage() {
       </section>
 
       {/* Exterior Architecture Banner & Live Details Grid */}
-      <section style={{ paddingBottom: '5rem' }}>
-        <div className="luxury-container">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '3rem',
-              alignItems: 'center',
-            }}
-          >
+      <section className="pb-16 sm:pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Real Building Facade Photo */}
-            <div
-              style={{
-                position: 'relative',
-                width: '100%',
-                borderRadius: '24px',
-                overflow: 'hidden',
-                background: '#ffffff',
-                border: '1px solid var(--card-border)',
-                boxShadow: '0 20px 45px -10px rgba(0,0,0,0.08)',
-                padding: '0.85rem',
-              }}
-            >
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: '520px',
-                  borderRadius: '18px',
-                  overflow: 'hidden',
-                }}
-              >
+            <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-black/8 shadow-[0_20px_45px_-10px_rgba(0,0,0,0.08)] p-2.5 sm:p-3.5">
+              <div className="relative w-full h-[280px] xs:h-[360px] sm:h-[520px] rounded-xl sm:rounded-2xl overflow-hidden">
                 <Image
                   src="/images/store-facade.jpg"
                   alt="Deer & Dan Grand Glass Flagship Showroom in Chhindwara"
                   fill
                   priority
-                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  className="object-cover object-center"
                 />
 
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '1.25rem',
-                    left: '1.25rem',
-                    right: '1.25rem',
-                    background: 'rgba(17, 17, 17, 0.92)',
-                    backdropFilter: 'blur(16px)',
-                    padding: '1.35rem',
-                    borderRadius: '18px',
-                    color: '#ffffff',
-                    border: '1px solid rgba(255,255,255,0.15)',
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
-                  }}
-                >
-                  <span
-                    style={{
-                      margin: 0,
-                      fontSize: '0.68rem',
-                      letterSpacing: '0.18em',
-                      textTransform: 'uppercase',
-                      color: '#10b981',
-                      fontWeight: 600,
-                    }}
-                  >
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 bg-[#111111]/92 backdrop-blur-xl p-3.5 sm:p-5 rounded-xl sm:rounded-2xl text-white border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
+                  <span className="m-0 text-[0.62rem] sm:text-[0.68rem] tracking-[0.18em] uppercase text-[#10b981] font-semibold block">
                     Architectural Glass Facade
                   </span>
-                  <h3
-                    style={{
-                      margin: '0.35rem 0 0 0',
-                      fontFamily: "'Newsreader', Georgia, serif",
-                      fontSize: '1.45rem',
-                      fontWeight: 500,
-                      letterSpacing: '-0.01em',
-                    }}
-                  >
+                  <h3 className="m-0 mt-0.5 sm:mt-1 font-serif text-[1.15rem] sm:text-[1.45rem] font-medium tracking-tight text-white">
                     Deer & Dan (डियर & डैन)
                   </h3>
-                  <p
-                    style={{
-                      margin: '0.25rem 0 0 0',
-                      fontSize: '0.8rem',
-                      color: 'rgba(255,255,255,0.8)',
-                      lineHeight: 1.45,
-                    }}
-                  >
+                  <p className="m-0 mt-0.5 sm:mt-1 text-[0.72rem] sm:text-[0.8rem] text-white/80 leading-relaxed">
                     Imlikheda Chowk, MP SH 26, Thuniya Bhand, Chhindwara, MP 480001
                   </p>
                 </div>
@@ -240,185 +144,78 @@ export default function StorePage() {
             </div>
 
             {/* Store Information & Direct Connect */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+            <div className="flex flex-col gap-5 sm:gap-7">
               <div>
-                <span
-                  style={{
-                    fontSize: '0.72rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.2em',
-                    fontWeight: 700,
-                    color: 'var(--accent)',
-                    display: 'block',
-                    marginBottom: '0.5rem',
-                  }}
-                >
+                <span className="text-[0.68rem] sm:text-[0.72rem] uppercase tracking-[0.2em] font-bold text-[#111111] block mb-2">
                   Visiting Information
                 </span>
-                <h2
-                  style={{
-                    fontFamily: "'Newsreader', Georgia, serif",
-                    fontSize: 'clamp(2.2rem, 3.8vw, 3rem)',
-                    fontWeight: 400,
-                    margin: 0,
-                    lineHeight: 1.15,
-                    color: '#121212',
-                  }}
-                >
+                <h2 className="font-serif text-[clamp(1.9rem,4vw,3rem)] font-normal m-0 leading-[1.15] text-[#121212]">
                   Open 7 Days a Week
                 </h2>
               </div>
 
               {/* Information Cards */}
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '1.25rem',
-                  background: 'var(--card-bg)',
-                  padding: '2rem',
-                  borderRadius: '24px',
-                  border: '1px solid var(--card-border)',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
-                }}
-              >
+              <div className="flex flex-col gap-4 sm:gap-5 bg-white/85 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-black/8 shadow-sm">
                 {/* Operating Hours */}
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.85rem' }}>
-                  <div
-                    style={{
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '10px',
-                      background: 'rgba(16, 185, 129, 0.12)',
-                      color: '#10b981',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                    }}
-                  >
+                <div className="flex items-start gap-3 sm:gap-3.5">
+                  <div className="w-9 h-9 rounded-xl bg-[#10b981]/12 text-[#10b981] flex items-center justify-center shrink-0">
                     <Clock size={18} />
                   </div>
                   <div>
-                    <strong
-                      style={{
-                        display: 'block',
-                        fontSize: '0.72rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.12em',
-                        color: 'var(--text-muted)',
-                      }}
-                    >
+                    <strong className="block text-[0.68rem] sm:text-[0.72rem] uppercase tracking-[0.12em] text-[#525252]">
                       Operating Hours
                     </strong>
-                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '1.2rem', fontWeight: 600, color: '#047857' }}>
+                    <p className="m-0 mt-0.5 sm:mt-1 text-[1.1rem] sm:text-[1.2rem] font-semibold text-emerald-700">
                       10:30 AM – 10:00 PM
                     </p>
-                    <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
+                    <span className="text-[0.72rem] sm:text-[0.76rem] text-[#525252]">
                       Monday through Sunday • No holiday closures
                     </span>
                   </div>
                 </div>
 
                 {/* Physical Address */}
-                <div
-                  style={{
-                    borderTop: '1px solid var(--card-border)',
-                    paddingTop: '1.15rem',
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '0.85rem',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '10px',
-                      background: 'rgba(0, 0, 0, 0.05)',
-                      color: '#121212',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                    }}
-                  >
+                <div className="border-t border-black/8 pt-3.5 sm:pt-4.5 flex items-start gap-3 sm:gap-3.5">
+                  <div className="w-9 h-9 rounded-xl bg-black/5 text-[#121212] flex items-center justify-center shrink-0">
                     <MapPin size={18} />
                   </div>
                   <div>
-                    <strong
-                      style={{
-                        display: 'block',
-                        fontSize: '0.72rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.12em',
-                        color: 'var(--text-muted)',
-                      }}
-                    >
+                    <strong className="block text-[0.68rem] sm:text-[0.72rem] uppercase tracking-[0.12em] text-[#525252]">
                       Physical Landmark
                     </strong>
-                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.92rem', fontWeight: 500, color: '#1f2937', lineHeight: 1.45 }}>
+                    <p className="m-0 mt-0.5 sm:mt-1 text-[0.85rem] sm:text-[0.92rem] font-medium text-gray-800 leading-snug">
                       {BRAND_DATA.address.full}
                     </p>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.15rem', display: 'block' }}>
+                    <span className="text-[0.72rem] sm:text-[0.75rem] text-[#525252] mt-0.5 block">
                       Google Plus Code: <strong>{BRAND_DATA.address.plusCode}</strong>
                     </span>
                   </div>
                 </div>
 
                 {/* Founder & Creative Direction */}
-                <div
-                  style={{
-                    borderTop: '1px solid var(--card-border)',
-                    paddingTop: '1.15rem',
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '0.85rem',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '10px',
-                      background: 'rgba(0, 0, 0, 0.05)',
-                      color: '#121212',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                    }}
-                  >
+                <div className="border-t border-black/8 pt-3.5 sm:pt-4.5 flex items-start gap-3 sm:gap-3.5">
+                  <div className="w-9 h-9 rounded-xl bg-black/5 text-[#121212] flex items-center justify-center shrink-0">
                     <User size={18} />
                   </div>
                   <div>
-                    <strong
-                      style={{
-                        display: 'block',
-                        fontSize: '0.72rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.12em',
-                        color: 'var(--text-muted)',
-                      }}
-                    >
+                    <strong className="block text-[0.68rem] sm:text-[0.72rem] uppercase tracking-[0.12em] text-[#525252]">
                       Founder & Creative Direction
                     </strong>
-                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.95rem', fontWeight: 600, color: '#121212' }}>
+                    <p className="m-0 mt-0.5 sm:mt-1 text-[0.88rem] sm:text-[0.95rem] font-semibold text-[#121212]">
                       {BRAND_DATA.founder}
                     </p>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{BRAND_DATA.founderRole}</span>
+                    <span className="text-[0.72rem] sm:text-[0.75rem] text-[#525252]">{BRAND_DATA.founderRole}</span>
                   </div>
                 </div>
               </div>
 
               {/* Direct Buttons */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.85rem' }}>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-3.5 w-full sm:w-auto">
                 <a
                   href={BRAND_DATA.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-luxury-primary"
-                  style={{ textDecoration: 'none' }}
+                  className="btn-luxury-primary w-full sm:w-auto justify-center text-center !py-3.5 !px-6 !text-[0.85rem]"
                 >
                   <MapPin size={16} />
                   <span>Open in Google Maps</span>
@@ -429,32 +226,12 @@ export default function StorePage() {
                   href={BRAND_DATA.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.55rem',
-                    padding: '0.85rem 1.6rem',
-                    borderRadius: '9999px',
-                    background: 'linear-gradient(135deg, #25D366 0%, #059669 100%)',
-                    color: '#ffffff',
-                    fontWeight: 600,
-                    fontSize: '0.88rem',
-                    textDecoration: 'none',
-                    boxShadow: '0 8px 20px -3px rgba(16, 185, 129, 0.35)',
-                  }}
+                  className="btn-whatsapp-submit w-full sm:!w-auto justify-center text-center !py-3.5 !px-6 !text-[0.85rem]"
                 >
                   <MessageCircle size={17} fill="#ffffff" color="#10b981" />
                   <span>WhatsApp Stylist Chat</span>
                   <ArrowUpRight size={15} />
                 </a>
-{/* 
-                <Link
-                  href="/contact"
-                  className="btn-luxury-secondary"
-                  style={{ textDecoration: 'none', padding: '0.85rem 1.4rem' }}
-                >
-                  <span>Book In-Store Visit</span>
-                </Link> */}
               </div>
             </div>
           </div>
@@ -462,137 +239,47 @@ export default function StorePage() {
       </section>
 
       {/* Flagship Amenities & Hospitality Suite */}
-      <section style={{ padding: '5rem 0', borderTop: '1px solid var(--card-border)' }}>
-        <div className="luxury-container">
-          <div style={{ maxWidth: '640px', marginBottom: '3rem' }}>
-            <span
-              style={{
-                fontSize: '0.72rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.2em',
-                fontWeight: 700,
-                color: 'var(--accent)',
-                display: 'block',
-                marginBottom: '0.5rem',
-              }}
-            >
+      <section className="py-14 sm:py-20 border-t border-black/8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="max-w-[640px] mb-8 sm:mb-12">
+            <span className="text-[0.68rem] sm:text-[0.72rem] uppercase tracking-[0.2em] font-bold text-[#111111] block mb-2">
               Showroom Standards
             </span>
-            <h2
-              style={{
-                fontFamily: "'Newsreader', Georgia, serif",
-                fontSize: 'clamp(2.2rem, 3.8vw, 3rem)',
-                fontWeight: 400,
-                lineHeight: 1.15,
-                margin: 0,
-                color: '#121212',
-              }}
-            >
+            <h2 className="font-serif text-[clamp(1.9rem,4vw,3rem)] font-normal leading-[1.15] m-0 text-[#121212]">
               Designed for Unhurried Luxury.
             </h2>
-            <p style={{ fontSize: '0.98rem', color: 'var(--text-muted)', lineHeight: 1.65, marginTop: '0.5rem' }}>
+            <p className="text-[0.88rem] sm:text-[0.98rem] text-[#525252] leading-relaxed mt-2 m-0">
               Every touchpoint at our Imlikheda Chowk flagship is engineered for sensory calm, bespoke fit precision, and discrete hospitality.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '1.75rem',
-            }}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-7">
             {storeAmenities.map((amenity, idx) => {
               const Icon = amenity.icon;
               return (
                 <div
                   key={idx}
-                  style={{
-                    padding: '2rem 1.75rem',
-                    background: 'var(--card-bg)',
-                    borderRadius: '22px',
-                    border: '1px solid var(--card-border)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '1.15rem',
-                    position: 'relative',
-                    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
-                  }}
-                  className="amenity-card-hover"
+                  className="p-5 sm:p-8 bg-white/85 rounded-2xl sm:rounded-3xl border border-black/8 flex flex-col gap-3.5 sm:gap-4.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-black/20 hover:shadow-md"
                 >
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      width: '100%',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: '44px',
-                        height: '44px',
-                        borderRadius: '12px',
-                        background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(251, 231, 214, 0.35) 100%)',
-                        border: '1px solid rgba(16, 185, 129, 0.25)',
-                        color: '#047857',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        boxShadow: '0 4px 12px rgba(16, 185, 129, 0.1)',
-                      }}
-                    >
-                      <Icon size={20} />
+                  <div className="flex items-center justify-between w-full">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#10b981]/12 to-[#fbe7d6]/35 border border-[#10b981]/25 text-emerald-700 flex items-center justify-center shadow-sm">
+                      <Icon size={19} />
                     </div>
-                    <span
-                      style={{
-                        fontFamily: "'Newsreader', Georgia, serif",
-                        fontSize: '1.45rem',
-                        fontWeight: 400,
-                        color: 'var(--text-muted)',
-                        opacity: 0.5,
-                      }}
-                    >
+                    <span className="font-serif text-[1.3rem] sm:text-[1.45rem] font-normal text-[#525252] opacity-50">
                       {amenity.num}
                     </span>
                   </div>
 
                   <div>
-                    <span
-                      style={{
-                        fontSize: '0.65rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.15em',
-                        color: '#059669',
-                        fontWeight: 700,
-                        display: 'block',
-                        marginBottom: '0.35rem',
-                      }}
-                    >
+                    <span className="text-[0.62rem] sm:text-[0.65rem] uppercase tracking-[0.15em] text-[#059669] font-bold block mb-1">
                       {amenity.tag}
                     </span>
-                    <h3
-                      style={{
-                        margin: 0,
-                        fontSize: '1.25rem',
-                        fontFamily: "'Newsreader', Georgia, serif",
-                        fontWeight: 500,
-                        color: '#121212',
-                        lineHeight: 1.25,
-                      }}
-                    >
+                    <h3 className="m-0 text-[1.15rem] sm:text-[1.25rem] font-serif font-medium text-[#121212] leading-snug">
                       {amenity.title}
                     </h3>
                   </div>
 
-                  <p
-                    style={{
-                      margin: 0,
-                      fontSize: '0.86rem',
-                      color: 'var(--text-muted)',
-                      lineHeight: 1.6,
-                    }}
-                  >
+                  <p className="m-0 text-[0.82rem] sm:text-[0.86rem] text-[#525252] leading-relaxed">
                     {amenity.desc}
                   </p>
                 </div>
@@ -603,110 +290,43 @@ export default function StorePage() {
       </section>
 
       {/* Showroom Interior Galleries Grid */}
-      <section style={{ padding: '5.5rem 0', borderTop: '1px solid var(--card-border)' }}>
-        <div className="luxury-container">
-          <div style={{ maxWidth: '640px', marginBottom: '3.5rem' }}>
-            <span
-              style={{
-                fontSize: '0.72rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.2em',
-                fontWeight: 700,
-                color: 'var(--accent)',
-                display: 'block',
-                marginBottom: '0.5rem',
-              }}
-            >
+      <section className="py-14 sm:py-20 border-t border-black/8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="max-w-[640px] mb-8 sm:mb-14">
+            <span className="text-[0.68rem] sm:text-[0.72rem] uppercase tracking-[0.2em] font-bold text-[#111111] block mb-2">
               Interior Architecture
             </span>
-            <h2
-              style={{
-                fontFamily: "'Newsreader', Georgia, serif",
-                fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
-                fontWeight: 400,
-                lineHeight: 1.15,
-                margin: 0,
-                color: '#121212',
-              }}
-            >
+            <h2 className="font-serif text-[clamp(1.9rem,4vw,3.2rem)] font-normal leading-[1.15] m-0 text-[#121212]">
               Curated Showcase Galleries.
             </h2>
-            <p style={{ fontSize: '0.98rem', color: 'var(--text-muted)', lineHeight: 1.6, marginTop: '0.5rem' }}>
+            <p className="text-[0.88rem] sm:text-[0.98rem] text-[#525252] leading-relaxed mt-2 m-0">
               Explore the dedicated visual zones across our multi-floor flagship showroom in Chhindwara.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '2.25rem',
-            }}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {showroomGalleries.map((gallery, idx) => (
               <div
                 key={idx}
-                style={{
-                  background: 'var(--card-bg)',
-                  border: '1px solid var(--card-border)',
-                  borderRadius: '1.5rem',
-                  padding: '1.25rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '1.25rem',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.02)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                }}
+                className="bg-white/85 border border-black/8 rounded-2xl sm:rounded-3xl p-4 sm:p-5 flex flex-col gap-4 sm:gap-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
-                <div
-                  style={{
-                    position: 'relative',
-                    width: '100%',
-                    height: '290px',
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                  }}
-                >
+                <div className="relative w-full h-[240px] sm:h-[290px] rounded-xl sm:rounded-2xl overflow-hidden">
                   <Image
                     src={gallery.image}
                     alt={gallery.title}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    className="object-cover"
                   />
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '0.85rem',
-                      left: '0.85rem',
-                      background: 'rgba(0,0,0,0.72)',
-                      backdropFilter: 'blur(10px)',
-                      color: '#ffffff',
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: '9999px',
-                      fontSize: '0.68rem',
-                      fontWeight: 600,
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                      border: '1px solid rgba(255,255,255,0.15)',
-                    }}
-                  >
+                  <div className="absolute top-3 sm:top-3.5 left-3 sm:left-3.5 bg-black/75 backdrop-blur-md text-white py-1 sm:py-1.5 px-3 sm:px-3.5 rounded-full text-[0.62rem] sm:text-[0.68rem] font-semibold tracking-[0.1em] uppercase border border-white/15">
                     {gallery.subtitle}
                   </div>
                 </div>
 
                 <div>
-                  <h3
-                    style={{
-                      fontFamily: "'Newsreader', Georgia, serif",
-                      fontSize: '1.35rem',
-                      fontWeight: 500,
-                      margin: '0 0 0.35rem 0',
-                      color: '#121212',
-                    }}
-                  >
+                  <h3 className="font-serif text-[1.2rem] sm:text-[1.35rem] font-medium m-0 mb-1 sm:mb-1.5 text-[#121212]">
                     {gallery.title}
                   </h3>
-                  <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
+                  <p className="m-0 text-[0.8rem] sm:text-[0.85rem] text-[#525252] leading-relaxed">
                     {gallery.description}
                   </p>
                 </div>
@@ -717,52 +337,26 @@ export default function StorePage() {
       </section>
 
       {/* Embedded Google Map Section */}
-      <section style={{ padding: '4rem 0 6rem', borderTop: '1px solid var(--card-border)' }}>
-        <div className="luxury-container">
-          <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 2.5rem' }}>
-            <span
-              style={{
-                fontSize: '0.72rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.2em',
-                fontWeight: 700,
-                color: 'var(--accent)',
-              }}
-            >
+      <section className="pt-12 sm:pt-16 pb-16 sm:pb-24 border-t border-black/8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="text-center max-w-[640px] mx-auto mb-8 sm:mb-10">
+            <span className="text-[0.68rem] sm:text-[0.72rem] uppercase tracking-[0.2em] font-bold text-[#111111]">
               Interactive Map
             </span>
-            <h2
-              style={{
-                fontFamily: "'Newsreader', Georgia, serif",
-                fontSize: '2.5rem',
-                fontWeight: 400,
-                margin: '0.5rem 0 0 0',
-                color: '#121212',
-              }}
-            >
+            <h2 className="font-serif text-[clamp(1.9rem,4vw,2.5rem)] font-normal m-0 mt-2 text-[#121212]">
               Find Us at Imlikheda Chowk
             </h2>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '0.4rem', lineHeight: 1.5 }}>
+            <p className="text-[0.85rem] sm:text-[0.9rem] text-[#525252] mt-1.5 leading-relaxed">
               Conveniently located on MP SH 26 with easy highway accessibility and dedicated on-site parking.
             </p>
           </div>
 
-          <div
-            style={{
-              position: 'relative',
-              width: '100%',
-              height: '440px',
-              borderRadius: '24px',
-              overflow: 'hidden',
-              boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
-              border: '1px solid var(--card-border)',
-            }}
-          >
+          <div className="relative w-full h-[280px] sm:h-[440px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-black/8">
             <iframe
               src={BRAND_DATA.mapEmbedUrl}
               width="100%"
               height="100%"
-              style={{ border: 0 }}
+              className="border-0"
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

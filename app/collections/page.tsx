@@ -7,7 +7,7 @@ import LookModal from '../components/LookModal';
 import Image from 'next/image';
 import { COLLECTIONS, LOOKS, Look } from '../data/looks';
 import { BRAND_DATA } from '../data/brand';
-import { Search, X, ArrowUpRight, Feather, Sparkles } from 'lucide-react';
+import { Search, X, ArrowUpRight, Feather } from 'lucide-react';
 
 export default function CollectionsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -40,48 +40,21 @@ export default function CollectionsPage() {
       <Navbar onOpenInquiry={() => handleInquire(null)} />
 
       {/* Collections Page Hero Header */}
-      <section style={{ paddingTop: '8.5rem', paddingBottom: '3rem' }}>
-        <div className="luxury-container">
-          <div style={{ maxWidth: '840px', display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
-            <span
-              style={{
-                fontSize: '0.72rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.22em',
-                fontWeight: 700,
-                color: 'var(--accent)',
-                display: 'block',
-              }}
-            >
+      <section className="pt-24 sm:pt-[8.5rem] pb-8 sm:pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="max-w-[840px] flex flex-col gap-4 sm:gap-4.5">
+            <span className="text-[0.68rem] sm:text-[0.72rem] uppercase tracking-[0.22em] font-bold text-[#111111] block">
               The Atelier Lookbook • 2026 Curated Showcase
             </span>
 
-            <h1
-              style={{
-                fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                fontSize: 'clamp(2.5rem, 5.2vw, 4.4rem)',
-                fontWeight: 400,
-                lineHeight: 1.1,
-                letterSpacing: '-0.025em',
-                margin: 0,
-                color: '#121212',
-              }}
-            >
+            <h1 className="font-serif text-[clamp(2.1rem,6vw,4.4rem)] font-normal leading-[1.1] tracking-[-0.025em] m-0 text-[#121212]">
               The Curated Lookbook & <br />
-              <span style={{ fontStyle: 'italic', fontWeight: 300, opacity: 0.85 }}>
+              <span className="italic font-light opacity-85">
                 Seasonal Silhouettes.
               </span>
             </h1>
 
-            <p
-              style={{
-                fontSize: '1.08rem',
-                color: 'var(--text-muted)',
-                lineHeight: 1.75,
-                margin: 0,
-                maxWidth: '720px',
-              }}
-            >
+            <p className="text-[0.95rem] sm:text-[1.08rem] text-[#525252] leading-[1.7] sm:leading-[1.75] m-0 max-w-[720px]">
               Every garment in the Deer & Dan collection is crafted with intention—from 100% pure Indian
               combed cotton and breathable linen sets to tailored denim and quiet luxury knitwear.
               Select any look to inspect fabric compositions and styling specifications.
@@ -89,37 +62,11 @@ export default function CollectionsPage() {
           </div>
 
           {/* Search & Category Filter Controls */}
-          <div
-            style={{
-              marginTop: '2.5rem',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1.25rem',
-            }}
-          >
+          <div className="mt-8 sm:mt-10 flex flex-col gap-4 sm:gap-5">
             {/* Search Input Bar with Result Count */}
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '1rem',
-              }}
-            >
-              <div style={{ width: '100%', maxWidth: '440px', position: 'relative' }}>
-                <div
-                  style={{
-                    position: 'absolute',
-                    left: '1.1rem',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    color: '#71717a',
-                    display: 'flex',
-                    alignItems: 'center',
-                    pointerEvents: 'none',
-                  }}
-                >
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+              <div className="w-full sm:max-w-md relative">
+                <div className="absolute left-4.5 top-1/2 -translate-y-1/2 text-zinc-500 flex items-center pointer-events-none">
                   <Search size={16} />
                 </div>
                 <input
@@ -127,39 +74,12 @@ export default function CollectionsPage() {
                   placeholder="Search fabric, silhouette, cotton, denim..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  style={{
-                    width: '100%',
-                    padding: '0.85rem 2.5rem 0.85rem 2.85rem',
-                    borderRadius: '9999px',
-                    border: '1.5px solid rgba(0, 0, 0, 0.09)',
-                    background: 'rgba(255, 255, 255, 0.85)',
-                    backdropFilter: 'blur(12px)',
-                    fontSize: '0.88rem',
-                    fontFamily: 'inherit',
-                    outline: 'none',
-                    color: '#121212',
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.03)',
-                    transition: 'all 0.2s ease',
-                  }}
+                  className="w-full py-3 sm:py-3.5 pl-11 pr-10 rounded-full border border-black/10 bg-white/85 backdrop-blur-md text-[0.85rem] sm:text-[0.88rem] outline-none text-[#121212] shadow-[0_4px_15px_rgba(0,0,0,0.03)] focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-all"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
-                    style={{
-                      position: 'absolute',
-                      right: '1rem',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      color: '#71717a',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      background: 'rgba(0,0,0,0.06)',
-                      borderRadius: '9999px',
-                      width: '22px',
-                      height: '22px',
-                      cursor: 'pointer',
-                    }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-800 flex items-center justify-center bg-black/6 rounded-full w-5.5 h-5.5 cursor-pointer border-0"
                     aria-label="Clear search"
                   >
                     <X size={13} />
@@ -168,71 +88,32 @@ export default function CollectionsPage() {
               </div>
 
               {/* Counter Tag */}
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  fontSize: '0.75rem',
-                  color: 'var(--text-muted)',
-                }}
-              >
+              <div className="inline-flex items-center gap-1.5 text-[0.72rem] sm:text-[0.75rem] text-[#525252]">
                 <span>
                   Showing <strong>{filteredLooks.length}</strong> {filteredLooks.length === 1 ? 'silhouette' : 'silhouettes'}
                 </span>
               </div>
             </div>
 
-            {/* Category Filter Pills (Refined Luxury Editorial Tabs) */}
-            <div
-              className="no-scrollbar"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.55rem',
-                overflowX: 'auto',
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none',
-                paddingBottom: '0.35rem',
-              }}
-            >
+            {/* Category Filter Pills */}
+            <div className="no-scrollbar flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 max-w-full -mx-4 px-4 sm:mx-0 sm:px-0">
               {COLLECTIONS.map((cat) => {
                 const active = selectedCategory === cat.id;
                 return (
                   <button
                     key={cat.id}
                     onClick={() => setSelectedCategory(cat.id)}
-                    style={{
-                      padding: '0.6rem 1.25rem',
-                      borderRadius: '9999px',
-                      fontSize: '0.74rem',
-                      fontWeight: active ? 700 : 500,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      whiteSpace: 'nowrap',
-                      transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-                      background: active ? '#121212' : 'rgba(255, 255, 255, 0.85)',
-                      color: active ? '#ffffff' : 'var(--text-muted)',
-                      border: active ? '1.5px solid #121212' : '1.5px solid rgba(0, 0, 0, 0.08)',
-                      cursor: 'pointer',
-                      boxShadow: active
-                        ? '0 4px 14px rgba(0, 0, 0, 0.18)'
-                        : '0 2px 6px rgba(0, 0, 0, 0.02)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.45rem',
-                    }}
+                    className={`py-2 sm:py-2.5 px-3.5 sm:px-5 rounded-full text-[0.7rem] sm:text-[0.74rem] uppercase tracking-[0.08em] whitespace-nowrap transition-all duration-200 cursor-pointer inline-flex items-center gap-1.5 sm:gap-2 border ${
+                      active
+                        ? 'bg-[#121212] text-white font-bold border-[#121212] shadow-sm'
+                        : 'bg-white/85 text-[#525252] font-medium border-black/8 hover:border-black/20 hover:text-[#121212]'
+                    }`}
                   >
                     <span>{cat.label}</span>
                     <span
-                      style={{
-                        fontSize: '0.65rem',
-                        fontWeight: 600,
-                        padding: '0.1rem 0.45rem',
-                        borderRadius: '9999px',
-                        background: active ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.05)',
-                        color: active ? '#ffffff' : '#71717a',
-                      }}
+                      className={`text-[0.62rem] sm:text-[0.65rem] font-semibold py-0.5 px-1.5 sm:px-2 rounded-full ${
+                        active ? 'bg-white/20 text-white' : 'bg-black/5 text-[#71717a]'
+                      }`}
                     >
                       {cat.count}
                     </span>
@@ -245,177 +126,63 @@ export default function CollectionsPage() {
       </section>
 
       {/* Lookbook Grid Section */}
-      <section style={{ paddingBottom: '6rem' }}>
-        <div className="luxury-container">
-          <div className="collection-grid-layout">
+      <section className="pb-16 sm:pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {filteredLooks.map((look) => (
               <article
                 key={look.id}
                 onClick={() => setSelectedLook(look)}
-                className="collection-card"
-                style={{
-                  cursor: 'pointer',
-                  borderRadius: '1.75rem',
-                  overflow: 'hidden',
-                  background: 'var(--card-bg)',
-                  border: '1px solid var(--card-border)',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
-                }}
+                className="flex flex-col bg-white/85 border border-black/8 rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer backdrop-blur-md hover:border-black/20 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] group"
               >
                 {/* Image Box */}
-                <div
-                  className="collection-card-img-wrap"
-                  style={{
-                    position: 'relative',
-                    width: '100%',
-                    height: '420px',
-                    overflow: 'hidden',
-                    background: '#111',
-                  }}
-                >
+                <div className="relative w-full h-[340px] xs:h-[380px] sm:h-[420px] overflow-hidden bg-[#111111]">
                   <Image
                     src={look.image}
                     alt={look.title}
                     fill
-                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
 
                   {/* Top-Left: Look Number Pill */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '1rem',
-                      left: '1rem',
-                      background: 'rgba(17, 17, 17, 0.8)',
-                      color: '#ffffff',
-                      padding: '0.3rem 0.75rem',
-                      borderRadius: '9999px',
-                      fontSize: '0.68rem',
-                      fontFamily: 'monospace',
-                      fontWeight: 700,
-                      letterSpacing: '0.12em',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255, 255, 255, 0.15)',
-                    }}
-                  >
+                  <div className="absolute top-4 left-4 bg-black/80 text-white py-1.5 px-3 rounded-full text-[0.68rem] font-mono font-bold tracking-widest backdrop-blur-md border border-white/15">
                     LOOK {look.number}
                   </div>
 
                   {/* Top-Right: Category Tag */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '1rem',
-                      right: '1rem',
-                      background: 'rgba(255, 255, 255, 0.92)',
-                      color: '#121212',
-                      padding: '0.3rem 0.75rem',
-                      borderRadius: '9999px',
-                      fontSize: '0.65rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                      backdropFilter: 'blur(8px)',
-                      boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-                    }}
-                  >
+                  <div className="absolute top-4 right-4 bg-white/92 text-[#121212] py-1.5 px-3 rounded-full text-[0.65rem] font-bold tracking-wider uppercase backdrop-blur-md shadow-sm">
                     {look.tags[0] || look.category}
                   </div>
                 </div>
 
                 {/* Text Info */}
-                <div
-                  style={{
-                    padding: '1.75rem 1.5rem',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.85rem',
-                    flex: 1,
-                    justifyContent: 'space-between',
-                  }}
-                >
+                <div className="p-5 sm:p-7 flex flex-col gap-3 sm:gap-3.5 flex-1 justify-between">
                   <div>
-                    <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        fontSize: '0.7rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.12em',
-                        color: 'var(--text-muted)',
-                        marginBottom: '0.4rem',
-                      }}
-                    >
+                    <div className="flex items-center justify-between text-[0.7rem] uppercase tracking-wider text-[#525252] mb-1">
                       <span>{look.season}</span>
-                      <span style={{ textTransform: 'capitalize' }}>{look.category}</span>
+                      <span className="capitalize">{look.category}</span>
                     </div>
 
-                    <h3
-                      style={{
-                        fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                        fontSize: '1.45rem',
-                        fontWeight: 500,
-                        lineHeight: 1.25,
-                        margin: 0,
-                        color: '#121212',
-                      }}
-                    >
+                    <h3 className="font-serif text-[1.45rem] font-medium leading-snug m-0 text-[#121212]">
                       {look.title}
                     </h3>
 
                     {/* Fabric Spec Snippet */}
-                    <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.4rem',
-                        marginTop: '0.65rem',
-                        fontSize: '0.78rem',
-                        color: '#047857',
-                        fontWeight: 500,
-                      }}
-                    >
-                      <Feather size={13} style={{ flexShrink: 0 }} />
-                      <span
-                        style={{
-                          overflow: 'hidden',
-                          textOverflow: 'ellipsis',
-                          whiteSpace: 'nowrap',
-                        }}
-                      >
+                    <div className="flex items-center gap-1.5 mt-2.5 text-[0.78rem] text-emerald-700 font-medium">
+                      <Feather size={13} className="shrink-0" />
+                      <span className="truncate">
                         {look.fabric}
                       </span>
                     </div>
                   </div>
 
                   {/* Card Footer: Action */}
-                  <div
-                    style={{
-                      paddingTop: '0.85rem',
-                      borderTop: '1px solid var(--card-border)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      fontSize: '0.75rem',
-                    }}
-                  >
-                    <span style={{ fontFamily: 'monospace', opacity: 0.65, fontSize: '0.7rem' }}>
+                  <div className="pt-3.5 border-t border-black/8 flex items-center justify-between text-[0.75rem]">
+                    <span className="font-mono opacity-65 text-[0.7rem] text-[#525252]">
                       In-Store Trial
                     </span>
-                    <span
-                      style={{
-                        fontWeight: 700,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
-                        color: 'var(--accent)',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.35rem',
-                      }}
-                    >
+                    <span className="font-bold uppercase tracking-[0.08em] text-[#111111] inline-flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
                       <span>Inspect Specs</span>
                       <ArrowUpRight size={14} />
                     </span>
@@ -427,17 +194,11 @@ export default function CollectionsPage() {
 
           {/* Empty Search State */}
           {filteredLooks.length === 0 && (
-            <div
-              style={{
-                textAlign: 'center',
-                padding: '5rem 1rem',
-                color: 'var(--text-muted)',
-              }}
-            >
-              <p style={{ fontSize: '1.15rem', margin: 0, color: '#121212' }}>
+            <div className="text-center py-20 px-4 text-[#525252]">
+              <p className="text-[1.15rem] m-0 text-[#121212]">
                 No silhouettes found matching &ldquo;{searchQuery}&rdquo;.
               </p>
-              <p style={{ fontSize: '0.85rem', marginTop: '0.35rem' }}>
+              <p className="text-[0.85rem] mt-1.5 text-[#525252]">
                 Try searching for &lsquo;cotton&rsquo;, &lsquo;denim&rsquo;, &lsquo;linen&rsquo;, or &lsquo;shirt&rsquo;.
               </p>
               <button
@@ -445,8 +206,7 @@ export default function CollectionsPage() {
                   setSelectedCategory('all');
                   setSearchQuery('');
                 }}
-                className="btn-luxury-secondary"
-                style={{ marginTop: '1.25rem' }}
+                className="mt-5 inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full border border-black/10 bg-white/70 hover:border-black/30 hover:bg-white text-[#121212] text-[0.82rem] font-medium transition-all duration-200 cursor-pointer"
               >
                 Reset Filters
               </button>

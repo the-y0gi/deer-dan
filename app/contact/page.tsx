@@ -10,11 +10,8 @@ import {
   MapPin,
   Clock,
   Phone,
-  Globe,
   Gift,
-  Send,
   Calendar,
-  Sparkles,
   ArrowUpRight,
   ShieldCheck,
   CheckCircle2,
@@ -52,9 +49,9 @@ const SERVICE_OPTIONS = [
 ];
 
 const TIME_SLOTS = [
-  { value: "11:00", label: "11:00", period: "Morning" },
-  { value: "14:00", label: "14:00", period: "Afternoon" },
-  { value: "17:00", label: "17:00", period: "Evening" },
+  { value: "11:00 AM", label: "11:00 AM", period: "Morning" },
+  { value: "02:00 PM", label: "02:00 PM", period: "Afternoon" },
+  { value: "05:00 PM", label: "05:00 PM", period: "Evening" },
 ];
 
 export default function ContactPage() {
@@ -75,7 +72,6 @@ export default function ContactPage() {
     e.preventDefault();
     setLoading(true);
 
-    // Build the formatted WhatsApp message
     const formattedText = `*New Showroom Inquiry - Deer & Dan*
 ━━━━━━━━━━━━━━━━━━
 👤 *Name:* ${formData.name.trim()}
@@ -90,7 +86,6 @@ _Sent via deeranddan.com concierge_`;
     const cleanNumber = BRAND_DATA.phone.replace(/[^0-9]/g, "");
     const waUrl = `https://wa.me/91${cleanNumber}?text=${encodeURIComponent(formattedText)}`;
 
-    // Open WhatsApp directly in new tab
     window.open(waUrl, "_blank");
 
     setLoading(false);
@@ -101,59 +96,22 @@ _Sent via deeranddan.com concierge_`;
     <div className="min-h-screen font-sans">
       <Navbar />
 
-      {/* Hero Header: Compact & Elegant */}
-      <section style={{ paddingTop: "7.5rem", paddingBottom: "2.5rem" }}>
-        <div className="luxury-container">
-          <div
-            style={{
-              maxWidth: "780px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.85rem",
-            }}
-          >
-            <span
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.45rem",
-                fontSize: "0.72rem",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                letterSpacing: "0.15em",
-                color: "var(--accent)",
-              }}
-            >
+      {/* Hero Header */}
+      <section className="pt-24 sm:pt-[7.5rem] pb-8 sm:pb-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="max-w-[780px] flex flex-col gap-3 sm:gap-3.5">
+            <span className="inline-flex items-center gap-2 text-[0.68rem] sm:text-[0.72rem] font-bold uppercase tracking-[0.15em] text-[#111111]">
               Showroom Concierge • Chhindwara
             </span>
 
-            <h1
-              style={{
-                fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                fontSize: "clamp(2.3rem, 4.5vw, 3.8rem)",
-                fontWeight: 400,
-                lineHeight: 1.1,
-                letterSpacing: "-0.025em",
-                margin: 0,
-              }}
-            >
+            <h1 className="font-serif text-[clamp(2.1rem,5vw,3.8rem)] font-normal leading-[1.1] tracking-[-0.025em] m-0 text-[#121212]">
               Connect with Our <br />
-              <span
-                style={{ fontStyle: "italic", fontWeight: 300, opacity: 0.85 }}
-              >
+              <span className="italic font-light opacity-85">
                 Styling Concierge.
               </span>
             </h1>
 
-            <p
-              style={{
-                fontSize: "0.95rem",
-                color: "var(--text-muted)",
-                lineHeight: 1.65,
-                margin: 0,
-                maxWidth: "640px",
-              }}
-            >
+            <p className="text-[0.9rem] sm:text-[0.95rem] text-[#525252] leading-relaxed m-0 max-w-[640px]">
               Planning a visit to our multi-floor glass showroom at Imlikheda
               Chowk, checking size availability, or scheduling personal styling?
               Connect with our team directly.
@@ -163,91 +121,28 @@ _Sent via deeranddan.com concierge_`;
       </section>
 
       {/* Main Contact Grid */}
-      <section style={{ paddingBottom: "4.5rem" }}>
-        <div className="luxury-container">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "2.5rem",
-              alignItems: "start",
-            }}
-          >
+      <section className="pb-14 sm:pb-18">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-8 sm:gap-10 items-start">
             {/* Left: Contact Info Cards */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1.25rem",
-              }}
-            >
+            <div className="flex flex-col gap-4 sm:gap-5">
               {/* WhatsApp Quick CTA Box */}
-              <div
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(16,185,129,0.12) 0%, rgba(255,255,255,0.85) 100%)",
-                  border: "1px solid rgba(16,185,129,0.3)",
-                  borderRadius: "20px",
-                  padding: "1.5rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.85rem",
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.03)",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.65rem",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "36px",
-                      height: "36px",
-                      borderRadius: "9999px",
-                      background: "#10b981",
-                      color: "#ffffff",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
+              <div className="bg-gradient-to-br from-[#10b981]/12 to-white/85 border border-[#10b981]/30 rounded-2xl sm:rounded-3xl p-4.5 sm:p-6 flex flex-col gap-3 sm:gap-3.5 shadow-sm">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-full bg-[#10b981] text-white flex items-center justify-center shrink-0">
                     <MessageCircle size={18} />
                   </div>
                   <div>
-                    <h3
-                      style={{
-                        margin: 0,
-                        fontSize: "1.15rem",
-                        fontFamily: "'Newsreader', Georgia, serif",
-                        fontWeight: 500,
-                      }}
-                    >
+                    <h3 className="m-0 text-[1.1rem] sm:text-[1.15rem] font-serif font-medium text-[#121212]">
                       Instant WhatsApp Concierge
                     </h3>
-                    <span
-                      style={{
-                        fontSize: "0.72rem",
-                        color: "#059669",
-                        fontWeight: 600,
-                      }}
-                    >
+                    <span className="text-[0.68rem] sm:text-[0.72rem] text-emerald-700 font-semibold">
                       Active Now • Fast Response
                     </span>
                   </div>
                 </div>
 
-                <p
-                  style={{
-                    margin: 0,
-                    fontSize: "0.82rem",
-                    color: "var(--text-muted)",
-                    lineHeight: 1.5,
-                  }}
-                >
+                <p className="m-0 text-[0.8rem] sm:text-[0.82rem] text-[#525252] leading-relaxed">
                   Chat directly with our showroom team for outfit sizes,
                   in-store trial assistance, or quick queries.
                 </p>
@@ -257,21 +152,7 @@ _Sent via deeranddan.com concierge_`;
                     href={BRAND_DATA.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-luxury-primary"
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      padding: "0.75rem 1.35rem",
-                      borderRadius: "9999px",
-                      background: "#10b981",
-                      border: "none",
-                      color: "#ffffff",
-                      fontWeight: 600,
-                      fontSize: "0.78rem",
-                      textDecoration: "none",
-                      boxShadow: "0 4px 15px rgba(16,185,129,0.25)",
-                    }}
+                    className="btn-luxury-primary !bg-[#10b981] !py-3 !px-5 !text-[0.78rem] !text-white w-full sm:w-auto justify-center"
                   >
                     <MessageCircle size={15} />
                     <span>Open WhatsApp Chat</span>
@@ -281,377 +162,126 @@ _Sent via deeranddan.com concierge_`;
               </div>
 
               {/* Physical Store Details Card */}
-              <div
-                style={{
-                  background: "var(--card-bg)",
-                  border: "1px solid var(--card-border)",
-                  borderRadius: "20px",
-                  padding: "1.5rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1.1rem",
-                  boxShadow: "0 8px 24px rgba(0,0,0,0.03)",
-                }}
-              >
+              <div className="bg-white/85 border border-black/8 rounded-2xl sm:rounded-3xl p-4.5 sm:p-6 flex flex-col gap-4 sm:gap-4.5 shadow-sm">
                 <div>
-                  <span
-                    style={{
-                      fontSize: "0.65rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.15em",
-                      color: "var(--text-muted)",
-                      fontWeight: 700,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.4rem",
-                      marginBottom: "0.35rem",
-                    }}
-                  >
-                    <MapPin size={13} color="#111111" />
+                  <span className="text-[0.62rem] sm:text-[0.65rem] uppercase tracking-[0.15em] text-[#525252] font-bold inline-flex items-center gap-1.5 mb-1 sm:mb-1.5">
+                    <MapPin size={13} className="text-[#111111]" />
                     Flagship Showroom
                   </span>
-                  <h4
-                    style={{
-                      margin: 0,
-                      fontSize: "1.2rem",
-                      fontFamily: "'Newsreader', Georgia, serif",
-                      fontWeight: 500,
-                    }}
-                  >
+                  <h4 className="m-0 text-[1.15rem] sm:text-[1.2rem] font-serif font-medium text-[#121212]">
                     Deer & Dan (डियर & डैन)
                   </h4>
-                  <p
-                    style={{
-                      margin: "0.25rem 0 0 0",
-                      fontSize: "0.82rem",
-                      color: "var(--text-muted)",
-                      lineHeight: 1.55,
-                    }}
-                  >
+                  <p className="m-0 mt-1 text-[0.8rem] sm:text-[0.82rem] text-[#525252] leading-relaxed">
                     {BRAND_DATA.address.full}
                   </p>
-                  <p
-                    style={{
-                      margin: "0.15rem 0 0 0",
-                      fontSize: "0.72rem",
-                      color: "var(--text-muted)",
-                    }}
-                  >
+                  <p className="m-0 mt-0.5 text-[0.7rem] sm:text-[0.72rem] text-[#525252]">
                     Plus Code: {BRAND_DATA.address.plusCode}
                   </p>
                 </div>
 
-                <div
-                  style={{
-                    borderTop: "1px solid var(--card-border)",
-                    paddingTop: "0.85rem",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: "0.65rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.15em",
-                      color: "var(--text-muted)",
-                      fontWeight: 700,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.4rem",
-                      marginBottom: "0.25rem",
-                    }}
-                  >
-                    <Clock size={13} color="#111111" />
+                <div className="border-t border-black/8 pt-3 sm:pt-3.5">
+                  <span className="text-[0.62rem] sm:text-[0.65rem] uppercase tracking-[0.15em] text-[#525252] font-bold inline-flex items-center gap-1.5 mb-1">
+                    <Clock size={13} className="text-[#111111]" />
                     Operating Hours
                   </span>
-                  <p
-                    style={{
-                      margin: 0,
-                      fontSize: "1.05rem",
-                      fontWeight: 600,
-                      color: "#10b981",
-                    }}
-                  >
+                  <p className="m-0 text-[1rem] sm:text-[1.05rem] font-semibold text-[#10b981]">
                     10:30 AM – 10:00 PM
                   </p>
-                  <span
-                    style={{ fontSize: "0.72rem", color: "var(--text-muted)" }}
-                  >
+                  <span className="text-[0.7rem] sm:text-[0.72rem] text-[#525252]">
                     Open Monday through Sunday (All 7 Days)
                   </span>
                 </div>
 
-                <div
-                  style={{
-                    borderTop: "1px solid var(--card-border)",
-                    paddingTop: "0.85rem",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.45rem",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: "0.65rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.15em",
-                      color: "var(--text-muted)",
-                      fontWeight: 700,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.4rem",
-                      marginBottom: "0.2rem",
-                    }}
-                  >
-                    <Phone size={13} color="#111111" />
+                <div className="border-t border-black/8 pt-3 sm:pt-3.5 flex flex-col gap-1.5 sm:gap-2">
+                  <span className="text-[0.62rem] sm:text-[0.65rem] uppercase tracking-[0.15em] text-[#525252] font-bold inline-flex items-center gap-1.5 mb-0.5">
+                    <Phone size={13} className="text-[#111111]" />
                     Direct Channels
                   </span>
                   <a
                     href={`tel:${BRAND_DATA.phone}`}
-                    style={{
-                      fontSize: "0.82rem",
-                      color: "var(--text-main)",
-                      textDecoration: "none",
-                      fontWeight: 600,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.4rem",
-                    }}
+                    className="text-[0.8rem] sm:text-[0.82rem] text-[#121212] no-underline font-semibold inline-flex items-center gap-1.5 hover:underline"
                   >
                     <span>Phone: {BRAND_DATA.phoneFormatted}</span>
                   </a>
-                  <span
-                    style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}
-                  >
+                  <span className="text-[0.78rem] sm:text-[0.8rem] text-[#525252]">
                     Instagram: {BRAND_DATA.instagram}
                   </span>
-                  <span
-                    style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}
-                  >
+                  <span className="text-[0.78rem] sm:text-[0.8rem] text-[#525252]">
                     Website: {BRAND_DATA.website}
                   </span>
                 </div>
               </div>
 
               {/* Complimentary VIP Packaging Pill */}
-              <div
-                className="look-card-frame"
-                style={{
-                  padding: "0.85rem 1.15rem",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "1rem",
-                  borderRadius: "16px",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    width: "65px",
-                    height: "65px",
-                    borderRadius: "10px",
-                    overflow: "hidden",
-                    flexShrink: 0,
-                  }}
-                >
+              <div className="bg-white border border-black/10 rounded-xl sm:rounded-2xl p-3.5 sm:p-4 sm:px-5 flex items-center gap-3.5 sm:gap-4 shadow-sm">
+                <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0">
                   <Image
                     src="/images/packaging-single-bag.jpg"
                     alt="Deer & Dan luxury packaging bag"
                     fill
-                    style={{ objectFit: "cover" }}
+                    className="object-cover"
                   />
                 </div>
                 <div>
-                  <h5
-                    style={{
-                      margin: 0,
-                      fontSize: "0.88rem",
-                      fontWeight: 600,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.35rem",
-                    }}
-                  >
-                    <Gift size={14} color="#111111" />
+                  <h5 className="m-0 text-[0.85rem] sm:text-[0.88rem] font-semibold flex items-center gap-1.5 text-[#121212]">
+                    <Gift size={14} className="text-[#111111]" />
                     Complimentary VIP Packaging
                   </h5>
-                  <p
-                    style={{
-                      margin: "0.15rem 0 0 0",
-                      fontSize: "0.72rem",
-                      color: "var(--text-muted)",
-                      lineHeight: 1.4,
-                    }}
-                  >
-                    Every purchase includes our signature matte black stag gift
-                    bag & seal.
+                  <p className="m-0 mt-0.5 text-[0.7rem] sm:text-[0.72rem] text-[#525252] leading-snug">
+                    Every purchase includes our signature matte black stag gift bag & seal.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Right: Interactive WhatsApp Form */}
-            <div className="luxury-form-card">
+            <div className="w-full rounded-2xl sm:rounded-3xl p-4.5 sm:p-7 md:p-10 bg-white/92 backdrop-blur-xl border border-black/8 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.06),inset_0_0_0_1px_rgba(255,255,255,0.8)]">
               {submitted ? (
-                <div
-                  style={{
-                    textAlign: "center",
-                    padding: "3rem 1.5rem",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "1.15rem",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "68px",
-                      height: "68px",
-                      borderRadius: "9999px",
-                      backgroundColor: "rgba(16, 185, 129, 0.12)",
-                      border: "1.5px solid rgba(16, 185, 129, 0.3)",
-                      color: "#10b981",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      boxShadow: "0 8px 20px rgba(16, 185, 129, 0.2)",
-                    }}
-                  >
+                <div className="text-center py-12 px-6 flex flex-col items-center gap-4.5">
+                  <div className="w-16 h-16 rounded-full bg-[#10b981]/12 border border-[#10b981]/30 text-[#10b981] flex items-center justify-center shadow-[0_8px_20px_rgba(16,185,129,0.2)]">
                     <CheckCircle2 size={36} />
                   </div>
                   <div>
-                    <h3
-                      style={{
-                        fontFamily: "'Newsreader', Georgia, serif",
-                        fontSize: "2.1rem",
-                        fontWeight: 500,
-                        margin: 0,
-                        color: "#121212",
-                      }}
-                    >
+                    <h3 className="font-serif text-[2.1rem] font-medium m-0 text-[#121212]">
                       WhatsApp Ready to Send
                     </h3>
-                    <p
-                      style={{
-                        fontSize: "0.88rem",
-                        color: "var(--text-muted)",
-                        maxWidth: "400px",
-                        lineHeight: 1.6,
-                        margin: "0.5rem auto 0 auto",
-                      }}
-                    >
+                    <p className="text-[0.88rem] text-[#525252] max-w-sm leading-relaxed mx-auto mt-2 mb-0">
                       Your details have been pre-filled. Simply tap &ldquo;Send&rdquo; inside WhatsApp to chat with our Chhindwara showroom team immediately.
                     </p>
                   </div>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="btn-luxury-secondary"
-                    style={{
-                      marginTop: "0.5rem",
-                      fontSize: "0.8rem",
-                      padding: "0.65rem 1.25rem",
-                      borderRadius: "9999px",
-                      border: "1px solid rgba(0,0,0,0.15)",
-                    }}
+                    className="mt-2 text-[0.8rem] py-2.5 px-5 rounded-full border border-black/15 bg-white/80 hover:bg-white transition-colors cursor-pointer"
                   >
                     Send Another Inquiry
                   </button>
                 </div>
               ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "1.35rem",
-                  }}
-                >
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5.5">
                   <div>
-                    <div
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.45rem",
-                        padding: "0.32rem 0.85rem",
-                        borderRadius: "9999px",
-                        background: "rgba(16, 185, 129, 0.08)",
-                        border: "1px solid rgba(16, 185, 129, 0.25)",
-                        marginBottom: "0.75rem",
-                      }}
-                    >
-                      <span
-                        style={{
-                          width: "7px",
-                          height: "7px",
-                          borderRadius: "9999px",
-                          background: "#10b981",
-                          boxShadow: "0 0 8px #10b981",
-                          display: "inline-block",
-                        }}
-                      />
-                      <span
-                        style={{
-                          fontSize: "0.7rem",
-                          fontWeight: 700,
-                          letterSpacing: "0.12em",
-                          textTransform: "uppercase",
-                          color: "#047857",
-                        }}
-                      >
+                    <div className="inline-flex items-center gap-2 py-1 px-3.5 rounded-full bg-[#10b981]/8 border border-[#10b981]/25 mb-3">
+                      <span className="w-2 h-2 rounded-full bg-[#10b981] shadow-[0_0_8px_#10b981]" />
+                      <span className="text-[0.7rem] font-bold tracking-[0.12em] uppercase text-emerald-800">
                         Direct WhatsApp Concierge
                       </span>
                     </div>
 
-                    <h3
-                      style={{
-                        fontFamily: "'Newsreader', 'Playfair Display', Georgia, serif",
-                        fontSize: "clamp(1.75rem, 3.2vw, 2.3rem)",
-                        fontWeight: 400,
-                        letterSpacing: "-0.025em",
-                        margin: 0,
-                        color: "#121212",
-                        lineHeight: 1.15,
-                      }}
-                    >
+                    <h3 className="font-serif text-[clamp(1.75rem,3.2vw,2.3rem)] font-normal tracking-tight m-0 text-[#121212] leading-tight">
                       Connect with Showroom Team
                     </h3>
-                    <p
-                      style={{
-                        fontSize: "0.85rem",
-                        color: "var(--text-muted)",
-                        marginTop: "0.35rem",
-                        marginBottom: 0,
-                        lineHeight: 1.55,
-                      }}
-                    >
+                    <p className="text-[0.85rem] text-[#525252] mt-1.5 mb-0 leading-relaxed">
                       Fill in your preferences below — opens WhatsApp instantly with your structured inquiry ready to send.
                     </p>
                   </div>
 
                   {/* Row 1: Full Name & Phone */}
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                      gap: "1rem",
-                    }}
-                  >
-                    {/* Full Name */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label
-                        style={{
-                          display: "block",
-                          fontSize: "0.7rem",
-                          fontWeight: 700,
-                          textTransform: "uppercase",
-                          letterSpacing: "0.08em",
-                          color: "#18181b",
-                          marginBottom: "0.4rem",
-                        }}
-                      >
-                        Full Name <span style={{ color: "#10b981" }}>*</span>
+                      <label className="block text-[0.7rem] font-bold uppercase tracking-wider text-zinc-900 mb-1.5">
+                        Full Name <span className="text-[#10b981]">*</span>
                       </label>
-                      <div className="luxury-input-wrapper">
-                        <div className="luxury-input-icon">
+                      <div className="relative flex items-center rounded-xl bg-white border border-black/10 shadow-sm focus-within:border-[#10b981] focus-within:ring-2 focus-within:ring-[#10b981]/20 transition-all">
+                        <div className="absolute left-3.5 text-zinc-400 pointer-events-none flex items-center">
                           <User size={16} />
                         </div>
                         <input
@@ -662,28 +292,17 @@ _Sent via deeranddan.com concierge_`;
                           onChange={(e) =>
                             setFormData({ ...formData, name: e.target.value })
                           }
-                          className="luxury-input-field"
+                          className="w-full py-3.5 pl-11 pr-4 bg-transparent border-0 outline-none text-[0.9rem] text-[#121212] placeholder-zinc-400"
                         />
                       </div>
                     </div>
 
-                    {/* Phone Number */}
                     <div>
-                      <label
-                        style={{
-                          display: "block",
-                          fontSize: "0.7rem",
-                          fontWeight: 700,
-                          textTransform: "uppercase",
-                          letterSpacing: "0.08em",
-                          color: "#18181b",
-                          marginBottom: "0.4rem",
-                        }}
-                      >
-                        Phone / WhatsApp <span style={{ color: "#10b981" }}>*</span>
+                      <label className="block text-[0.7rem] font-bold uppercase tracking-wider text-zinc-900 mb-1.5">
+                        Phone / WhatsApp <span className="text-[#10b981]">*</span>
                       </label>
-                      <div className="luxury-input-wrapper">
-                        <div className="luxury-input-icon">
+                      <div className="relative flex items-center rounded-xl bg-white border border-black/10 shadow-sm focus-within:border-[#10b981] focus-within:ring-2 focus-within:ring-[#10b981]/20 transition-all">
+                        <div className="absolute left-3.5 text-zinc-400 pointer-events-none flex items-center">
                           <Phone size={16} />
                         </div>
                         <input
@@ -694,34 +313,18 @@ _Sent via deeranddan.com concierge_`;
                           onChange={(e) =>
                             setFormData({ ...formData, phone: e.target.value })
                           }
-                          className="luxury-input-field"
+                          className="w-full py-3.5 pl-11 pr-4 bg-transparent border-0 outline-none text-[0.9rem] text-[#121212] placeholder-zinc-400"
                         />
                       </div>
                     </div>
                   </div>
 
-                  {/* Row 2: Service / Inquiry Type Selection (Interactive Luxury Chips) */}
+                  {/* Row 2: Service / Inquiry Type Selection */}
                   <div>
-                    <label
-                      style={{
-                        display: "block",
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.08em",
-                        color: "#18181b",
-                        marginBottom: "0.45rem",
-                      }}
-                    >
+                    <label className="block text-[0.7rem] font-bold uppercase tracking-wider text-zinc-900 mb-2">
                       Service / Inquiry Type
                     </label>
-                    <div
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-                        gap: "0.65rem",
-                      }}
-                    >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       {SERVICE_OPTIONS.map((s) => {
                         const Icon = s.icon;
                         const isSelected = formData.service === s.id;
@@ -732,70 +335,39 @@ _Sent via deeranddan.com concierge_`;
                             onClick={() =>
                               setFormData({ ...formData, service: s.id })
                             }
-                            className={`service-option-btn ${
-                              isSelected ? "active" : ""
+                            className={`text-left rounded-2xl p-4 transition-all duration-200 cursor-pointer flex items-center gap-3.5 relative border shadow-sm ${
+                              isSelected
+                                ? "bg-gradient-to-br from-[#10b981]/8 to-[#fbe7d6]/45 border-[#10b981] text-[#121212] shadow-[0_6px_18px_-4px_rgba(16,185,129,0.18)]"
+                                : "bg-white/85 border-black/8 hover:border-[#10b981]/35 hover:bg-white hover:-translate-y-0.5"
                             }`}
                           >
                             <div
-                              style={{
-                                width: "36px",
-                                height: "36px",
-                                borderRadius: "10px",
-                                background: isSelected
-                                  ? "#10b981"
-                                  : "rgba(0,0,0,0.04)",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                flexShrink: 0,
-                                color: isSelected ? "#ffffff" : "#525252",
-                                boxShadow: isSelected
-                                  ? "0 4px 10px rgba(16, 185, 129, 0.28)"
-                                  : "none",
-                                transition: "all 0.2s ease",
-                              }}
+                              className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all ${
+                                isSelected
+                                  ? "bg-[#10b981] text-white shadow-[0_4px_10px_rgba(16,185,129,0.28)]"
+                                  : "bg-black/5 text-[#525252]"
+                              }`}
                             >
                               <Icon size={17} />
                             </div>
-                            <div style={{ flex: 1 }}>
+                            <div className="flex-1">
                               <div
-                                style={{
-                                  fontSize: "0.85rem",
-                                  fontWeight: 600,
-                                  lineHeight: 1.25,
-                                  color: isSelected ? "#064e3b" : "#121212",
-                                }}
+                                className={`text-[0.85rem] font-semibold leading-tight ${
+                                  isSelected ? "text-emerald-950" : "text-[#121212]"
+                                }`}
                               >
                                 {s.title}
                               </div>
                               <div
-                                style={{
-                                  fontSize: "0.72rem",
-                                  color: isSelected ? "#047857" : "#71717a",
-                                  marginTop: "0.15rem",
-                                  lineHeight: 1.2,
-                                }}
+                                className={`text-[0.72rem] mt-0.5 leading-tight ${
+                                  isSelected ? "text-emerald-700" : "text-zinc-500"
+                                }`}
                               >
                                 {s.sub}
                               </div>
                             </div>
                             {isSelected && (
-                              <span
-                                style={{
-                                  position: "absolute",
-                                  top: "0.7rem",
-                                  right: "0.7rem",
-                                  width: "20px",
-                                  height: "20px",
-                                  borderRadius: "9999px",
-                                  background: "#10b981",
-                                  color: "#ffffff",
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "center",
-                                  boxShadow: "0 2px 6px rgba(16, 185, 129, 0.3)",
-                                }}
-                              >
+                              <span className="absolute top-3 right-3 w-5 h-5 rounded-full bg-[#10b981] text-white flex items-center justify-center shadow-[0_2px_6px_rgba(16,185,129,0.3)]">
                                 <Check size={12} strokeWidth={3} />
                               </span>
                             )}
@@ -805,23 +377,13 @@ _Sent via deeranddan.com concierge_`;
                     </div>
                   </div>
 
-                  {/* Row 3: Preferred Date (Optional) */}
+                  {/* Row 3: Preferred Date */}
                   <div>
-                    <label
-                      style={{
-                        display: "block",
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.08em",
-                        color: "#18181b",
-                        marginBottom: "0.4rem",
-                      }}
-                    >
+                    <label className="block text-[0.7rem] font-bold uppercase tracking-wider text-zinc-900 mb-1.5">
                       Preferred Visit Date (Optional)
                     </label>
-                    <div className="luxury-input-wrapper">
-                      <div className="luxury-input-icon">
+                    <div className="relative flex items-center rounded-xl bg-white border border-black/10 shadow-sm focus-within:border-[#10b981] focus-within:ring-2 focus-within:ring-[#10b981]/20 transition-all">
+                      <div className="absolute left-3.5 text-zinc-400 pointer-events-none flex items-center">
                         <Calendar size={16} />
                       </div>
                       <input
@@ -830,53 +392,23 @@ _Sent via deeranddan.com concierge_`;
                         onChange={(e) =>
                           setFormData({ ...formData, date: e.target.value })
                         }
-                        className="luxury-input-field"
-                        style={{ cursor: "pointer" }}
+                        className="w-full py-3.5 pl-11 pr-4 bg-transparent border-0 outline-none text-[0.9rem] text-[#121212] cursor-pointer"
                       />
                     </div>
                   </div>
 
-                  {/* Row 4: Preferred Time Slot (Spacious Luxury Pills) */}
+                  {/* Row 4: Preferred Time Slot */}
                   <div>
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        marginBottom: "0.45rem",
-                      }}
-                    >
-                      <label
-                        style={{
-                          display: "block",
-                          fontSize: "0.7rem",
-                          fontWeight: 700,
-                          textTransform: "uppercase",
-                          letterSpacing: "0.08em",
-                          color: "#18181b",
-                          margin: 0,
-                        }}
-                      >
+                    <div className="flex items-center justify-between mb-2">
+                      <label className="block text-[0.7rem] font-bold uppercase tracking-wider text-zinc-900 m-0">
                         Preferred Time Slot
                       </label>
-                      <span
-                        style={{
-                          fontSize: "0.68rem",
-                          color: "var(--text-muted)",
-                        }}
-                      >
+                      <span className="text-[0.68rem] text-[#525252]">
                         Showroom: 10:30 AM – 10:00 PM
                       </span>
                     </div>
 
-                    <div
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns:
-                          "repeat(auto-fit, minmax(130px, 1fr))",
-                        gap: "0.65rem",
-                      }}
-                    >
+                    <div className="grid grid-cols-1 xs:grid-cols-3 gap-2 sm:gap-2.5">
                       {TIME_SLOTS.map((slot) => {
                         const isSelected = formData.time === slot.value;
                         return (
@@ -886,45 +418,33 @@ _Sent via deeranddan.com concierge_`;
                             onClick={() =>
                               setFormData({ ...formData, time: slot.value })
                             }
-                            className={`time-slot-pill ${
-                              isSelected ? "active" : ""
+                            className={`p-2.5 sm:p-3 rounded-xl text-[0.8rem] sm:text-[0.82rem] font-medium border transition-all duration-200 cursor-pointer flex items-center justify-between shadow-sm ${
+                              isSelected
+                                ? "bg-gradient-to-br from-[#10b981]/10 to-[#fbe7d6]/45 border-[#10b981] text-emerald-900 shadow-sm"
+                                : "bg-white/85 border-black/8 text-zinc-700 hover:border-[#10b981]/35 hover:bg-white hover:-translate-y-0.5"
                             }`}
                           >
-                            <div
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "0.45rem",
-                              }}
-                            >
+                            <div className="flex items-center gap-1.5">
                               <Clock
                                 size={14}
-                                style={{
-                                  color: isSelected ? "#059669" : "#9ca3af",
-                                  flexShrink: 0,
-                                }}
+                                className={`shrink-0 ${
+                                  isSelected ? "text-emerald-700" : "text-zinc-400"
+                                }`}
                               />
                               <span
-                                style={{
-                                  fontWeight: 600,
-                                  fontSize: "0.82rem",
-                                  color: isSelected ? "#064e3b" : "#1f2937",
-                                }}
+                                className={`font-semibold text-[0.8rem] sm:text-[0.82rem] ${
+                                  isSelected ? "text-emerald-950" : "text-zinc-800"
+                                }`}
                               >
                                 {slot.label}
                               </span>
                             </div>
                             <span
-                              style={{
-                                fontSize: "0.68rem",
-                                padding: "0.15rem 0.45rem",
-                                borderRadius: "6px",
-                                background: isSelected
-                                  ? "rgba(16, 185, 129, 0.2)"
-                                  : "rgba(0, 0, 0, 0.04)",
-                                color: isSelected ? "#047857" : "#6b7280",
-                                fontWeight: 600,
-                              }}
+                              className={`text-[0.65rem] sm:text-[0.68rem] py-0.5 px-1.5 rounded-md font-semibold ${
+                                isSelected
+                                  ? "bg-[#10b981]/20 text-emerald-800"
+                                  : "bg-black/5 text-zinc-500"
+                              }`}
                             >
                               {slot.period}
                             </span>
@@ -934,37 +454,13 @@ _Sent via deeranddan.com concierge_`;
                     </div>
                   </div>
 
-                  {/* Row 4: Inquiry Details / Specific Outfits (Optional) */}
+                  {/* Row 5: Specific Requests */}
                   <div>
-                    <label
-                      style={{
-                        display: "block",
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.08em",
-                        color: "#18181b",
-                        marginBottom: "0.4rem",
-                      }}
-                    >
+                    <label className="block text-[0.7rem] font-bold uppercase tracking-wider text-zinc-900 mb-1.5">
                       Specific Requests / Outfits (Optional)
                     </label>
-                    <div
-                      className="luxury-input-wrapper"
-                      style={{
-                        alignItems: "flex-start",
-                        padding: "0.65rem 0.85rem",
-                      }}
-                    >
-                      <div
-                        style={{
-                          color: "#71717a",
-                          paddingTop: "0.2rem",
-                          marginRight: "0.65rem",
-                          display: "flex",
-                          alignItems: "center",
-                        }}
-                      >
+                    <div className="relative flex items-start rounded-xl bg-white border border-black/10 shadow-sm focus-within:border-[#10b981] focus-within:ring-2 focus-within:ring-[#10b981]/20 transition-all p-3.5">
+                      <div className="text-zinc-400 pt-0.5 mr-2.5 flex items-center shrink-0">
                         <MessageSquare size={16} />
                       </div>
                       <textarea
@@ -974,26 +470,17 @@ _Sent via deeranddan.com concierge_`;
                         onChange={(e) =>
                           setFormData({ ...formData, note: e.target.value })
                         }
-                        style={{
-                          width: "100%",
-                          background: "transparent",
-                          border: "none",
-                          outline: "none",
-                          fontSize: "0.88rem",
-                          fontFamily: "inherit",
-                          color: "#121212",
-                          resize: "none",
-                        }}
+                        className="w-full bg-transparent border-0 outline-none text-[0.88rem] text-[#121212] resize-none"
                       />
                     </div>
                   </div>
 
-                  {/* Row 5: WhatsApp Submit Button */}
-                  <div style={{ marginTop: "0.35rem" }}>
+                  {/* Submit Button */}
+                  <div className="mt-1">
                     <button
                       type="submit"
                       disabled={loading}
-                      className="btn-whatsapp-submit"
+                      className="w-full py-4 px-6 rounded-full bg-gradient-to-br from-[#25D366] to-[#059669] hover:opacity-95 text-white font-semibold text-[0.95rem] tracking-tight inline-flex items-center justify-center gap-2.5 border-0 cursor-pointer shadow-[0_12px_24px_-4px_rgba(16,185,129,0.4),inset_0_1px_1px_rgba(255,255,255,0.35)] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
                     >
                       <MessageCircle
                         size={19}
@@ -1008,18 +495,8 @@ _Sent via deeranddan.com concierge_`;
                       <ArrowUpRight size={17} />
                     </button>
 
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: "0.35rem",
-                        marginTop: "0.65rem",
-                        fontSize: "0.72rem",
-                        color: "var(--text-muted)",
-                      }}
-                    >
-                      <ShieldCheck size={14} color="#10b981" />
+                    <div className="flex items-center justify-center gap-1.5 mt-2.5 text-[0.72rem] text-[#525252]">
+                      <ShieldCheck size={14} className="text-[#10b981]" />
                       <span>
                         Opens WhatsApp directly with pre-filled details • Fast concierge response
                       </span>
@@ -1032,25 +509,15 @@ _Sent via deeranddan.com concierge_`;
         </div>
       </section>
 
-      {/* Embedded Map Section: Compact & Framed */}
-      <section style={{ paddingBottom: "4.5rem" }}>
-        <div className="luxury-container">
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              height: "360px",
-              borderRadius: "24px",
-              overflow: "hidden",
-              boxShadow: "0 15px 40px rgba(0,0,0,0.06)",
-              border: "1px solid var(--card-border)",
-            }}
-          >
+      {/* Embedded Map Section */}
+      <section className="pb-14 sm:pb-18">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="relative w-full h-[260px] sm:h-[360px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-black/8">
             <iframe
               src={BRAND_DATA.mapEmbedUrl}
               width="100%"
               height="100%"
-              style={{ border: 0 }}
+              className="border-0"
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
