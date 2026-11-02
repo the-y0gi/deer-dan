@@ -43,7 +43,7 @@ const SERVICE_OPTIONS = [
   {
     id: "General Store Visit Inquiry",
     title: "Store Visit",
-    sub: "Imlikheda showroom",
+    sub: "Mansarovar showroom",
     icon: MapPin,
   },
 ];
@@ -81,7 +81,7 @@ export default function ContactPage() {
 ✨ *Service:* ${formData.service}
 ${formData.note ? `📝 *Note:* ${formData.note.trim()}` : ""}
 ━━━━━━━━━━━━━━━━━━
-_Sent via deeranddan.com concierge_`;
+_Sent via deerdan.in concierge_`;
 
     const cleanNumber = BRAND_DATA.phone.replace(/[^0-9]/g, "");
     const waUrl = `https://wa.me/91${cleanNumber}?text=${encodeURIComponent(formattedText)}`;
@@ -112,8 +112,8 @@ _Sent via deeranddan.com concierge_`;
             </h1>
 
             <p className="text-[0.9rem] sm:text-[0.95rem] text-[#525252] leading-relaxed m-0 max-w-[640px]">
-              Planning a visit to our multi-floor glass showroom at Imlikheda
-              Chowk, checking size availability, or scheduling personal styling?
+              Planning a visit to our showroom at Mansarovar Complex,
+              Chhindwara, checking size availability, or scheduling personal styling?
               Connect with our team directly.
             </p>
           </div>
@@ -203,9 +203,14 @@ _Sent via deeranddan.com concierge_`;
                   >
                     <span>Phone: {BRAND_DATA.phoneFormatted}</span>
                   </a>
-                  <span className="text-[0.78rem] sm:text-[0.8rem] text-[#525252]">
+                  <a
+                    href={BRAND_DATA.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[0.78rem] sm:text-[0.8rem] text-[#525252] hover:text-[#121212] transition-colors"
+                  >
                     Instagram: {BRAND_DATA.instagram}
-                  </span>
+                  </a>
                   <span className="text-[0.78rem] sm:text-[0.8rem] text-[#525252]">
                     Website: {BRAND_DATA.website}
                   </span>

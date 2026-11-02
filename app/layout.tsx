@@ -129,12 +129,22 @@ export default function RootLayout({
               },
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Imlikheda Chowk, MP SH 26, Thuniya Bhand",
+                streetAddress: "Mansarovar Complex, Chhindwara Rd, Chandangaon",
                 addressLocality: "Chhindwara",
                 addressRegion: "Madhya Pradesh",
                 postalCode: "480001",
                 addressCountry: "IN",
               },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 22.0494,
+                longitude: 78.9382,
+              },
+              hasMap: "https://maps.google.com/?q=Chhindwara+mansarovar,+Chandangaon,+Chhindwara,+Madhya+Pradesh+480001",
+              sameAs: [
+                "https://www.instagram.com/mydeer.dan",
+              ],
+              email: "info.deerdan@gmail.com",
               openingHoursSpecification: {
                 "@type": "OpeningHoursSpecification",
                 dayOfWeek: [
@@ -150,7 +160,7 @@ export default function RootLayout({
                 closes: "22:00",
               },
               priceRange: "₹₹₹",
-              telephone: "+91-9999999999",
+              telephone: "+91-9340926379",
             }),
           }}
         />

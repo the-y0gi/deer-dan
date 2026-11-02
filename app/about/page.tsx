@@ -62,7 +62,7 @@ export default function AboutPage() {
                     Flagship Insignia
                   </span>
                   <p className="m-0 mt-0.5 sm:mt-1 text-[0.78rem] sm:text-[0.82rem] text-white font-medium">
-                    Imlikheda Chowk • Chhindwara
+                    Mansarovar Complex • Chhindwara
                   </p>
                 </div>
                 <div className="inline-flex items-center gap-1.5 py-1 px-2.5 sm:px-3 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 text-[#10b981] text-[0.68rem] sm:text-[0.72rem] font-semibold">
@@ -83,7 +83,7 @@ export default function AboutPage() {
               </div>
 
               <p className="text-[0.92rem] sm:text-base text-[#525252] leading-[1.7] sm:leading-[1.75] m-0">
-                From our flagship showroom at Imlikheda Chowk in Chhindwara to discerning patrons nationwide,
+                From our flagship showroom at Mansarovar Complex in Chhindwara to discerning patrons nationwide,
                 Deer & Dan represents a return to enduring craftsmanship. We engineer garments mathematically
                 to balance architectural structure with natural ease of movement.
               </p>
@@ -255,7 +255,7 @@ export default function AboutPage() {
                     <MapPin size={15} />
                   </div>
                   <span className="text-[0.82rem] sm:text-[0.88rem] text-[#1f2937] font-medium">
-                    Complimentary on every in-store purchase at Imlikheda Chowk
+                    Complimentary on every in-store purchase at Mansarovar Complex showroom
                   </span>
                 </div>
               </div>

@@ -252,7 +252,7 @@ export const ATELIER_PILLARS: AtelierPillar[] = [
     title: 'The Flagship Showroom',
     subtitle: 'Chhindwara Landmark',
     description:
-      'Spanning multiple glass-fronted floors at Imlikheda Chowk, our grand destination brings curated visual arches, trial lounges, and personal styling to Madhya Pradesh.',
+      'Spanning multiple floors at Mansarovar Complex on Chhindwara Road, our grand destination brings curated visual arches, trial lounges, and personal styling to Madhya Pradesh.',
     image: '/images/store-facade.jpg',
   },
   {

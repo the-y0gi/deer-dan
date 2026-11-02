@@ -8,6 +8,7 @@ export interface StoreInfo {
   whatsappUrl: string;
   email: string;
   instagram: string;
+  instagramUrl: string;
   website: string;
   address: {
     landmark: string;
@@ -33,27 +34,28 @@ export const BRAND_DATA: StoreInfo = {
   tagline: 'Premium Clothing & Smart Casuals Showroom',
   founder: 'Romi',
   founderRole: 'Founder & Creative Director',
-  phone: '9999999999',
-  phoneFormatted: '+91 99999 99999',
-  whatsappUrl: 'https://wa.me/919999999999?text=Hello%20Deer%20%26%20Dan%2C%20I%20would%20like%20to%20inquire%20about%20your%20latest%20collection.',
-  email: 'concierge@deeranddan.com',
-  instagram: '@deeranddan_official',
-  website: 'www.deeranddan.com',
+  phone: '9340926379',
+  phoneFormatted: '+91 93409 26379',
+  whatsappUrl: 'https://wa.me/919340926379?text=Hello%20Deer%20%26%20Dan%2C%20I%20would%20like%20to%20inquire%20about%20your%20latest%20collection.',
+  email: 'info.deerdan@gmail.com',
+  instagram: '@mydeer.dan',
+  instagramUrl: 'https://www.instagram.com/mydeer.dan',
+  website: 'deerdan.in',
   address: {
-    landmark: 'Imlikheda Square (इमलीखेड़ा चौक)',
-    road: 'MP SH 26',
-    area: 'Thuniya Bhand',
+    landmark: 'Mansarovar Complex (मानसरोवर कॉम्प्लेक्स)',
+    road: 'Chhindwara Road',
+    area: 'Chandangaon',
     city: 'Chhindwara',
     state: 'Madhya Pradesh',
     pincode: '480001',
-    plusCode: '2W2H+5V Thuniya Bhand, Madhya Pradesh',
-    full: 'Imlikheda Chowk, MP SH 26, Thuniya Bhand, Chhindwara, Madhya Pradesh 480001',
+    plusCode: '3W4Q+X7F Chandangaon, Chhindwara, Madhya Pradesh',
+    full: 'Mansarovar Complex, Chhindwara Rd, Chandangaon, Chhindwara, Madhya Pradesh 480001',
   },
   timings: {
     days: 'Monday – Sunday (Open All 7 Days)',
     hours: '10:30 AM – 10:00 PM',
     statusNote: 'Open Today for In-Store Walk-ins & Private Styling',
   },
-  mapUrl: 'https://maps.google.com/?q=Imlikheda+Chowk,+Chhindwara,+Madhya+Pradesh+480001',
-  mapEmbedUrl: 'https://www.google.com/maps?q=Imlikheda+Chowk,+Chhindwara,+Madhya+Pradesh+480001&output=embed',
+  mapUrl: 'https://maps.google.com/?q=Chhindwara+mansarovar,+Chandangaon,+Chhindwara,+Madhya+Pradesh+480001',
+  mapEmbedUrl: 'https://www.google.com/maps?q=Chhindwara+mansarovar,+Chandangaon,+Chhindwara,+Madhya+Pradesh+480001&output=embed',
 };

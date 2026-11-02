@@ -45,7 +45,7 @@ export default function FlagshipShowroom() {
                     Flagship Destination • Madhya Pradesh
                   </p>
                   <h3 className="m-0 mt-0.5 sm:mt-1 font-serif text-[1rem] sm:text-[1.25rem] font-medium text-white">
-                    Imlikheda Chowk, Chhindwara
+                    Mansarovar Complex, Chhindwara
                   </h3>
                   <p className="m-0 mt-0.5 sm:mt-1 text-[0.64rem] sm:text-[0.72rem] text-white/80 line-clamp-1 sm:line-clamp-none">
                     {BRAND_DATA.address.landmark}, {BRAND_DATA.address.road} (PIN: {BRAND_DATA.address.pincode})
@@ -70,7 +70,7 @@ export default function FlagshipShowroom() {
             </div>
 
             <p className="text-[0.85rem] sm:text-[0.88rem] leading-relaxed text-[#525252] m-0">
-              Located prominently at Imlikheda Chowk on MP SH 26, our grand glass facade destination
+              Located prominently at Mansarovar Complex on Chhindwara Road (Chandangaon), our luxury destination
               houses curated luxury displays—from quiet luxury knitwear and ascot pairings to dark street
               atelier capsules. Every customer receives personalized guidance and fabric consultations.
             </p>
@@ -113,7 +113,7 @@ export default function FlagshipShowroom() {
                 </div>
                 <h4 className="m-0 text-[0.8rem] sm:text-[0.82rem] font-semibold text-[#121212]">Hassle-Free Parking</h4>
                 <p className="m-0 mt-1 text-[0.68rem] sm:text-[0.7rem] text-[#525252] leading-snug">
-                  Direct highway access on MP SH 26 with showroom parking.
+                  Prime location on Chhindwara Road with showroom parking.
                 </p>
               </div>
             </div>
