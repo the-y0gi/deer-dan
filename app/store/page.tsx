@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -14,6 +13,38 @@ import {
   Car,
   Building,
 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Flagship Store Chhindwara | Deer & Dan Showroom Mansarovar Complex',
+  description:
+    'Visit Deer & Dan flagship clothing showroom at Mansarovar Complex, Chhindwara Road (Chandangaon). Explore quiet luxury menswear, 100% cotton shirts, and private styling. Open all 7 days 10:30 AM – 10:00 PM.',
+  keywords: [
+    'chhindwara clothing store',
+    'flagship store chhindwara',
+    'mansarovar complex chhindwara',
+    'clothes shop chandangaon',
+    'luxury showroom chhindwara',
+    'deer and dan showroom',
+    'mens clothing showroom madhya pradesh',
+  ],
+  alternates: {
+    canonical: 'https://deerdan.in/store',
+  },
+  openGraph: {
+    title: 'Flagship Store Chhindwara | Deer & Dan Showroom Mansarovar Complex',
+    description:
+      'Visit Deer & Dan flagship clothing showroom at Mansarovar Complex, Chhindwara Road. Open daily 10:30 AM – 10:00 PM.',
+    url: 'https://deerdan.in/store',
+    images: [
+      {
+        url: 'https://deerdan.in/images/store-facade.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Deer & Dan Flagship Showroom Facade Chhindwara',
+      },
+    ],
+  },
+};
 
 export default function StorePage() {
   const showroomGalleries = [

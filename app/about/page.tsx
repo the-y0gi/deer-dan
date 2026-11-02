@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
@@ -7,6 +6,37 @@ import Footer from '../components/Footer';
 import { BRAND_DATA } from '../data/brand';
 import { ATELIER_PILLARS } from '../data/looks';
 import { ShieldCheck, CheckCircle2, ArrowUpRight, Gift, MapPin, Award, Feather } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About Deer & Dan | 100% Cotton Craftsmanship & Atelier Heritage',
+  description:
+    'Discover Deer & Dan’s heritage — pure 100% Indian combed cotton, artisanal linen tailoring, and quiet luxury menswear founded under the creative direction of Romi in Chhindwara.',
+  keywords: [
+    'about deer and dan',
+    'pure cotton clothing india',
+    'chhindwara fashion designer',
+    'quiet luxury brand india',
+    'cotton craft chhindwara',
+    'romi deer and dan',
+  ],
+  alternates: {
+    canonical: 'https://deerdan.in/about',
+  },
+  openGraph: {
+    title: 'About Deer & Dan | 100% Cotton Craftsmanship & Atelier Heritage',
+    description:
+      'Pure 100% combed cotton, zero synthetic compromise, and architectural tailoring from Deer & Dan Chhindwara.',
+    url: 'https://deerdan.in/about',
+    images: [
+      {
+        url: 'https://deerdan.in/images/craft-tags-strip.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Deer & Dan Textile Craft & Heritage',
+      },
+    ],
+  },
+};
 
 export default function AboutPage() {
   return (
