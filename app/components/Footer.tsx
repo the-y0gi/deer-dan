@@ -7,6 +7,7 @@ import {
   Clock,
   Phone,
   ArrowUpRight,
+  Heart,
 } from 'lucide-react';
 import { BRAND_DATA } from '../data/brand';
 
@@ -173,8 +174,19 @@ export default function Footer({}: FooterProps) {
               &copy; {new Date().getFullYear()} <strong>Deer & Dan Clothing</strong>. All rights reserved. Flagship Showroom in Chhindwara, Madhya Pradesh.
             </span>
             <span className="opacity-40 hidden sm:inline">•</span>
-            <span>
-              Developed by <strong className="text-[#121212] font-semibold">Yogesh Gadhewal</strong>
+            <span className="inline-flex items-center gap-1.5">
+              <span>Developed with</span>
+              <Heart size={13} className="text-[#ef4444] fill-[#ef4444] inline shrink-0" />
+              <span>by</span>
+              <a
+                href="https://yogeshgadhewal.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#121212] font-semibold no-underline hover:underline decoration-[#ef4444] underline-offset-2 transition-colors"
+                title="Yogesh Gadhewal — Full Stack Developer & Freelance Software Engineer"
+              >
+                Yogesh Gadhewal
+              </a>
             </span>
           </div>
         </div>
