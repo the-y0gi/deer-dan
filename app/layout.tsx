@@ -38,12 +38,19 @@ export const metadata: Metadata = {
     "Deer & Dan Chhindwara",
     "Deer and Dan",
     "deerdan.in",
+    "Yogesh Gadhewal",
+    "Yogesh Gadhewal developer",
+    "Yogesh Gadhewal portfolio",
+    "Yogesh Gadhewal projects",
   ],
 
   applicationName: "Deer & Dan Chhindwara",
 
-  authors: [{ name: "Deer & Dan", url: "https://deerdan.in" }],
-  creator: "Romi — Creative Director",
+  authors: [
+    { name: "Deer & Dan", url: "https://deerdan.in" },
+    { name: "Yogesh Gadhewal", url: "https://yogeshgadhewal.in" },
+  ],
+  creator: "Yogesh Gadhewal (Full Stack Developer & Software Engineer — https://yogeshgadhewal.in)",
   publisher: "Deer & Dan Flagship Showroom",
 
   referrer: "origin-when-cross-origin",
@@ -202,6 +209,34 @@ export default function RootLayout({
                     "@type": "Person",
                     name: "Romi",
                     jobTitle: "Founder & Creative Director",
+                  },
+                  creator: {
+                    "@type": "Person",
+                    "@id": "https://yogeshgadhewal.in/#person",
+                    name: "Yogesh Gadhewal",
+                    jobTitle: "Full Stack Developer & Freelance Software Engineer",
+                    url: "https://yogeshgadhewal.in",
+                    sameAs: [
+                      "https://yogeshgadhewal.in",
+                      "https://www.linkedin.com/in/yogesh-gadhewal",
+                    ],
+                  },
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://deerdan.in/#website",
+                  url: "https://deerdan.in",
+                  name: "Deer & Dan Clothing",
+                  description:
+                    "Deer & Dan is Chhindwara's premier luxury clothing and fashion showroom located at Mansarovar Complex, Chandangaon.",
+                  publisher: {
+                    "@id": "https://deerdan.in/#store",
+                  },
+                  creator: {
+                    "@id": "https://yogeshgadhewal.in/#person",
+                  },
+                  author: {
+                    "@id": "https://yogeshgadhewal.in/#person",
                   },
                 },
                 {
