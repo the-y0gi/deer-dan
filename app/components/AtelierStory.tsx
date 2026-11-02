@@ -31,7 +31,7 @@ export default function AtelierStory({}: AtelierStoryProps) {
       num: '03',
       tag: 'Showroom Heritage',
       title: 'Boutique Packaging & Service',
-      desc: 'Signature matte black stag shopping bags, bespoke hangtags, and one-on-one styling at Imlikheda Chowk.',
+      desc: 'Signature matte black stag shopping bags, bespoke hangtags, and one-on-one styling at Mansarovar Complex showroom.',
       image: '/images/packaging-luxury-shopping-bag.jpg',
       badge: 'Flagship Destination',
     },

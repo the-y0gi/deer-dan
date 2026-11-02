@@ -139,7 +139,7 @@ export default function Footer({}: FooterProps) {
               </a>
 
               <a
-                href="https://instagram.com"
+                href={BRAND_DATA.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 text-[0.8rem] sm:text-[0.82rem] text-[#525252] no-underline font-medium hover:text-[#121212] transition-colors"

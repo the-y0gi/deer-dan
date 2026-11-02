@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -14,6 +13,38 @@ import {
   Car,
   Building,
 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Flagship Store Chhindwara | Deer & Dan Showroom Mansarovar Complex',
+  description:
+    'Visit Deer & Dan flagship clothing showroom at Mansarovar Complex, Chhindwara Road (Chandangaon). Explore quiet luxury menswear, 100% cotton shirts, and private styling. Open all 7 days 10:30 AM – 10:00 PM.',
+  keywords: [
+    'chhindwara clothing store',
+    'flagship store chhindwara',
+    'mansarovar complex chhindwara',
+    'clothes shop chandangaon',
+    'luxury showroom chhindwara',
+    'deer and dan showroom',
+    'mens clothing showroom madhya pradesh',
+  ],
+  alternates: {
+    canonical: 'https://deerdan.in/store',
+  },
+  openGraph: {
+    title: 'Flagship Store Chhindwara | Deer & Dan Showroom Mansarovar Complex',
+    description:
+      'Visit Deer & Dan flagship clothing showroom at Mansarovar Complex, Chhindwara Road. Open daily 10:30 AM – 10:00 PM.',
+    url: 'https://deerdan.in/store',
+    images: [
+      {
+        url: 'https://deerdan.in/images/store-facade.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Deer & Dan Flagship Showroom Facade Chhindwara',
+      },
+    ],
+  },
+};
 
 export default function StorePage() {
   const showroomGalleries = [
@@ -82,7 +113,7 @@ export default function StorePage() {
       tag: 'Valet & Parking',
       icon: Car,
       title: 'Easy Highway Accessibility',
-      desc: 'Prominently located at Imlikheda Chowk on MP SH 26 with effortless on-site parking.',
+      desc: 'Prominently located at Mansarovar Complex on Chhindwara Road with effortless showroom parking.',
     },
   ];
 
@@ -101,13 +132,13 @@ export default function StorePage() {
             <h1 className="font-serif text-[clamp(2.1rem,6vw,4.4rem)] font-normal leading-[1.1] tracking-[-0.025em] m-0 text-[#121212]">
               The Grand Flagship Store <br />
               <span className="italic font-light opacity-85">
-                at Imlikheda Chowk, Chhindwara.
+                at Mansarovar Complex, Chhindwara.
               </span>
             </h1>
 
             <p className="text-[0.95rem] sm:text-[1.08rem] text-[#525252] leading-[1.7] sm:leading-[1.75] m-0 max-w-[720px]">
               Step into a sanctuary of architectural refinement and quiet luxury. Spanning multiple
-              glass-fronted floors on MP SH 26, the <strong className="font-semibold text-[#121212]">Deer & Dan</strong> flagship showroom brings
+              floors on Chhindwara Road (Chandangaon), the <strong className="font-semibold text-[#121212]">Deer & Dan</strong> flagship showroom brings
               personalized haute couture and contemporary Indian fashion to Madhya Pradesh.
             </p>
           </div>
@@ -137,7 +168,7 @@ export default function StorePage() {
                     Deer & Dan (डियर & डैन)
                   </h3>
                   <p className="m-0 mt-0.5 sm:mt-1 text-[0.72rem] sm:text-[0.8rem] text-white/80 leading-relaxed">
-                    Imlikheda Chowk, MP SH 26, Thuniya Bhand, Chhindwara, MP 480001
+                    {BRAND_DATA.address.full}
                   </p>
                 </div>
               </div>
@@ -249,7 +280,7 @@ export default function StorePage() {
               Designed for Unhurried Luxury.
             </h2>
             <p className="text-[0.88rem] sm:text-[0.98rem] text-[#525252] leading-relaxed mt-2 m-0">
-              Every touchpoint at our Imlikheda Chowk flagship is engineered for sensory calm, bespoke fit precision, and discrete hospitality.
+              Every touchpoint at our Mansarovar Complex flagship is engineered for sensory calm, bespoke fit precision, and discrete hospitality.
             </p>
           </div>
 
@@ -344,10 +375,10 @@ export default function StorePage() {
               Interactive Map
             </span>
             <h2 className="font-serif text-[clamp(1.9rem,4vw,2.5rem)] font-normal m-0 mt-2 text-[#121212]">
-              Find Us at Imlikheda Chowk
+              Find Us at Mansarovar Complex
             </h2>
             <p className="text-[0.85rem] sm:text-[0.9rem] text-[#525252] mt-1.5 leading-relaxed">
-              Conveniently located on MP SH 26 with easy highway accessibility and dedicated on-site parking.
+              Conveniently located at Mansarovar Complex on Chhindwara Road (Chandangaon) with dedicated showroom parking.
             </p>
           </div>
 

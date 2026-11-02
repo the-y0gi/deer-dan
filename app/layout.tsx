@@ -12,32 +12,39 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://deerdan.in"),
 
   title: {
-    default: "Deer & Dan Clothing | Premium Fashion Brand India",
-    template: "%s | Deer & Dan Clothing",
+    default: "Deer & Dan — Luxury Clothing & Fashion Showroom in Chhindwara",
+    template: "%s | Deer & Dan Chhindwara",
   },
 
   description:
-    "Deer & Dan Clothing is a premium fashion brand offering stylish and modern clothing for men, women, and kids. Discover timeless fashion crafted for every you.",
+    "Deer & Dan is Chhindwara's premier luxury clothing and fashion showroom located at Mansarovar Complex, Chandangaon. Discover 100% pure combed cotton shirts, relaxed pleated trousers, luxury knitwear, and quiet luxury menswear.",
 
   keywords: [
+    "chhindwara clothing",
+    "chhindwara fashion",
+    "clothing store in chhindwara",
+    "clothes shop in chhindwara",
+    "best clothing showroom in chhindwara",
+    "mens clothing chhindwara",
+    "luxury clothing brand chhindwara",
+    "mansarovar complex chhindwara",
+    "chandangaon chhindwara clothing",
+    "pure cotton shirts chhindwara",
+    "pleated trousers chhindwara",
+    "readymade garments chhindwara",
+    "menswear chhindwara",
+    "smart casuals chhindwara",
     "Deer & Dan",
-    "Deer & Dan Clothing",
-    "Premium Fashion Brand India",
-    "Luxury Clothing Brand India",
-    "Men's Clothing",
-    "Women's Clothing",
-    "Kids Clothing",
-    "Streetwear India",
-    "Online Clothing Store India",
-    "Fashion Brand India",
+    "Deer & Dan Chhindwara",
+    "Deer and Dan",
     "deerdan.in",
   ],
 
-  applicationName: "Deer & Dan Clothing",
+  applicationName: "Deer & Dan Chhindwara",
 
-  authors: [{ name: "Deer & Dan Clothing" }],
-  creator: "Deer & Dan Clothing",
-  publisher: "Deer & Dan Clothing",
+  authors: [{ name: "Deer & Dan", url: "https://deerdan.in" }],
+  creator: "Romi — Creative Director",
+  publisher: "Deer & Dan Flagship Showroom",
 
   referrer: "origin-when-cross-origin",
 
@@ -65,33 +72,40 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Deer & Dan Clothing | Premium Fashion Brand India",
+    title: "Deer & Dan — Luxury Clothing & Fashion Showroom in Chhindwara",
     description:
-      "Premium fashion for every you. Discover timeless and modern clothing for men, women, and kids.",
+      "Chhindwara's premier luxury fashion destination at Mansarovar Complex. Crafted from 100% fine combed cotton with quiet luxury elegance.",
     url: "https://deerdan.in",
-    siteName: "Deer & Dan Clothing",
+    siteName: "Deer & Dan Chhindwara",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://deerdan.in/deer_logo.jpeg",
+        url: "https://deerdan.in/images/store-facade.jpg",
         width: 1200,
         height: 630,
-        alt: "Deer & Dan Clothing",
+        alt: "Deer & Dan Luxury Clothing Showroom Chhindwara",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Deer & Dan Clothing | Premium Fashion Brand India",
+    title: "Deer & Dan — Luxury Clothing & Fashion Showroom in Chhindwara",
     description:
-      "Premium fashion for every you. Discover timeless and modern clothing for men, women, and kids.",
-    images: ["https://deerdan.in/deer_logo.jpeg"],
-    creator: "@deerdan",
+      "Chhindwara's premier luxury fashion destination at Mansarovar Complex. 100% pure combed cotton shirts, pleated trousers & designer casuals.",
+    images: ["https://deerdan.in/images/store-facade.jpg"],
+    creator: "@mydeer.dan",
   },
 
-  category: "Fashion",
+  category: "Fashion & Luxury Retail",
+
+  other: {
+    "geo.region": "IN-MP",
+    "geo.placename": "Chhindwara, Chandangaon",
+    "geo.position": "22.0494;78.9382",
+    ICBM: "22.0494, 78.9382",
+  },
 };
 
 export default function RootLayout({
@@ -110,47 +124,133 @@ export default function RootLayout({
         />
       </head>
       <body>
+        {/* Schema.org Knowledge Graph: ClothingStore & LocalBusiness */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "ClothingStore",
-              name: "Deer & Dan",
-              alternateName: "डियर & डैन",
-              description: "Luxury Indian fashion and clothing brand crafting 100% fine combed cotton, artisanal linen tailoring, and quiet luxury menswear & womenswear.",
-              url: "https://deerdan.in",
-              logo: "https://deerdan.in/images/official-deer-logo.jpg",
-              image: "https://deerdan.in/images/store-facade.jpg",
-              founder: {
-                "@type": "Person",
-                name: "Romi",
-                jobTitle: "Founder & Creative Director",
-              },
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Imlikheda Chowk, MP SH 26, Thuniya Bhand",
-                addressLocality: "Chhindwara",
-                addressRegion: "Madhya Pradesh",
-                postalCode: "480001",
-                addressCountry: "IN",
-              },
-              openingHoursSpecification: {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday",
-                ],
-                opens: "10:30",
-                closes: "22:00",
-              },
-              priceRange: "₹₹₹",
-              telephone: "+91-9999999999",
+              "@graph": [
+                {
+                  "@type": ["ClothingStore", "MensClothingStore", "LocalBusiness"],
+                  "@id": "https://deerdan.in/#store",
+                  name: "Deer & Dan",
+                  legalName: "Deer & Dan Flagship Showroom",
+                  alternateName: [
+                    "Deer and Dan",
+                    "डियर & डैन",
+                    "Deer & Dan Chhindwara",
+                    "Deer & Dan Clothing",
+                  ],
+                  description:
+                    "Deer & Dan is Chhindwara's premier luxury clothing and fashion showroom located at Mansarovar Complex, Chandangaon. Specializing in 100% fine combed cotton shirts, relaxed pleated trousers, luxury waffle knits, and quiet luxury menswear.",
+                  url: "https://deerdan.in",
+                  logo: "https://deerdan.in/images/official-deer-logo.jpg",
+                  image: [
+                    "https://deerdan.in/images/store-facade.jpg",
+                    "https://deerdan.in/images/rack-quiet-luxury.jpg",
+                    "https://deerdan.in/images/signature-model.jpg",
+                  ],
+                  telephone: "+91-9340926379",
+                  email: "info.deerdan@gmail.com",
+                  sameAs: ["https://www.instagram.com/mydeer.dan"],
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Mansarovar Complex, Chhindwara Rd, Chandangaon",
+                    addressLocality: "Chhindwara",
+                    addressRegion: "Madhya Pradesh",
+                    postalCode: "480001",
+                    addressCountry: "IN",
+                  },
+                  geo: {
+                    "@type": "GeoCoordinates",
+                    latitude: 22.0494,
+                    longitude: 78.9382,
+                  },
+                  hasMap:
+                    "https://maps.google.com/?q=Chhindwara+mansarovar,+Chandangaon,+Chhindwara,+Madhya+Pradesh+480001",
+                  openingHoursSpecification: [
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      dayOfWeek: [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday",
+                      ],
+                      opens: "10:30",
+                      closes: "22:00",
+                    },
+                  ],
+                  priceRange: "₹₹",
+                  currenciesAccepted: "INR",
+                  paymentAccepted: "Cash, Credit Card, UPI, Debit Card",
+                  areaServed: [
+                    {
+                      "@type": "City",
+                      name: "Chhindwara",
+                    },
+                    {
+                      "@type": "AdministrativeArea",
+                      name: "Madhya Pradesh",
+                    },
+                  ],
+                  founder: {
+                    "@type": "Person",
+                    name: "Romi",
+                    jobTitle: "Founder & Creative Director",
+                  },
+                },
+                {
+                  "@type": "FAQPage",
+                  "@id": "https://deerdan.in/#faq",
+                  mainEntity: [
+                    {
+                      "@type": "Question",
+                      name: "Which is the best luxury clothing showroom in Chhindwara?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Deer & Dan is Chhindwara’s premier luxury clothing and fashion showroom located at Mansarovar Complex on Chhindwara Road (Chandangaon). They craft 100% pure combed cotton shirts, relaxed pleated trousers, luxury waffle knits, and quiet luxury menswear with tailored precision and personalized styling.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "Where can I buy 100% pure combed cotton shirts in Chhindwara?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Deer & Dan offers an exclusive collection of 100% fine combed cotton shirts, crafted from breathable long-staple Indian cotton with zero synthetic blend compromise. Visit their showroom at Mansarovar Complex, Chhindwara Road.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "What are the store timings and location of Deer & Dan in Chhindwara?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Deer & Dan is located at Mansarovar Complex, Chhindwara Road, Chandangaon, Chhindwara, Madhya Pradesh 480001 (Plus Code: 3W4Q+X7F). The showroom is open Monday through Sunday from 10:30 AM to 10:00 PM.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "Does Deer & Dan offer personal styling and WhatsApp consultation?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Yes, Deer & Dan provides personal styling assistance directed under founder Romi. You can also connect directly with their styling concierge on WhatsApp at +91 93409 26379 to check piece availability.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "What clothing styles are available at Deer & Dan Chhindwara?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Deer & Dan features Quiet Luxury & Heritage Knits, Pure Cotton Casuals, Dark Street Atelier utility wear, Tailored Linen resort sets, and Signature Washed Denim with custom stag hardware.",
+                      },
+                    },
+                  ],
+                },
+              ],
             }),
           }}
         />

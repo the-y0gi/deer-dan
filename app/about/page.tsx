@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
@@ -7,6 +6,37 @@ import Footer from '../components/Footer';
 import { BRAND_DATA } from '../data/brand';
 import { ATELIER_PILLARS } from '../data/looks';
 import { ShieldCheck, CheckCircle2, ArrowUpRight, Gift, MapPin, Award, Feather } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About Deer & Dan | 100% Cotton Craftsmanship & Atelier Heritage',
+  description:
+    'Discover Deer & Dan’s heritage — pure 100% Indian combed cotton, artisanal linen tailoring, and quiet luxury menswear founded under the creative direction of Romi in Chhindwara.',
+  keywords: [
+    'about deer and dan',
+    'pure cotton clothing india',
+    'chhindwara fashion designer',
+    'quiet luxury brand india',
+    'cotton craft chhindwara',
+    'romi deer and dan',
+  ],
+  alternates: {
+    canonical: 'https://deerdan.in/about',
+  },
+  openGraph: {
+    title: 'About Deer & Dan | 100% Cotton Craftsmanship & Atelier Heritage',
+    description:
+      'Pure 100% combed cotton, zero synthetic compromise, and architectural tailoring from Deer & Dan Chhindwara.',
+    url: 'https://deerdan.in/about',
+    images: [
+      {
+        url: 'https://deerdan.in/images/craft-tags-strip.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Deer & Dan Textile Craft & Heritage',
+      },
+    ],
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -62,7 +92,7 @@ export default function AboutPage() {
                     Flagship Insignia
                   </span>
                   <p className="m-0 mt-0.5 sm:mt-1 text-[0.78rem] sm:text-[0.82rem] text-white font-medium">
-                    Imlikheda Chowk • Chhindwara
+                    Mansarovar Complex • Chhindwara
                   </p>
                 </div>
                 <div className="inline-flex items-center gap-1.5 py-1 px-2.5 sm:px-3 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 text-[#10b981] text-[0.68rem] sm:text-[0.72rem] font-semibold">
@@ -83,7 +113,7 @@ export default function AboutPage() {
               </div>
 
               <p className="text-[0.92rem] sm:text-base text-[#525252] leading-[1.7] sm:leading-[1.75] m-0">
-                From our flagship showroom at Imlikheda Chowk in Chhindwara to discerning patrons nationwide,
+                From our flagship showroom at Mansarovar Complex in Chhindwara to discerning patrons nationwide,
                 Deer & Dan represents a return to enduring craftsmanship. We engineer garments mathematically
                 to balance architectural structure with natural ease of movement.
               </p>
@@ -255,7 +285,7 @@ export default function AboutPage() {
                     <MapPin size={15} />
                   </div>
                   <span className="text-[0.82rem] sm:text-[0.88rem] text-[#1f2937] font-medium">
-                    Complimentary on every in-store purchase at Imlikheda Chowk
+                    Complimentary on every in-store purchase at Mansarovar Complex showroom
                   </span>
                 </div>
               </div>

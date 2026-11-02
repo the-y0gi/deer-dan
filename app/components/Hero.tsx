@@ -32,8 +32,8 @@ export default function Hero({ looks, onSelectLook }: HeroProps) {
 
             <p className="text-[0.95rem] sm:text-[1.05rem] leading-[1.65] text-[#525252] max-w-[540px] m-0">
               <strong className="font-bold text-[#121212]">Deer & Dan</strong> crafts pure 100% combed cotton shirts, relaxed
-              pleated trousers, signature denim, and everyday smart casuals. Experience our grand
-              multi-story glass showroom at Imlikheda Chowk curated under the creative direction of{' '}
+              pleated trousers, signature denim, and everyday smart casuals. Experience our flagship
+              showroom at Mansarovar Complex, Chhindwara curated under the creative direction of{' '}
               <strong className="font-bold text-[#121212]">{BRAND_DATA.founder}</strong>.
             </p>
 
